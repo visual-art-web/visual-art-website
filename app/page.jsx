@@ -33,9 +33,18 @@ export default function Home() {
   return (
     <main>
       <header className="navBar">
-        <a className="logo imageLogo" href="#top" aria-label="Visual Art">
-          <img src="/visual-art-logo.svg" alt="Visual Art" />
+        
+        <a className="logo premiumInlineLogo" href="#top" aria-label="Visual Art">
+          <div className="cameraMark">
+            <div className="lens"></div>
+          </div>
+
+          <div className="brandText">
+            <h2>VISUAL ART</h2>
+            <p>CAPTURING MOMENTS, CREATING MEMORIES</p>
+          </div>
         </a>
+
 
         <nav>
           <a href="#work">גלריה</a>
