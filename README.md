@@ -1,2 +1,3 @@
-Visual Art complete dark cinematic redesign.
-Upload all files and folders to GitHub.
+# Visual Art Website
+
+עיצוב חדש מאפס בסגנון dark luxury photography.
