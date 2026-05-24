@@ -1423,3 +1423,65 @@ body{
     max-width:250px !important;
   }
 }
+
+
+/* ===== V12.7 PUT LOGO INSIDE THE RIGHT AREA ===== */
+/* Force logo into the exact right-side logo zone, instead of letting grid push it near the menu. */
+
+.premiumHeaderShell{
+  position:relative !important;
+}
+
+.brandLogoTextOnly{
+  position:absolute !important;
+  top:50% !important;
+  right:112px !important;
+  transform:translateY(-50%) !important;
+  width:250px !important;
+  min-width:250px !important;
+  max-width:250px !important;
+  margin:0 !important;
+  padding:0 !important;
+  justify-self:auto !important;
+}
+
+.brandCopyOnly{
+  width:250px !important;
+  align-items:center !important;
+  text-align:center !important;
+  gap:4px !important;
+}
+
+.brandCopyOnly strong{
+  width:250px !important;
+  font-size:27px !important;
+  letter-spacing:.20em !important;
+  text-align:center !important;
+  line-height:1 !important;
+}
+
+.brandCopyOnly small{
+  width:250px !important;
+  font-size:7.2px !important;
+  letter-spacing:.15em !important;
+  text-align:center !important;
+  line-height:1.1 !important;
+}
+
+@media(max-width:980px){
+  .brandLogoTextOnly{
+    position:relative !important;
+    top:auto !important;
+    right:auto !important;
+    transform:none !important;
+    width:235px !important;
+    min-width:235px !important;
+    max-width:235px !important;
+  }
+
+  .brandCopyOnly,
+  .brandCopyOnly strong,
+  .brandCopyOnly small{
+    width:235px !important;
+  }
+}
