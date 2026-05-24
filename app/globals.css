@@ -900,151 +900,50 @@ body{
 
 
 
-/* ===== V10.1 CLEAN INLINE LOGO - NO PUBLIC IMAGE ===== */
-/* Logo works exactly like the original: built from HTML/CSS, no /public image needed. */
 
-.logo.cleanInlineLogo{
+
+
+/* ===== V10.3 EXACT SELECTED LOGO ===== */
+/* Uses the exact logo selected by the user, cropped and transparent,
+   so it sits naturally in the navbar without the black rectangle. */
+
+.logo.exactSelectedLogo{
   display:flex !important;
   align-items:center !important;
-  gap:16px !important;
-  width:auto !important;
-  min-width:390px !important;
-  max-width:460px !important;
+  justify-content:flex-end !important;
+  width:440px !important;
+  min-width:440px !important;
+  max-width:440px !important;
   height:64px !important;
+  max-height:64px !important;
   overflow:visible !important;
-  flex-shrink:0 !important;
+  flex:0 0 440px !important;
+  line-height:0 !important;
   direction:ltr !important;
-  text-align:left !important;
-  text-decoration:none !important;
-  line-height:1 !important;
 }
 
-.cameraIcon{
-  position:relative;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:58px !important;
-  height:42px !important;
-  min-width:58px !important;
-  border:2px solid #d6b16a !important;
-  border-radius:12px !important;
-  color:#d6b16a !important;
+.logo.exactSelectedLogo img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:right center !important;
+  border:0 !important;
   background:transparent !important;
-  box-shadow:none !important;
-}
-
-.cameraTop{
-  position:absolute;
-  top:-11px;
-  left:14px;
-  width:28px;
-  height:12px;
-  border:2px solid #d6b16a;
-  border-bottom:0;
-  border-radius:8px 8px 0 0;
-}
-
-.cameraLens{
-  width:24px;
-  height:24px;
-  border:2px solid rgba(255,249,239,.88);
-  border-radius:50%;
-  position:relative;
-}
-
-.cameraLens:after{
-  content:"";
-  position:absolute;
-  inset:6px;
-  border-radius:50%;
-  background:#d6b16a;
-}
-
-.logoDivider{
-  width:1px;
-  height:50px;
-  background:linear-gradient(to bottom, transparent, rgba(214,177,106,.95), transparent);
-  display:block !important;
-}
-
-.logoTextBlock{
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:center !important;
-  gap:8px !important;
-}
-
-.logoTextBlock strong{
-  display:block !important;
-  color:#fff9ef !important;
-  font-family:Georgia, 'Times New Roman', serif !important;
-  font-size:32px !important;
-  font-weight:600 !important;
-  letter-spacing:.32em !important;
-  line-height:.95 !important;
-  white-space:nowrap !important;
-  text-shadow:0 8px 26px rgba(0,0,0,.34);
-}
-
-.logoTextBlock small{
-  display:block !important;
-  color:#d6b16a !important;
-  font-size:9.5px !important;
-  font-weight:700 !important;
-  letter-spacing:.28em !important;
-  text-transform:uppercase !important;
-  white-space:nowrap !important;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.22));
 }
 
 .navBar{
-  grid-template-columns: 470px 1fr 300px !important;
+  grid-template-columns: 460px 1fr 300px !important;
 }
 
 @media(max-width:980px){
-  .logo.cleanInlineLogo{
-    min-width:245px !important;
-    max-width:245px !important;
-    height:52px !important;
-    gap:10px !important;
-  }
-
-  .cameraIcon{
-    width:42px !important;
-    height:32px !important;
-    min-width:42px !important;
-    border-radius:9px !important;
-  }
-
-  .cameraTop{
-    top:-9px;
-    left:10px;
-    width:20px;
-    height:9px;
-  }
-
-  .cameraLens{
-    width:17px;
-    height:17px;
-  }
-
-  .cameraLens:after{
-    inset:4px;
-  }
-
-  .logoDivider{
-    height:36px;
-  }
-
-  .logoTextBlock strong{
-    font-size:19px !important;
-    letter-spacing:.18em !important;
-  }
-
-  .logoTextBlock small{
-    font-size:7px !important;
-    letter-spacing:.12em !important;
-    white-space:normal !important;
+  .logo.exactSelectedLogo{
+    width:255px !important;
+    min-width:255px !important;
+    max-width:255px !important;
+    height:42px !important;
+    flex:0 0 255px !important;
   }
 
   .navBar{

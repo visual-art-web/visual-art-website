@@ -36,19 +36,11 @@ export default function Home() {
         
         
         
-        <a className="logo cleanInlineLogo" href="#top" aria-label="Visual Art">
-          <span className="cameraIcon" aria-hidden="true">
-            <span className="cameraTop"></span>
-            <span className="cameraLens"></span>
-          </span>
-
-          <span className="logoDivider" aria-hidden="true"></span>
-
-          <span className="logoTextBlock">
-            <strong>VISUAL ART</strong>
-            <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
-          </span>
+        
+        <a className="logo exactSelectedLogo" href="#top" aria-label="Visual Art">
+          <img src="/visual-art-selected-logo.png" alt="Visual Art" />
         </a>
+
 
 
 
