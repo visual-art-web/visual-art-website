@@ -1,5 +1,4 @@
-# Visual Art Website v2.1
+# Visual Art Website v3
+Premium bright luxury cinematic landing page for Visual Art photography studio.
 
-Premium Bright Luxury Cinematic photography landing page.
-
-Changes: improved cinematic hero contrast, ivory typography, luxury glass panel.
+Deploy: Netlify + GitHub.

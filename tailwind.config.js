@@ -1,13 +1,10 @@
 module.exports = {
-  content: [
-    './app/**/*.{js,jsx,ts,tsx}',
-    './components/**/*.{js,jsx,ts,tsx}'
-  ],
+  content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        serif: ['var(--font-display)', 'Georgia', 'serif'],
-        sans: ['var(--font-body)', 'Arial', 'sans-serif']
+        serif: ['var(--font-display)', 'serif'],
+        sans: ['var(--font-body)', 'sans-serif']
       }
     }
   },
