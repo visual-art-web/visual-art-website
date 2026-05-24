@@ -1,21 +1,19 @@
 {
   "name": "visual-art-website",
-  "version": "3.0.0",
+  "version": "4.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p ${PORT:-3000}"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "latest",
-    "next": "14.2.23",
+    "next": "^14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
-  "devDependencies": {
-    "autoprefixer": "10.4.20",
-    "postcss": "8.4.49",
-    "tailwindcss": "3.4.17"
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.17.0"
   }
 }
