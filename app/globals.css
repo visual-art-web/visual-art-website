@@ -1369,3 +1369,17 @@ body{
     margin-right:8px !important;
   }
 }
+
+
+/* ===== V12.4 LOGO MORE RIGHT ===== */
+
+.brandLogoTextOnly{
+  margin-right:52px !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    margin-right:14px !important;
+  }
+}
