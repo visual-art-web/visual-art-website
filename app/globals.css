@@ -1221,3 +1221,68 @@ body{
     font-size:12px;
   }
 }
+
+
+/* ===== V12 CLEAN LUXURY TEXT LOGO ===== */
+
+.brandLogoTextOnly{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  text-decoration:none !important;
+  direction:ltr !important;
+  min-width:430px !important;
+}
+
+.brandCopyOnly{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:8px !important;
+}
+
+.brandCopyOnly strong{
+  color:#f8f2e8 !important;
+  font-family:Georgia, 'Times New Roman', serif !important;
+  font-size:42px !important;
+  font-weight:600 !important;
+  letter-spacing:.34em !important;
+  line-height:.9 !important;
+  white-space:nowrap !important;
+  text-shadow:
+    0 4px 18px rgba(0,0,0,.28),
+    0 0 24px rgba(214,177,106,.08);
+}
+
+.brandCopyOnly small{
+  color:#d5b06a !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  letter-spacing:.34em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+
+.brandIcon,
+.brandDivider,
+.brandCameraTop,
+.brandLens{
+  display:none !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    min-width:250px !important;
+  }
+
+  .brandCopyOnly strong{
+    font-size:24px !important;
+    letter-spacing:.18em !important;
+  }
+
+  .brandCopyOnly small{
+    font-size:7px !important;
+    letter-spacing:.12em !important;
+  }
+}

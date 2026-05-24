@@ -34,19 +34,14 @@ export default function Home() {
     <main>
       <header className="premiumHeader">
         <div className="premiumHeaderShell">
-          <a className="brandLogo" href="#top" aria-label="Visual Art">
-            <span className="brandIcon" aria-hidden="true">
-              <span className="brandCameraTop"></span>
-              <span className="brandLens"></span>
-            </span>
-
-            <span className="brandDivider" aria-hidden="true"></span>
-
-            <span className="brandCopy">
+          
+          <a className="brandLogoTextOnly" href="#top" aria-label="Visual Art">
+            <span className="brandCopyOnly">
               <strong>VISUAL ART</strong>
               <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
             </span>
           </a>
+
 
           <nav className="premiumMenu" aria-label="Main navigation">
             <a href="#work">גלריה</a>
