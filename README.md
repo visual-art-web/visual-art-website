@@ -1,3 +1,3 @@
-# Visual Art Website V5
+# Visual Art Website V6
 
-Premium cinematic photography landing page for Railway deployment.
+Dark luxury cinematic photography website for Railway.
