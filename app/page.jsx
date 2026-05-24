@@ -77,8 +77,6 @@ export default function Home() {
           <span>Visual stories for people who care about details.</span>
           <strong>Fine Art · Sea · Light · Motion</strong>
         </div>
-
-        <div className="scrollCue">Scroll</div>
       </section>
 
       <section className="statement" id="about">
@@ -100,10 +98,6 @@ export default function Home() {
           {galleryImages.map((item, index) => (
             <article className={`workCard card${index + 1}`} key={item.title}>
               <img src={item.src} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
             </article>
           ))}
         </div>

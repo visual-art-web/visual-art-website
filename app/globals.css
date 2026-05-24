@@ -698,68 +698,37 @@ textarea::placeholder {
 }
 
 
-/* FIX hover flicker */
-.galleryCard,
-.galleryCard::before,
-.galleryCard::after,
-.galleryImage,
-.galleryOverlay {
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.galleryCard:hover {
-  transform: translateY(-4px) scale(1.01) !important;
-  filter: none !important;
-}
-
-.galleryCard:hover .galleryImage {
-  transform: scale(1.03) !important;
-}
-
-/* remove weird side label */
-.scrollBadge,
-.scrollText,
-.sideScroll,
-.scrollIndicator {
+/* REAL FIX 6.5 */
+/* remove the vertical SCROLL text near the hero buttons */
+.scrollCue {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-
-/* HARD REMOVE unwanted hover text */
-.fineArtDetails,
-.detailsText,
-.hoverDetails,
-.galleryDetails,
-.gallery-footer,
-.galleryMeta {
-  display:none !important;
-  opacity:0 !important;
-  visibility:hidden !important;
+/* remove all text overlays inside gallery images */
+.workCard > div,
+.workCard h3,
+.workCard p {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-/* HARD REMOVE scroll indicator */
-.scroll-indicator,
-.scrollIndicator,
-.scroll-text,
-.scrollText,
-.scroll-label,
-.side-scroll,
-.sideLabel {
-  display:none !important;
-  opacity:0 !important;
-  visibility:hidden !important;
+/* stop strong hover/flicker effect on gallery */
+.workCard img {
+  transition: none !important;
+  transform: none !important;
+  filter: saturate(.9) contrast(1.04) !important;
 }
 
-/* stabilize gallery */
-.galleryCard{
- overflow:hidden !important;
+.workCard:hover img {
+  transform: none !important;
+  filter: saturate(.9) contrast(1.04) !important;
 }
 
-.galleryCard img{
- transition:transform .4s ease !important;
-}
-
-.galleryCard:hover img{
- transform:scale(1.02) !important;
+/* keep a subtle dark overlay, no text */
+.workCard:after {
+  background: linear-gradient(0deg, rgba(0,0,0,.28), transparent 62%) !important;
+  pointer-events: none !important;
 }
