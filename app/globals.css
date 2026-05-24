@@ -1485,3 +1485,96 @@ body{
     width:235px !important;
   }
 }
+
+
+/* ===== V12.8 FINAL HEADER GRID FIX ===== */
+/* Real fix: define 3 fixed zones:
+   left = buttons, center = menu, right = logo.
+   No absolute positioning, no overlap. */
+
+.premiumHeaderShell{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns: 330px 1fr 330px !important;
+  grid-template-areas: "actions menu logo" !important;
+  align-items:center !important;
+  column-gap:22px !important;
+  overflow:hidden !important;
+}
+
+.premiumActions{
+  grid-area:actions !important;
+  justify-self:start !important;
+  position:relative !important;
+  z-index:3 !important;
+}
+
+.premiumMenu{
+  grid-area:menu !important;
+  justify-self:center !important;
+  position:relative !important;
+  z-index:2 !important;
+  margin:0 !important;
+}
+
+.brandLogoTextOnly{
+  grid-area:logo !important;
+  position:relative !important;
+  top:auto !important;
+  right:auto !important;
+  transform:none !important;
+  justify-self:center !important;
+  width:260px !important;
+  min-width:260px !important;
+  max-width:260px !important;
+  margin:0 !important;
+  padding:0 !important;
+  z-index:4 !important;
+}
+
+.brandCopyOnly{
+  width:260px !important;
+  text-align:center !important;
+  align-items:center !important;
+  gap:4px !important;
+}
+
+.brandCopyOnly strong{
+  width:260px !important;
+  font-size:27px !important;
+  letter-spacing:.20em !important;
+  text-align:center !important;
+  line-height:1 !important;
+}
+
+.brandCopyOnly small{
+  width:260px !important;
+  font-size:7.2px !important;
+  letter-spacing:.15em !important;
+  text-align:center !important;
+  line-height:1.1 !important;
+}
+
+@media(max-width:1050px){
+  .premiumHeaderShell{
+    grid-template-columns: 1fr auto !important;
+    grid-template-areas: "logo actions" !important;
+  }
+
+  .premiumMenu{
+    display:none !important;
+  }
+
+  .brandLogoTextOnly{
+    justify-self:start !important;
+    width:250px !important;
+    min-width:250px !important;
+    max-width:250px !important;
+  }
+
+  .brandCopyOnly,
+  .brandCopyOnly strong,
+  .brandCopyOnly small{
+    width:250px !important;
+  }
+}
