@@ -1,6 +1,6 @@
 {
   "name": "visual-art-website",
-  "version": "12.5.0",
+  "version": "12.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
