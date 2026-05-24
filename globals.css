@@ -900,154 +900,495 @@ body{
 
 
 
-/* ===== V10.1 CLEAN INLINE LOGO - NO PUBLIC IMAGE ===== */
-/* Logo works exactly like the original: built from HTML/CSS, no /public image needed. */
 
-.logo.cleanInlineLogo{
+
+
+/* ===== V10.3 EXACT SELECTED LOGO ===== */
+/* Uses the exact logo selected by the user, cropped and transparent,
+   so it sits naturally in the navbar without the black rectangle. */
+
+.logo.exactSelectedLogo{
   display:flex !important;
   align-items:center !important;
-  gap:16px !important;
-  width:auto !important;
-  min-width:390px !important;
-  max-width:460px !important;
+  justify-content:flex-end !important;
+  width:440px !important;
+  min-width:440px !important;
+  max-width:440px !important;
   height:64px !important;
+  max-height:64px !important;
   overflow:visible !important;
-  flex-shrink:0 !important;
+  flex:0 0 440px !important;
+  line-height:0 !important;
   direction:ltr !important;
-  text-align:left !important;
-  text-decoration:none !important;
-  line-height:1 !important;
 }
 
-.cameraIcon{
-  position:relative;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:58px !important;
-  height:42px !important;
-  min-width:58px !important;
-  border:2px solid #d6b16a !important;
-  border-radius:12px !important;
-  color:#d6b16a !important;
+.logo.exactSelectedLogo img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:right center !important;
+  border:0 !important;
   background:transparent !important;
-  box-shadow:none !important;
-}
-
-.cameraTop{
-  position:absolute;
-  top:-11px;
-  left:14px;
-  width:28px;
-  height:12px;
-  border:2px solid #d6b16a;
-  border-bottom:0;
-  border-radius:8px 8px 0 0;
-}
-
-.cameraLens{
-  width:24px;
-  height:24px;
-  border:2px solid rgba(255,249,239,.88);
-  border-radius:50%;
-  position:relative;
-}
-
-.cameraLens:after{
-  content:"";
-  position:absolute;
-  inset:6px;
-  border-radius:50%;
-  background:#d6b16a;
-}
-
-.logoDivider{
-  width:1px;
-  height:50px;
-  background:linear-gradient(to bottom, transparent, rgba(214,177,106,.95), transparent);
-  display:block !important;
-}
-
-.logoTextBlock{
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:center !important;
-  gap:8px !important;
-}
-
-.logoTextBlock strong{
-  display:block !important;
-  color:#fff9ef !important;
-  font-family:Georgia, 'Times New Roman', serif !important;
-  font-size:32px !important;
-  font-weight:600 !important;
-  letter-spacing:.32em !important;
-  line-height:.95 !important;
-  white-space:nowrap !important;
-  text-shadow:0 8px 26px rgba(0,0,0,.34);
-}
-
-.logoTextBlock small{
-  display:block !important;
-  color:#d6b16a !important;
-  font-size:9.5px !important;
-  font-weight:700 !important;
-  letter-spacing:.28em !important;
-  text-transform:uppercase !important;
-  white-space:nowrap !important;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.22));
 }
 
 .navBar{
-  grid-template-columns: 470px 1fr 300px !important;
+  grid-template-columns: 460px 1fr 300px !important;
 }
 
 @media(max-width:980px){
-  .logo.cleanInlineLogo{
-    min-width:245px !important;
-    max-width:245px !important;
-    height:52px !important;
-    gap:10px !important;
-  }
-
-  .cameraIcon{
-    width:42px !important;
-    height:32px !important;
-    min-width:42px !important;
-    border-radius:9px !important;
-  }
-
-  .cameraTop{
-    top:-9px;
-    left:10px;
-    width:20px;
-    height:9px;
-  }
-
-  .cameraLens{
-    width:17px;
-    height:17px;
-  }
-
-  .cameraLens:after{
-    inset:4px;
-  }
-
-  .logoDivider{
-    height:36px;
-  }
-
-  .logoTextBlock strong{
-    font-size:19px !important;
-    letter-spacing:.18em !important;
-  }
-
-  .logoTextBlock small{
-    font-size:7px !important;
-    letter-spacing:.12em !important;
-    white-space:normal !important;
+  .logo.exactSelectedLogo{
+    width:255px !important;
+    min-width:255px !important;
+    max-width:255px !important;
+    height:42px !important;
+    flex:0 0 255px !important;
   }
 
   .navBar{
     grid-template-columns: 1fr auto !important;
   }
+}
+
+
+/* ===== V11 COMPLETE NEW HEADER + BUILT-IN LOGO ===== */
+/* This replaces the whole menu/header zone with a built-in logo. No image files. No public logo. */
+
+.premiumHeader{
+  position:fixed;
+  top:18px;
+  left:0;
+  right:0;
+  z-index:1000;
+  pointer-events:none;
+  padding:0 28px;
+}
+
+.premiumHeaderShell{
+  pointer-events:auto;
+  width:min(1180px, 100%);
+  min-height:78px;
+  margin:0 auto;
+  padding:12px 18px;
+  display:grid;
+  grid-template-columns:minmax(360px, 1.1fr) minmax(320px, .9fr) minmax(260px, .75fr);
+  align-items:center;
+  gap:22px;
+  border-radius:999px;
+  background:
+    linear-gradient(135deg, rgba(14,18,18,.92), rgba(22,27,26,.86)),
+    radial-gradient(circle at 18% 50%, rgba(214,177,106,.12), transparent 32%);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter:blur(24px) saturate(135%);
+  overflow:hidden;
+}
+
+.brandLogo{
+  justify-self:start;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  direction:ltr;
+  text-align:left;
+  text-decoration:none;
+  min-width:0;
+}
+
+.brandIcon{
+  position:relative;
+  width:58px;
+  height:42px;
+  min-width:58px;
+  border:2px solid #d6b16a;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d6b16a;
+  background:linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.008));
+  box-shadow:0 10px 28px rgba(0,0,0,.26);
+}
+
+.brandCameraTop{
+  position:absolute;
+  top:-10px;
+  left:15px;
+  width:28px;
+  height:11px;
+  border:2px solid #d6b16a;
+  border-bottom:0;
+  border-radius:8px 8px 0 0;
+  background:rgba(14,18,18,.92);
+}
+
+.brandLens{
+  position:relative;
+  width:25px;
+  height:25px;
+  border:2px solid rgba(255,249,239,.90);
+  border-radius:50%;
+}
+
+.brandLens:after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:50%;
+  background:#d6b16a;
+  box-shadow:0 0 18px rgba(214,177,106,.26);
+}
+
+.brandDivider{
+  width:1px;
+  height:52px;
+  min-width:1px;
+  background:linear-gradient(to bottom, transparent, rgba(214,177,106,.9), transparent);
+}
+
+.brandCopy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:7px;
+  min-width:0;
+}
+
+.brandCopy strong{
+  color:#fff9ef;
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:30px;
+  line-height:.92;
+  font-weight:600;
+  letter-spacing:.30em;
+  white-space:nowrap;
+  text-shadow:0 8px 24px rgba(0,0,0,.36);
+}
+
+.brandCopy small{
+  color:#d6b16a;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.26em;
+  white-space:nowrap;
+  text-transform:uppercase;
+}
+
+.premiumMenu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  direction:rtl;
+}
+
+.premiumMenu a{
+  color:rgba(255,249,239,.72);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:color .22s ease;
+}
+
+.premiumMenu a:hover{
+  color:#d6b16a;
+}
+
+.premiumActions{
+  justify-self:end;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.premiumCta,
+.premiumWhatsApp{
+  height:46px;
+  padding:0 21px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.premiumCta{
+  color:#111;
+  background:linear-gradient(135deg,#e0bd72,#c9973f);
+  box-shadow:0 12px 34px rgba(214,177,106,.22);
+}
+
+.premiumWhatsApp{
+  color:#d6ffe4;
+  background:rgba(26,117,64,.34);
+  border:1px solid rgba(72,205,122,.35);
+}
+
+@media(max-width:1050px){
+  .premiumHeaderShell{
+    grid-template-columns:1fr auto;
+    gap:14px;
+  }
+
+  .premiumMenu{
+    display:none;
+  }
+
+  .premiumActions{
+    justify-self:end;
+  }
+
+  .brandCopy strong{
+    font-size:24px;
+    letter-spacing:.22em;
+  }
+
+  .brandCopy small{
+    font-size:7.5px;
+    letter-spacing:.16em;
+  }
+}
+
+@media(max-width:680px){
+  .premiumHeader{
+    top:10px;
+    padding:0 12px;
+  }
+
+  .premiumHeaderShell{
+    min-height:66px;
+    padding:10px 12px;
+    border-radius:28px;
+  }
+
+  .brandIcon{
+    width:42px;
+    height:31px;
+    min-width:42px;
+    border-radius:9px;
+  }
+
+  .brandCameraTop{
+    top:-8px;
+    left:11px;
+    width:20px;
+    height:9px;
+  }
+
+  .brandLens{
+    width:17px;
+    height:17px;
+  }
+
+  .brandLens:after{
+    inset:4px;
+  }
+
+  .brandDivider{
+    height:36px;
+  }
+
+  .brandLogo{
+    gap:9px;
+  }
+
+  .brandCopy strong{
+    font-size:18px;
+    letter-spacing:.14em;
+  }
+
+  .brandCopy small{
+    font-size:6.5px;
+    letter-spacing:.08em;
+    max-width:150px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .premiumWhatsApp{
+    display:none;
+  }
+
+  .premiumCta{
+    height:40px;
+    padding:0 14px;
+    font-size:12px;
+  }
+}
+
+
+/* ===== V12 CLEAN LUXURY TEXT LOGO ===== */
+
+.brandLogoTextOnly{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  text-decoration:none !important;
+  direction:ltr !important;
+  min-width:430px !important;
+}
+
+.brandCopyOnly{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:8px !important;
+}
+
+.brandCopyOnly strong{
+  color:#f8f2e8 !important;
+  font-family:Georgia, 'Times New Roman', serif !important;
+  font-size:42px !important;
+  font-weight:600 !important;
+  letter-spacing:.34em !important;
+  line-height:.9 !important;
+  white-space:nowrap !important;
+  text-shadow:
+    0 4px 18px rgba(0,0,0,.28),
+    0 0 24px rgba(214,177,106,.08);
+}
+
+.brandCopyOnly small{
+  color:#d5b06a !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  letter-spacing:.34em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+
+.brandIcon,
+.brandDivider,
+.brandCameraTop,
+.brandLens{
+  display:none !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    min-width:250px !important;
+  }
+
+  .brandCopyOnly strong{
+    font-size:24px !important;
+    letter-spacing:.18em !important;
+  }
+
+  .brandCopyOnly small{
+    font-size:7px !important;
+    letter-spacing:.12em !important;
+  }
+}
+
+
+/* ===== V12.1 LOGO BALANCE FIX ===== */
+
+.brandCopyOnly{
+  gap:4px !important;
+}
+
+.brandCopyOnly strong{
+  font-size:34px !important;
+  line-height:1 !important;
+  letter-spacing:.26em !important;
+}
+
+.brandCopyOnly small{
+  font-size:10px !important;
+  letter-spacing:.30em !important;
+  padding-left:4px !important;
+}
+
+
+/* ===== V12.2 LOGO WIDTH ALIGN FIX ===== */
+
+.brandLogoTextOnly{
+  min-width:520px !important;
+}
+
+.brandCopyOnly{
+  width:100% !important;
+  align-items:flex-start !important;
+}
+
+.brandCopyOnly strong{
+  width:100% !important;
+  display:block !important;
+  font-size:32px !important;
+  letter-spacing:.22em !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+}
+
+.brandCopyOnly small{
+  width:100% !important;
+  display:block !important;
+  font-size:9px !important;
+  letter-spacing:.22em !important;
+  line-height:1.1 !important;
+  white-space:nowrap !important;
+  padding-left:0 !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    min-width:270px !important;
+  }
+
+  .brandCopyOnly strong{
+    font-size:22px !important;
+    letter-spacing:.12em !important;
+  }
+
+  .brandCopyOnly small{
+    font-size:6px !important;
+    letter-spacing:.08em !important;
+  }
+}
+
+
+/* ===== V12.3 LOGO RIGHT ALIGN FIX ===== */
+
+.brandLogoTextOnly{
+  justify-self:end !important;
+  margin-right:22px !important;
+  padding-right:0 !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    margin-right:8px !important;
+  }
+}
+
+
+/* ===== V12.4 LOGO MORE RIGHT ===== */
+
+.brandLogoTextOnly{
+  margin-right:52px !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    margin-right:14px !important;
+  }
+}
+
+
+/* ===== V12.5 FORCE LOGO RIGHT ===== */
+
+.brandLogoTextOnly{
+  position:relative !important;
+  right:-42px !important;
+  margin-right:0 !important;
 }

@@ -32,37 +32,28 @@ const services = [
 export default function Home() {
   return (
     <main>
-      <header className="navBar">
-        
-        
-        
-        <a className="logo cleanInlineLogo" href="#top" aria-label="Visual Art">
-          <span className="cameraIcon" aria-hidden="true">
-            <span className="cameraTop"></span>
-            <span className="cameraLens"></span>
-          </span>
-
-          <span className="logoDivider" aria-hidden="true"></span>
-
-          <span className="logoTextBlock">
-            <strong>VISUAL ART</strong>
-            <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
-          </span>
-        </a>
+      <header className="premiumHeader">
+        <div className="premiumHeaderShell">
+          
+          <a className="brandLogoTextOnly" href="#top" aria-label="Visual Art">
+            <span className="brandCopyOnly">
+              <strong>VISUAL ART</strong>
+              <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
+            </span>
+          </a>
 
 
+          <nav className="premiumMenu" aria-label="Main navigation">
+            <a href="#work">גלריה</a>
+            <a href="#services">שירותים</a>
+            <a href="#about">הסטודיו</a>
+            <a href="#contact">יצירת קשר</a>
+          </nav>
 
-
-        <nav>
-          <a href="#work">גלריה</a>
-          <a href="#services">שירותים</a>
-          <a href="#about">הסטודיו</a>
-          <a href="#contact">יצירת קשר</a>
-        </nav>
-
-        <div className="navActions">
-          <a className="whatsappTop" href="https://wa.me/972000000000" aria-label="WhatsApp">WhatsApp</a>
-          <a className="navCta" href="#contact">קבלת הצעת מחיר</a>
+          <div className="premiumActions">
+            <a className="premiumWhatsApp" href="https://wa.me/972000000000" aria-label="WhatsApp">WhatsApp</a>
+            <a className="premiumCta" href="#contact">קבלת הצעת מחיר</a>
+          </div>
         </div>
       </header>
 
