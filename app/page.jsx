@@ -34,7 +34,7 @@ export default function Home() {
     <main>
       <header className="navBar">
         <a className="logo imageLogo" href="#top" aria-label="Visual Art">
-          <img src="/visual-art-logo.png" alt="Visual Art - Capturing Moments, Creating Memories" />
+          <img src="/visual-art-logo.svg" alt="Visual Art" />
         </a>
 
         <nav>
