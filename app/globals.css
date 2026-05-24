@@ -1,7 +1,7 @@
 
 :root {
-  --bg: #090b0b;
-  --panel: #111514;
+  --bg: #101313;
+  --panel: #181c1b;
   --cream: #f6efe4;
   --muted: rgba(246,239,228,.68);
   --line: rgba(246,239,228,.14);
@@ -44,13 +44,13 @@ img {
   width: min(1180px, calc(100% - 34px));
   height: 72px;
   display: grid;
-  grid-template-columns: 230px 1fr 190px;
+  grid-template-columns: 230px 1fr 300px;
   align-items: center;
   gap: 24px;
   padding: 0 18px;
   border: 1px solid rgba(246,239,228,.18);
   border-radius: 999px;
-  background: rgba(9, 11, 11, .44);
+  background: rgba(16, 19, 19, .54);
   backdrop-filter: blur(24px);
   box-shadow: 0 24px 80px rgba(0,0,0,.25);
 }
@@ -110,10 +110,34 @@ img {
 }
 
 .navCta {
-  justify-self: flex-start;
   min-height: 44px;
   font-size: 13px;
 }
+.navActions {
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatsappTop {
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c7f8d8;
+  background: rgba(34, 197, 94, .14);
+  border: 1px solid rgba(34, 197, 94, .28);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.whatsappTop:hover {
+  background: rgba(34, 197, 94, .22);
+}
+
 
 .hero {
   position: relative;
@@ -163,8 +187,8 @@ img {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg, rgba(9,11,11,.94) 0%, rgba(9,11,11,.78) 34%, rgba(9,11,11,.28) 70%, rgba(9,11,11,.68) 100%),
-    linear-gradient(0deg, rgba(9,11,11,.88) 0%, rgba(9,11,11,.08) 44%, rgba(9,11,11,.65) 100%);
+    linear-gradient(90deg, rgba(16,19,19,.88) 0%, rgba(16,19,19,.68) 34%, rgba(16,19,19,.24) 70%, rgba(16,19,19,.58) 100%),
+    linear-gradient(0deg, rgba(16,19,19,.78) 0%, rgba(16,19,19,.04) 44%, rgba(16,19,19,.52) 100%);
 }
 
 .grain {
@@ -502,10 +526,10 @@ textarea::placeholder {
   margin-top: 80px;
   padding: 70px min(7vw, 100px);
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 48px;
   border-top: 1px solid var(--line);
-  background: #070808;
+  background: #0d1110;
 }
 
 .footerBrand strong {
@@ -514,6 +538,44 @@ textarea::placeholder {
   font-size: 36px;
   letter-spacing: .14em;
   text-transform: uppercase;
+}
+
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.socialIcons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(246,239,228,.18);
+  background: rgba(246,239,228,.07);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.socialIcons a:hover {
+  transform: translateY(-2px);
+  background: rgba(228,194,123,.15);
+  border-color: rgba(228,194,123,.34);
+}
+
+.socialIcons svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 1.7;
+}
+
+.socialIcons a:nth-child(2) svg,
+.socialIcons a:nth-child(3) svg {
+  fill: var(--cream);
+  stroke: none;
 }
 
 .footerBrand span,
@@ -578,9 +640,14 @@ textarea::placeholder {
     justify-self: flex-end;
   }
 
-  .navCta {
+  .navActions {
     grid-column: 1;
     grid-row: 1;
+    justify-self: flex-start;
+  }
+
+  .whatsappTop {
+    display: none;
   }
 
   .hero {

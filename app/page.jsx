@@ -45,7 +45,10 @@ export default function Home() {
           <a href="#contact">יצירת קשר</a>
         </nav>
 
-        <a className="navCta" href="#contact">קבלת הצעת מחיר</a>
+        <div className="navActions">
+          <a className="whatsappTop" href="https://wa.me/972000000000" aria-label="WhatsApp">WhatsApp</a>
+          <a className="navCta" href="#contact">קבלת הצעת מחיר</a>
+        </div>
       </header>
 
       <section className="hero" id="top">
@@ -152,19 +155,25 @@ export default function Home() {
         <div className="footerBrand">
           <strong>Visual Art</strong>
           <span>Luxury Cinematic Photography Studio</span>
+
+          <div className="socialIcons" aria-label="רשתות חברתיות">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h2V4h-3c-3 0-5 2-5 5v3H6v4h2v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3c.5 3 2.2 4.8 5 5v4c-1.9 0-3.5-.6-5-1.7v5.8c0 3.4-2.4 5.9-5.8 5.9A5.7 5.7 0 0 1 3.5 16.3c0-3.3 2.5-5.7 5.8-5.7.4 0 .8 0 1.2.1v4.1a2.4 2.4 0 0 0-1.2-.3A1.8 1.8 0 1 0 11 16.3V3z"/></svg>
+            </a>
+          </div>
         </div>
 
         <div className="footerCol">
-          <h4>רשתות חברתיות</h4>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TikTok</a>
-        </div>
-
-        <div className="footerCol whatsappBox">
-          <h4>WhatsApp</h4>
-          <a href="#">שיחה מהירה בוואטסאפ</a>
-          <p>מקום נפרד ומהיר לתיאום צילומים והצעות מחיר.</p>
+          <h4>יצירת קשר</h4>
+          <a href="tel:+972000000000">000-0000000</a>
+          <a href="mailto:hello@visualart.co.il">hello@visualart.co.il</a>
+          <p>זמינות בתיאום מראש לצילומים והצעות מחיר.</p>
         </div>
 
         <div className="footerCol">
