@@ -722,3 +722,44 @@ textarea::placeholder {
   transform: scale(1.08) !important;
   filter: saturate(1) contrast(1.12) !important;
 }
+
+
+/* V6.7 stable gallery hover - keep movement, remove flashing/bright edge */
+.workCard {
+  overflow: hidden !important;
+  background: #0d1110 !important;
+  isolation: isolate;
+}
+
+.workCard img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transform: scale(1.015) translateZ(0) !important;
+  transform-origin: center center !important;
+  transition: transform .85s cubic-bezier(.22,.61,.36,1) !important;
+  filter: saturate(.9) contrast(1.05) brightness(.96) !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
+}
+
+.workCard:hover img {
+  transform: scale(1.055) translateZ(0) !important;
+  filter: saturate(.9) contrast(1.05) brightness(.96) !important;
+}
+
+/* keep the cinematic dark layer stable, no brightness changes */
+.workCard:after {
+  pointer-events: none !important;
+  transition: none !important;
+  background: linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,.04) 62%) !important;
+}
+
+/* make sure removed text never comes back */
+.workCard > div,
+.workCard h3,
+.workCard p,
+.scrollCue {
+  display: none !important;
+}
