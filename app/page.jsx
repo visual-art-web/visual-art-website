@@ -32,29 +32,33 @@ const services = [
 export default function Home() {
   return (
     <main>
-      <header className="navBar">
-        
-        
-        
-        
-        <a className="logo exactSelectedLogo" href="#top" aria-label="Visual Art">
-          <img src="/visual-art-selected-logo.png" alt="Visual Art" />
-        </a>
+      <header className="premiumHeader">
+        <div className="premiumHeaderShell">
+          <a className="brandLogo" href="#top" aria-label="Visual Art">
+            <span className="brandIcon" aria-hidden="true">
+              <span className="brandCameraTop"></span>
+              <span className="brandLens"></span>
+            </span>
 
+            <span className="brandDivider" aria-hidden="true"></span>
 
+            <span className="brandCopy">
+              <strong>VISUAL ART</strong>
+              <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
+            </span>
+          </a>
 
+          <nav className="premiumMenu" aria-label="Main navigation">
+            <a href="#work">גלריה</a>
+            <a href="#services">שירותים</a>
+            <a href="#about">הסטודיו</a>
+            <a href="#contact">יצירת קשר</a>
+          </nav>
 
-
-        <nav>
-          <a href="#work">גלריה</a>
-          <a href="#services">שירותים</a>
-          <a href="#about">הסטודיו</a>
-          <a href="#contact">יצירת קשר</a>
-        </nav>
-
-        <div className="navActions">
-          <a className="whatsappTop" href="https://wa.me/972000000000" aria-label="WhatsApp">WhatsApp</a>
-          <a className="navCta" href="#contact">קבלת הצעת מחיר</a>
+          <div className="premiumActions">
+            <a className="premiumWhatsApp" href="https://wa.me/972000000000" aria-label="WhatsApp">WhatsApp</a>
+            <a className="premiumCta" href="#contact">קבלת הצעת מחיר</a>
+          </div>
         </div>
       </header>
 
