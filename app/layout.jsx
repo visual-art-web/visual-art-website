@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Visual Art | סטודיו צילום יוקרתי',
-  description: 'סטודיו צילום יוקרתי לחוויות זוגיות, משפחה, הריון, אירועים, אלבומים וקנבסים.',
+  title: 'Visual Art | Luxury Cinematic Photography',
+  description: 'סטודיו צילום יוקרתי בסגנון cinematic editorial.',
 };
 
 export default function RootLayout({ children }) {
