@@ -724,3 +724,42 @@ textarea::placeholder {
 .scrollIndicator {
   display: none !important;
 }
+
+
+/* HARD REMOVE unwanted hover text */
+.fineArtDetails,
+.detailsText,
+.hoverDetails,
+.galleryDetails,
+.gallery-footer,
+.galleryMeta {
+  display:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+}
+
+/* HARD REMOVE scroll indicator */
+.scroll-indicator,
+.scrollIndicator,
+.scroll-text,
+.scrollText,
+.scroll-label,
+.side-scroll,
+.sideLabel {
+  display:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+}
+
+/* stabilize gallery */
+.galleryCard{
+ overflow:hidden !important;
+}
+
+.galleryCard img{
+ transition:transform .4s ease !important;
+}
+
+.galleryCard:hover img{
+ transform:scale(1.02) !important;
+}
