@@ -890,43 +890,31 @@ body{
 }
 
 
-/* ===== V9.4 LOGO IMAGE ONLY UPDATE ===== */
-/* Replaces the old text/VA logo with the selected clean photography logo image.
-   No other site layout is changed. */
+
+
+/* ===== FIXED HEADER LOGO ===== */
 
 .logo.imageLogo{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  width: clamp(260px, 28vw, 430px) !important;
-  max-width: 430px !important;
-  height: 72px !important;
-  overflow:hidden !important;
-  direction:ltr !important;
-  text-align:left !important;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  width:320px;
+  height:52px;
+  overflow:hidden;
+  flex-shrink:0;
 }
 
 .logo.imageLogo img{
-  display:block !important;
-  width:100% !important;
-  height:100% !important;
-  object-fit:contain !important;
-  object-position:left center !important;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.26));
-}
-
-/* Remove previous generated logo text/mark styling only when image logo is used */
-.logo.imageLogo span,
-.logo.imageLogo small,
-.logo.imageLogo strong,
-.logo.imageLogo .premiumLogoMark,
-.logo.imageLogo .premiumLogoText{
-  display:none !important;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
 }
 
 @media(max-width:980px){
   .logo.imageLogo{
-    width: clamp(210px, 58vw, 300px) !important;
-    height: 58px !important;
+    width:210px;
+    height:42px;
   }
 }
