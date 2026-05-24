@@ -1,4 +1,6 @@
-# Visual Art Website V6.1 Railway Safe
+# Visual Art Website V6.2
 
-Dark luxury cinematic photography website.
-Includes Tailwind/PostCSS dependencies so Railway will not fail if PostCSS config exists.
+Polished dark luxury cinematic version:
+- Brighter tone
+- WhatsApp moved to top CTA area
+- Social icons arranged horizontally under the logo
