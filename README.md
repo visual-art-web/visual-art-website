@@ -1,6 +1,6 @@
-# Visual Art Website V6.2
+# Visual Art Website V6.5
 
-Polished dark luxury cinematic version:
-- Brighter tone
-- WhatsApp moved to top CTA area
-- Social icons arranged horizontally under the logo
+Real fix:
+- Removed actual Scroll JSX element.
+- Removed gallery text overlays from JSX.
+- Disabled gallery hover flicker.
