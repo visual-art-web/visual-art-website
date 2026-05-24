@@ -33,12 +33,8 @@ export default function Home() {
   return (
     <main>
       <header className="navBar">
-        <a className="logo premiumLogo" href="#top">
-          <span className="premiumLogoMark">VA</span>
-          <span className="premiumLogoText">
-            <strong>Visual Art</strong>
-            <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
-          </span>
+        <a className="logo imageLogo" href="#top" aria-label="Visual Art">
+          <img src="/visual-art-logo.png" alt="Visual Art - Capturing Moments, Creating Memories" />
         </a>
 
         <nav>
@@ -151,7 +147,7 @@ export default function Home() {
       <footer className="footer">
         <div className="footerBrand">
           <strong>Visual Art</strong>
-          <span>CAPTURING MOMENTS, CREATING MEMORIES</span>
+          <span>Luxury Cinematic Photography Studio</span>
 
           <div className="socialIcons" aria-label="רשתות חברתיות">
             <a href="#" aria-label="Instagram">
