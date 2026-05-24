@@ -1,5 +1,5 @@
-# Visual Art Website
+# Visual Art Website v2.1
 
 Premium Bright Luxury Cinematic photography landing page.
 
-Deploy: Netlify + Next.js.
+Changes: improved cinematic hero contrast, ivory typography, luxury glass panel.
