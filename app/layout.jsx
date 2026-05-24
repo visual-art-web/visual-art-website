@@ -1,5 +1,5 @@
 import './globals.css';
-import { Cormorant_Garamond, Assistant } from 'next/font/google';
+import { Cormorant_Garamond, Heebo } from 'next/font/google';
 
 const display = Cormorant_Garamond({
   subsets: ['latin'],
@@ -7,14 +7,14 @@ const display = Cormorant_Garamond({
   variable: '--font-display'
 });
 
-const body = Assistant({
+const body = Heebo({
   subsets: ['hebrew', 'latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-body'
 });
 
 export const metadata = {
-  title: 'Visual Art | צילום יוקרתי ואמנותי',
+  title: 'Visual Art | צילום יוקרתי וקולנועי',
   description: 'Visual Art — צילום זוגיות, תדמית, אופנה, בת מצווה, אלבומים וקנבסים בסגנון Bright Luxury Cinematic.',
 };
 
