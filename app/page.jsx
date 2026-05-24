@@ -1,237 +1,204 @@
+
 const services = [
   {
-    title: 'צילום זוגיות',
-    text: 'סשן רגוע, מדויק וקולנועי שמספר את הקשר שלכם דרך אור, תנועה ורגש.',
-    tag: 'Couple Session',
-    image: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1100&q=80'
+    title: 'צילומי זוגיות',
+    text: 'סשן אינטימי, מדויק ואלגנטי שמרגיש כמו פריים מסרט — עם הכוונה מלאה, תאורה רכה ועריכה יוקרתית.',
+    tag: 'Couple Story'
   },
   {
-    title: 'צילום תדמית',
-    text: 'נראות עסקית שמייצרת אמון, סמכות ונוכחות — לאתר, לרשתות ולמותג האישי.',
-    tag: 'Brand Portraits',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1100&q=80'
+    title: 'צילומי הריון ומשפחה',
+    text: 'תיעוד נקי ומרגש של רגעים שלא חוזרים, באווירת Fine Art שמרגישה טבעית, חמה ומוקפדת.',
+    tag: 'Family Fine Art'
   },
   {
-    title: 'צילום אופנה',
-    text: 'שפה ויזואלית בסגנון Editorial: קומפוזיציה, סטיילינג, דרמה ואסתטיקה של מגזין.',
-    tag: 'Editorial Fashion',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=80'
+    title: 'אירועים ובוטיק',
+    text: 'צילום מוקפד לאירועים קטנים, הצעות נישואין, ימי הולדת ותוכן אישי — עם שפה ויזואלית אחידה ויוקרתית.',
+    tag: 'Boutique Events'
   },
-  {
-    title: 'בת מצווה',
-    text: 'חוויה אישית ומרגשת שנראית כמו הפקת אופנה, עם תוצאה שמרגישה פרימיום.',
-    tag: 'Bat Mitzvah',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1100&q=80'
-  },
-  {
-    title: 'אלבומים',
-    text: 'אלבומי פרימיום מעוצבים בקו נקי, אלגנטי ועל־זמני — מזכרת שנשארת בידיים.',
-    tag: 'Fine Art Albums',
-    image: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1100&q=80'
-  },
-  {
-    title: 'קנבסים',
-    text: 'הפיכת רגעים נבחרים לפריטי עיצוב לבית — קנבס, זכוכית ותמונות קיר Fine Art.',
-    tag: 'Wall Art',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1100&q=80'
-  }
 ];
 
 const gallery = [
-  'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80'
+  'Portrait Light', 'Wedding Detail', 'Family Moment', 'Fine Art Frame',
+  'Golden Hour', 'Studio Mood'
 ];
 
 const process = [
-  ['01', 'שיחת אפיון', 'מבינים את הסגנון, המטרה, הלוקיישן והתחושה שהצילום צריך להעביר.'],
-  ['02', 'קונספט וצילום', 'מתכננים תאורה, קומפוזיציה ואווירה — כדי שכל פריים ירגיש מכוון.'],
-  ['03', 'עריכה Fine Art', 'בחירה מוקפדת, עיבוד צבע, ריטוש עדין ויצירת שפה אחידה.'],
-  ['04', 'תוצר סופי', 'גלריה דיגיטלית, אלבום, קנבס או הדפסה — לפי הצורך והחוויה.']
+  ['01', 'אפיון קצר', 'מבינים את הסגנון, המטרה, הלוקיישן והתחושה שהצילום צריך להעביר.'],
+  ['02', 'יום צילום רגוע', 'הכוונה מלאה מול המצלמה, בלי לחץ ובלי פוזות מאולצות.'],
+  ['03', 'עריכה יוקרתית', 'בחירת פריימים, צבעים, ריטוש עדין והכנה לדיגיטל/הדפסה.'],
 ];
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <a href="#home" className="brand" aria-label="Visual Art home">
-          <span className="brand-main">Visual Art</span>
-          <span className="brand-sub">Capturing Moments</span>
-        </a>
-        <nav className="nav-links" aria-label="Main navigation">
+    <main className="site-shell">
+      <header className="topbar">
+        <a className="cta small" href="#contact">קבלת הצעת מחיר</a>
+
+        <nav className="nav">
           <a href="#services">שירותים</a>
-          <a href="#portfolio">גלריה</a>
+          <a href="#gallery">גלריה</a>
           <a href="#process">התהליך</a>
           <a href="#contact">יצירת קשר</a>
         </nav>
-        <a className="header-cta" href="#contact">קבלת הצעת מחיר</a>
+
+        <a className="brand" href="#">
+          <span className="brand-mark">VA</span>
+          <span>
+            <strong>Visual Art</strong>
+            <small>Luxury Photography Studio</small>
+          </span>
+        </a>
       </header>
 
-      <section id="home" className="hero-section">
-        <div className="hero-media" aria-hidden="true">
-          <div className="hero-photo hero-photo-main" />
-          <div className="hero-photo hero-photo-secondary" />
-          <div className="hero-glow" />
+      <section className="hero">
+        <div className="hero-video" aria-hidden="true">
+          <div className="film-grain"></div>
+          <div className="light-leak leak-one"></div>
+          <div className="light-leak leak-two"></div>
+          <div className="cinema-strip strip-a">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div className="cinema-strip strip-b">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div className="lens-circle"></div>
         </div>
 
         <div className="hero-content">
-          <p className="eyebrow">Modern Cinematic Luxury Photography</p>
-          <h1>צילום יוקרתי שמרגיש כמו יצירת אמנות</h1>
-          <p className="hero-lead">
-            Visual Art יוצר חוויית צילום מוקפדת לזוגיות, תדמית, אופנה, בת מצווה ומוצרי Fine Art — עם תוצאה שמרגישה נקייה, יוקרתית ועל־זמנית.
+          <p className="eyebrow">Bright Luxury Cinematic Photography</p>
+          <h1>צילום שמרגיש כמו<br />רגע מתוך סרט.</h1>
+          <p className="lead">
+            סטודיו צילום יוקרתי לחוויות זוגיות, משפחה, הריון ואירועי בוטיק —
+            עם תאורה קולנועית, קומפוזיציה נקייה ועריכה שמרגישה יקרה.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-gold">קבלת הצעת מחיר</a>
-            <a href="#portfolio" className="btn btn-light">צפייה בגלריה</a>
-          </div>
-          <div className="hero-proof">
-            <span>Fine Art Albums</span>
-            <span>Brand Portraits</span>
-            <span>Editorial Sessions</span>
+            <a className="cta" href="#contact">קבלת הצעת מחיר</a>
+            <a className="ghost" href="#gallery">צפייה בגלריה</a>
           </div>
         </div>
+
+        <aside className="hero-card">
+          <div className="card-photo">
+            <span>Fine Art</span>
+          </div>
+          <div className="card-caption">
+            <strong>Signature Visual Story</strong>
+            <p>פריימים מוקפדים שמספרים סיפור — לא עוד צילום רגיל.</p>
+          </div>
+        </aside>
       </section>
 
-      <section className="intro-section">
-        <div className="intro-label">Visual Philosophy</div>
-        <h2>לא עוד סט תמונות. חוויה ויזואלית שמתחילה בקונספט ונגמרת בתוצר שמרגיש יקר.</h2>
-        <p>
-          כל צילום נבנה מתוך מחשבה על אור, זווית, נוכחות ורגש. המטרה היא ליצור פריימים שמייצגים את האדם, הסיפור או הרגע — בצורה נקייה, אלגנטית ומדויקת.
-        </p>
+      <section className="intro">
+        <p>לא עוד “סט תמונות”.</p>
+        <h2>חוויה מצולמת שנבנית כמו מותג יוקרתי.</h2>
+        <span>
+          מהרגע הראשון באתר הלקוח צריך להבין: כאן הכול מסודר, מדויק וברמה גבוהה.
+          לכן השפה הוויזואלית נקייה, רגועה, יוקרתית — ומכוונת להזמנה.
+        </span>
       </section>
 
-      <section id="services" className="section services-section">
-        <div className="section-heading">
+      <section className="section" id="services">
+        <div className="section-head">
           <p>Services</p>
-          <h2>שירותי צילום</h2>
-          <span>כל שירות מוצג כחוויה מלאה — מהתכנון ועד לתוצאה הסופית.</span>
+          <h2>שירותי צילום פרימיום</h2>
         </div>
-
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.title}>
-              <div className="service-image" style={{ backgroundImage: `url(${service.image})` }} />
-              <div className="service-content">
-                <span>{service.tag}</span>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <a href="#contact">לקבלת הצעת מחיר</a>
-              </div>
+        <div className="services-grid">
+          {services.map((item) => (
+            <article className="service-card" key={item.title}>
+              <small>{item.tag}</small>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="portfolio" className="section portfolio-section">
-        <div className="portfolio-top">
-          <div>
-            <p className="section-kicker">Portfolio</p>
-            <h2>גלריה שמוכרת את החוויה עוד לפני השיחה הראשונה</h2>
-          </div>
-          <p>
-            כרגע מוצגות תמונות דמו. בהמשך נחליף אותן בעבודות האמיתיות שלך ונבנה קטגוריות לפי זוגיות, תדמית, אופנה, בת מצווה, אלבומים וקנבסים.
-          </p>
+      <section className="gallery-section" id="gallery">
+        <div className="section-head center">
+          <p>Selected Gallery</p>
+          <h2>גלריה שמרגישה כמו קמפיין</h2>
+          <span>כרגע אלו פריימים עיצוביים זמניים. בהמשך נחליף אותם בתמונות האמיתיות שלך.</span>
         </div>
         <div className="gallery-grid">
-          {gallery.map((src, index) => (
-            <div className={`gallery-item item-${index + 1}`} key={src}>
-              <img src={src} alt="Visual Art portfolio sample" />
+          {gallery.map((item, index) => (
+            <div className={`gallery-item item-${index + 1}`} key={item}>
+              <div className="photo-shade"></div>
+              <span>{item}</span>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="process" className="section process-section">
-        <div className="section-heading light-heading">
-          <p>Experience</p>
-          <h2>תהליך שמרגיש מקצועי, רגוע ומדויק</h2>
-          <span>לקוח שמבין שיש תהליך — מבין שיש מותג רציני.</span>
+      <section className="process" id="process">
+        <div className="section-head">
+          <p>Process</p>
+          <h2>תהליך צילום מסודר, רגוע ומדויק</h2>
         </div>
-        <div className="process-grid">
-          {process.map(([number, title, text]) => (
-            <article className="process-card" key={number}>
-              <span>{number}</span>
+        <div className="process-list">
+          {process.map(([num, title, text]) => (
+            <div className="process-row" key={num}>
+              <strong>{num}</strong>
               <h3>{title}</h3>
               <p>{text}</p>
-            </article>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="section products-section">
-        <div className="product-card-large">
-          <p className="section-kicker">Fine Art Products</p>
-          <h2>זיכרונות שלא נשארים רק במסך</h2>
-          <p>
-            אלבומי פרימיום, קנבסים, הדפסות זכוכית ותמונות קיר הופכים את הצילום למוצר מוחשי — כזה שנשאר בבית ומרגיש כמו פריט עיצוב.
-          </p>
+      <section className="products">
+        <div>
+          <p className="eyebrow">Fine Art Products</p>
+          <h2>אלבומים, קנבסים והדפסות שנראות כמו פריט עיצוב.</h2>
         </div>
-        <div className="product-list">
-          <span>אלבומי פרימיום</span>
-          <span>קנבסים מעוצבים</span>
-          <span>הדפסות זכוכית</span>
-          <span>תמונות קיר Fine Art</span>
-        </div>
+        <a className="cta dark" href="#contact">לפרטים והזמנה</a>
       </section>
 
-      <section id="contact" className="section contact-section">
+      <section className="contact" id="contact">
         <div className="contact-copy">
-          <p className="section-kicker">Inquiry</p>
-          <h2>רוצים לקבל הצעת מחיר מותאמת אישית?</h2>
+          <p className="eyebrow">Start Your Story</p>
+          <h2>רוצה שהצילומים שלך ייראו ברמה אחרת?</h2>
           <p>
-            השאירו פרטים ונחזור אליכם לתיאום סשן צילום שמתאים לסגנון, למטרה ולחוויה שאתם מחפשים.
+            השאירו פרטים ונחזור אליכם עם התאמה אישית לסוג הצילום, הלוקיישן והסגנון.
           </p>
-          <a className="whatsapp-box" href="https://wa.me/972000000000" target="_blank" rel="noreferrer">
-            <strong>WhatsApp מהיר</strong>
-            <span>לחצו כאן לשליחת הודעה ישירה</span>
-          </a>
         </div>
         <form className="lead-form">
           <input placeholder="שם מלא" />
           <input placeholder="טלפון" />
-          <select defaultValue="">
-            <option value="" disabled>סוג צילום</option>
-            <option>זוגיות</option>
-            <option>תדמית</option>
-            <option>אופנה</option>
-            <option>בת מצווה</option>
-            <option>אלבומים / קנבסים</option>
-          </select>
-          <input placeholder="תאריך רצוי" />
-          <textarea placeholder="ספרו בקצרה מה אתם מחפשים" />
-          <button type="button">שליחת פרטים</button>
+          <input placeholder="סוג צילום רצוי" />
+          <textarea placeholder="ספרו בקצרה מה תרצו לצלם"></textarea>
+          <button type="button">שליחת פנייה</button>
         </form>
       </section>
 
-      <footer className="site-footer">
+      <footer className="footer">
         <div className="footer-brand">
-          <span className="brand-main">Visual Art</span>
-          <p>Capturing Moments. Creating Memories.</p>
+          <strong>Visual Art</strong>
+          <p>Luxury Photography Studio — צילום נקי, מרגש ויוקרתי.</p>
         </div>
 
-        <div className="footer-socials">
-          <h3>רשתות חברתיות</h3>
-          <div>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-          </div>
+        <div className="footer-box social">
+          <h4>רשתות חברתיות</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
         </div>
 
-        <div className="footer-contact">
-          <h3>יצירת קשר</h3>
-          <a href="tel:+972000000000">טלפון</a>
-          <a href="mailto:hello@visual-art.co.il">hello@visual-art.co.il</a>
-          <a className="footer-whatsapp" href="https://wa.me/972000000000">WhatsApp</a>
+        <div className="footer-box whatsapp">
+          <h4>WhatsApp</h4>
+          <a className="whatsapp-btn" href="#">שיחה מהירה בוואטסאפ</a>
+          <span>מענה מהיר להצעות מחיר ותיאום צילומים.</span>
+        </div>
+
+        <div className="footer-box">
+          <h4>יצירת קשר</h4>
+          <a href="tel:+972000000000">טלפון: 000-0000000</a>
+          <a href="mailto:hello@visualart.co.il">hello@visualart.co.il</a>
+          <span>ישראל · זמינות בתיאום מראש</span>
         </div>
 
         <div className="footer-legal">
-          <h3>מידע משפטי</h3>
-          <a href="#">תקנון</a>
           <a href="#">מדיניות פרטיות</a>
+          <a href="#">תנאי שימוש</a>
           <a href="#">הצהרת נגישות</a>
         </div>
       </footer>

@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Visual Art | צילום יוקרתי',
-  description: 'Visual Art — צילום זוגיות, תדמית, אופנה, בת מצווה, אלבומים וקנבסים בגישת Fine Art יוקרתית.',
+  title: 'Visual Art | סטודיו צילום יוקרתי',
+  description: 'סטודיו צילום יוקרתי לחוויות זוגיות, משפחה, הריון, אירועים, אלבומים וקנבסים.',
 };
 
 export default function RootLayout({ children }) {
