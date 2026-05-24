@@ -1,7 +1,6 @@
-# Visual Art Website V6.7
+# Visual Art Website V9.4
 
-Stable gallery hover:
-- Keeps smooth image movement.
-- Removes hover flashing/bright edge.
-- Keeps gallery text hidden.
-- Keeps Scroll hidden.
+Only logo update:
+- Added selected logo image to /public/visual-art-logo.png
+- Replaced active header logo with image logo
+- Kept the rest of the website unchanged
