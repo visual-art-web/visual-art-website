@@ -1,5 +1,3 @@
-# Visual Art Website v4.1 Railway Fixed
+# Visual Art Website V5
 
-Premium bright luxury cinematic landing page for Visual Art photography studio.
-
-Updated for Railway deployment with Next.js ^14.2.35.
+Premium cinematic photography landing page for Railway deployment.
