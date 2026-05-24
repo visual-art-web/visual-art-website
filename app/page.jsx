@@ -33,9 +33,12 @@ export default function Home() {
   return (
     <main>
       <header className="navBar">
-        <a className="logo" href="#top">
-          <span>Visual Art</span>
-          <small>Cinematic Photography Studio</small>
+        <a className="logo premiumLogo" href="#top">
+          <span className="premiumLogoMark">VA</span>
+          <span className="premiumLogoText">
+            <strong>Visual Art</strong>
+            <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
+          </span>
         </a>
 
         <nav>
@@ -148,7 +151,7 @@ export default function Home() {
       <footer className="footer">
         <div className="footerBrand">
           <strong>Visual Art</strong>
-          <span>Luxury Cinematic Photography Studio</span>
+          <span>CAPTURING MOMENTS, CREATING MEMORIES</span>
 
           <div className="socialIcons" aria-label="רשתות חברתיות">
             <a href="#" aria-label="Instagram">
