@@ -1286,3 +1286,22 @@ body{
     letter-spacing:.12em !important;
   }
 }
+
+
+/* ===== V12.1 LOGO BALANCE FIX ===== */
+
+.brandCopyOnly{
+  gap:4px !important;
+}
+
+.brandCopyOnly strong{
+  font-size:34px !important;
+  line-height:1 !important;
+  letter-spacing:.26em !important;
+}
+
+.brandCopyOnly small{
+  font-size:10px !important;
+  letter-spacing:.30em !important;
+  padding-left:4px !important;
+}
