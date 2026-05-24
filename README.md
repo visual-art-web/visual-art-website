@@ -1,6 +1,7 @@
-# Visual Art Website V6.5
+# Visual Art Website V6.6
 
-Real fix:
-- Removed actual Scroll JSX element.
-- Removed gallery text overlays from JSX.
-- Disabled gallery hover flicker.
+Correct fix:
+- Removed SCROLL label.
+- Removed gallery text overlays including Fine Art Details.
+- Kept the image hover movement/animation.
+- Replaced failing gallery image and cleared img alt so broken text cannot appear.
