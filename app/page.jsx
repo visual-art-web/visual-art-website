@@ -1,277 +1,211 @@
-'use client';
-
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Gem, Menu, MessageCircle, Sparkles, X } from 'lucide-react';
-
 const services = [
-  {
-    title: 'צילום זוגיות',
-    text: 'סשן אישי וקולנועי שמספר את הסיפור שלכם דרך אור, רגש ותנועה.',
-    image: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85'
-  },
-  {
-    title: 'צילום תדמית',
-    text: 'צילום שמייצר נוכחות, אמון ומיתוג אישי ברמה גבוהה.',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=85'
-  },
-  {
-    title: 'צילום אופנה',
-    text: 'Editorial style עם קומפוזיציות דרמטיות, סטיילינג ואווירת מגזין.',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=85'
-  },
-  {
-    title: 'בת מצווה',
-    text: 'חוויה יוקרתית ומרגשת שמרגישה כמו הפקת אופנה אישית.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85'
-  },
-  {
-    title: 'אלבומים',
-    text: 'אלבומי פרימיום מעוצבים שנשארים כמזכרת מוחשית לשנים.',
-    image: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85'
-  },
-  {
-    title: 'קנבסים',
-    text: 'הפיכת רגעים נבחרים לפריטי עיצוב אמנותיים לבית.',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=85'
-  }
+  ['זוגיות', 'סשן קולנועי, אישי ומרגש שמספר את הסיפור שלכם דרך אור, תנועה ורגעים אמיתיים.', 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85'],
+  ['תדמית', 'צילום שמייצר נוכחות, אמון ומיתוג אישי חד — לאנשים שרוצים להיראות ברמה גבוהה.', 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=85'],
+  ['אופנה', 'Editorial style עם קומפוזיציות דרמטיות, סטיילינג ותחושה של מגזין בינלאומי.', 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=85'],
+  ['בת מצווה', 'חוויה יוקרתית ומרגשת שמרגישה כמו הפקת אופנה אישית, עם סטייל ועיבוד מוקפד.', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85'],
+  ['אלבומים', 'אלבומי פרימיום מעוצבים, עם נייר איכותי וגימור שמרגיש כמו מוצר אספנות.', 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85'],
+  ['קנבסים', 'הפיכת רגעים נבחרים לפריטי עיצוב אמנותיים לבית, משרד או חלל אישי.', 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85']
 ];
 
 const gallery = [
-  'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=85'
+  ['https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85', 'h-[420px]'],
+  ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85', 'h-[560px]'],
+  ['https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=85', 'h-[360px]'],
+  ['https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85', 'h-[520px]'],
+  ['https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=85', 'h-[420px]'],
+  ['https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=85', 'h-[500px]']
 ];
 
-const process = [
-  'שיחת אפיון והבנת הסגנון',
-  'תכנון קונספט, לוקיישן ואווירה',
-  'יום צילום מקצועי ומכוון',
-  'עריכה אמנותית Fine Art',
-  'בחירת אלבום, קנבס או הדפסה'
+const steps = [
+  ['01', 'אפיון', 'שיחה קצרה להבנת הסגנון, המטרה, הלוקיישן והחוויה הרצויה.'],
+  ['02', 'קונספט', 'בחירת אווירה, צבעים, תאורה, לבוש ותכנון סטיילינג מדויק.'],
+  ['03', 'צילום', 'יום צילום רגוע ומכוון, עם הדרכה מלאה ותשומת לב לפרטים.'],
+  ['04', 'Fine Art', 'עריכה מוקפדת, עיבוד יוקרתי ובחירת תמונות מובילות.'],
+  ['05', 'מוצר סופי', 'גלריה דיגיטלית, אלבום פרימיום, קנבס או הדפסה אמנותית.']
 ];
 
-export default function HomePage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false);
-  };
-
+export default function Home() {
   return (
-    <main className="overflow-x-hidden bg-cream text-graphite">
-      <header className="fixed left-4 right-4 top-4 z-50 rounded-full glass-header">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
-          <button onClick={() => scrollTo('hero')} className="text-right">
-            <div className="font-serif text-2xl tracking-[0.18em]">Visual Art</div>
-            <div className="text-[10px] uppercase tracking-[0.22em] text-gold">Capturing Moments</div>
-          </button>
+    <main className="min-h-screen overflow-hidden bg-[#fffdf8] text-[#1d2422]">
+      <div className="luxury-noise" />
 
-          <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-            <button onClick={() => scrollTo('services')}>שירותים</button>
-            <button onClick={() => scrollTo('gallery')}>גלריה</button>
-            <button onClick={() => scrollTo('process')}>התהליך</button>
-            <button onClick={() => scrollTo('contact')}>יצירת קשר</button>
+      <header className="fixed left-4 right-4 top-4 z-50 mx-auto max-w-7xl rounded-full glass-header">
+        <div className="flex items-center justify-between px-4 py-3 md:px-7">
+          <a href="#home" className="text-center md:text-right">
+            <div className="font-serif text-2xl tracking-[.28em] text-[#1d2422] md:text-3xl">Visual Art</div>
+            <div className="mt-[-4px] text-[10px] uppercase tracking-[.34em] text-[#c99332]">Capturing Moments</div>
+          </a>
+          <nav className="hidden items-center gap-9 text-sm text-[#4b514f] md:flex">
+            <a href="#services" className="hover:text-[#c99332]">שירותים</a>
+            <a href="#gallery" className="hover:text-[#c99332]">גלריה</a>
+            <a href="#process" className="hover:text-[#c99332]">התהליך</a>
+            <a href="#contact" className="hover:text-[#c99332]">יצירת קשר</a>
           </nav>
-
-          <button onClick={() => scrollTo('contact')} className="hidden rounded-full bg-gold px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-gold/20 md:block">
-            קבלת הצעת מחיר
-          </button>
-
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="תפריט">
-            {menuOpen ? <X /> : <Menu />}
-          </button>
+          <a href="#contact" className="gold-gradient rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-[0_14px_40px_rgba(201,147,50,.30)] transition hover:scale-105">קבלת הצעת מחיר</a>
         </div>
-
-        {menuOpen && (
-          <div className="border-t border-[#E8DDCC] px-6 pb-5 pt-2 md:hidden">
-            <div className="grid gap-3 text-right text-sm">
-              {[
-                ['services', 'שירותים'],
-                ['gallery', 'גלריה'],
-                ['process', 'התהליך'],
-                ['contact', 'יצירת קשר']
-              ].map(([id, label]) => (
-                <button key={id} onClick={() => scrollTo(id)}>{label}</button>
-              ))}
-            </div>
-          </div>
-        )}
       </header>
 
-      <section id="hero" className="hero-bg relative flex min-h-screen items-center pt-28">
-        <div className="luxury-container relative py-20">
-          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="max-w-2xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/50 px-4 py-2 text-xs tracking-[0.2em] text-teal backdrop-blur">
-              <Sparkles size={14} /> BRIGHT LUXURY CINEMATIC
+      <section id="home" className="hero-bg relative flex min-h-screen items-center pt-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(201,147,50,.18),transparent_32%)]" />
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-20 md:grid-cols-2">
+          <div className="hidden md:block">
+            <div className="float-soft h-[560px] w-[78%] overflow-hidden rounded-[42px] border border-white/20 bg-[#0f3d3e]/20 shadow-[0_40px_100px_rgba(15,61,62,.22)] backdrop-blur-sm">
+              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center opacity-80 mix-blend-luminosity" />
             </div>
-            <h1 className="font-serif text-5xl leading-tight tracking-tight md:text-7xl">
+          </div>
+
+          <div className="max-w-2xl text-center md:text-right">
+            <div className="reveal-up mb-5 inline-flex items-center gap-2 rounded-full border border-[#c99332]/25 bg-white/70 px-4 py-2 text-[11px] uppercase tracking-[.34em] text-[#0f3d3e] backdrop-blur-md">
+              Bright Luxury Cinematic ✦
+            </div>
+            <h1 className="reveal-up-delay font-serif text-5xl font-semibold leading-[.95] tracking-[-.04em] text-[#1d2422] md:text-8xl">
               צילום שנשאר<br />כיצירת אמנות
             </h1>
-            <p className="mt-5 text-lg tracking-[0.12em] text-gold">Capturing Moments. Creating Memories.</p>
-            <p className="mt-6 max-w-xl text-base leading-8 text-[#35403E] md:text-lg">
+            <p className="reveal-up-delay mt-6 text-base tracking-[.18em] text-[#c99332] md:text-lg">Capturing Moments. Creating Memories.</p>
+            <p className="reveal-up-delay-2 mx-auto mt-6 max-w-xl text-lg leading-9 text-[#56524c] md:mx-0">
               חוויה ויזואלית יוקרתית לצילומי זוגיות, תדמית, אופנה, בת מצווה ומוצרי Fine Art לבית.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <button onClick={() => scrollTo('contact')} className="rounded-full bg-gold px-7 py-3 font-semibold text-white shadow-xl shadow-gold/20 transition hover:scale-105">
-                קבלת הצעת מחיר
-              </button>
-              <button onClick={() => scrollTo('gallery')} className="rounded-full border border-gold bg-white/35 px-7 py-3 font-semibold backdrop-blur transition hover:bg-white/70">
-                צפייה בגלריה
-              </button>
+            <div className="reveal-up-delay-2 mt-9 flex flex-wrap justify-center gap-4 md:justify-start">
+              <a href="#contact" className="gold-gradient rounded-full px-8 py-4 font-bold text-white shadow-[0_20px_45px_rgba(201,147,50,.32)] transition hover:scale-105">קבלת הצעת מחיר</a>
+              <a href="#gallery" className="rounded-full border border-[#c99332]/45 bg-white/60 px-8 py-4 font-bold text-[#1d2422] backdrop-blur-md transition hover:bg-white">צפייה בגלריה</a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <section className="px-4 py-24">
-        <div className="luxury-container grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1fr_.8fr] md:items-center">
           <div>
-            <p className="mb-3 text-sm tracking-[0.25em] text-gold">VISUAL PHILOSOPHY</p>
-            <h2 className="font-serif text-4xl leading-tight md:text-6xl">לא רק צילום. חוויה ויזואלית שנבנית כמו יצירת אמנות.</h2>
-            <p className="mt-6 max-w-2xl text-lg leading-9 text-[#48514F]">
-              ב־Visual Art כל פריים נבנה מתוך מחשבה על אור, קומפוזיציה, רגש ונוכחות. המטרה היא לא רק לתעד רגע — אלא להפוך אותו לזיכרון מוחשי, אלגנטי ועל־זמני.
+            <div className="mb-4 text-sm tracking-[.32em] text-[#c99332]">VISUAL PHILOSOPHY</div>
+            <h2 className="font-serif text-4xl font-semibold leading-tight md:text-7xl">לא עוד צילום. חוויה שנראית כמו קמפיין יוקרה.</h2>
+          </div>
+          <div className="rounded-[34px] border border-[#ead9b5] bg-[#fff7e8]/70 p-8 shadow-[0_30px_80px_rgba(29,36,34,.08)]">
+            <p className="text-xl leading-10 text-[#5d5750]">
+              ב־Visual Art כל פריים נבנה מתוך מחשבה על אור, קומפוזיציה, רגש ונוכחות. המטרה היא להפוך רגעים לתוצרים מוחשיים: אלבומים, קנבסים והדפסות Fine Art שנשארים איתך לאורך שנים.
             </p>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-5 rounded-[3rem] bg-gold/15 blur-2xl" />
-            <img className="relative h-[520px] w-full rounded-[3rem] object-cover shadow-2xl" src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=85" alt="Visual Art photography" />
-          </div>
         </div>
       </section>
 
-      <section id="services" className="bg-sand px-4 py-24">
-        <div className="luxury-container">
-          <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+      <section id="services" className="bg-[#f7f0e2] px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="mb-3 text-sm tracking-[0.25em] text-gold">SERVICES</p>
-              <h2 className="font-serif text-4xl md:text-6xl">שירותי צילום</h2>
+              <div className="mb-4 text-sm tracking-[.32em] text-[#c99332]">SERVICES</div>
+              <h2 className="font-serif text-5xl font-semibold md:text-7xl">שירותי צילום</h2>
             </div>
-            <p className="max-w-xl leading-8 text-[#48514F]">כל שירות נבנה כחוויה מלאה — מהרעיון, דרך הצילום, ועד לתוצר הסופי.</p>
+            <p className="max-w-xl text-lg leading-8 text-[#625c54]">כל שירות נבנה כחוויה מלאה — מהרעיון, דרך הצילום ועד לתוצר הסופי.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {services.map((service) => (
-              <motion.div whileHover={{ y: -8 }} key={service.title} className="service-card group relative h-[420px] overflow-hidden rounded-[2rem] shadow-xl">
-                <img src={service.image} alt={service.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-graphite/85 via-graphite/20 to-transparent" />
-                <div className="absolute bottom-0 p-7 text-white">
-                  <h3 className="font-serif text-3xl">{service.title}</h3>
-                  <p className="mt-3 leading-7 text-white/85">{service.text}</p>
-                  <button onClick={() => scrollTo('contact')} className="mt-5 inline-flex items-center gap-2 text-sm text-[#E9C775]">
-                    לפרטים והצעת מחיר <ArrowLeft size={16} />
-                  </button>
+            {services.map(([title, text, image]) => (
+              <article key={title} className="image-card group relative h-[440px] overflow-hidden rounded-[34px] bg-[#0f3d3e] shadow-[0_28px_80px_rgba(29,36,34,.16)]">
+                <img src={image} alt={title} className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101817]/90 via-[#101817]/22 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+                  <h3 className="font-serif text-4xl font-semibold">{title}</h3>
+                  <p className="mt-3 leading-8 text-white/82">{text}</p>
+                  <a href="#contact" className="mt-6 inline-block text-sm font-bold tracking-[.18em] text-[#e7c47a]">לקבלת הצעה ←</a>
                 </div>
-              </motion.div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="gallery" className="px-4 py-24">
-        <div className="luxury-container">
-          <p className="mb-3 text-sm tracking-[0.25em] text-gold">PORTFOLIO</p>
-          <h2 className="font-serif text-4xl md:text-6xl">רגעים שנראים כמו סצנות מתוך סרט</h2>
-          <div className="mt-10 columns-1 gap-5 md:columns-3">
-            {gallery.map((src, index) => (
-              <motion.img
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                key={src}
-                src={src}
-                alt="Portfolio sample"
-                className="mb-5 w-full rounded-[2rem] object-cover shadow-lg transition duration-500 hover:scale-[1.02]"
-              />
-            ))}
+      <section id="gallery" className="px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <div className="mb-4 text-sm tracking-[.32em] text-[#c99332]">PORTFOLIO</div>
+            <h2 className="font-serif text-5xl font-semibold md:text-7xl">גלריה קולנועית</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#625c54]">דוגמאות דמו בלבד — בהמשך נחליף לתמונות המקוריות שלך ונבנה תיק עבודות מלא לפי קטגוריות.</p>
           </div>
-        </div>
-      </section>
-
-      <section id="process" className="bg-teal px-4 py-24 text-white">
-        <div className="luxury-container">
-          <p className="mb-3 text-sm tracking-[0.25em] text-gold">EXPERIENCE</p>
-          <h2 className="font-serif text-4xl md:text-6xl">מהרעיון הראשון ועד לתמונה שתישאר איתך שנים</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-5">
-            {process.map((step, index) => (
-              <div key={step} className="rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gold font-serif text-xl text-white">{index + 1}</div>
-                <p className="leading-7 text-white/85">{step}</p>
+          <div className="masonry columns-1 md:columns-3">
+            {gallery.map(([src, height], i) => (
+              <div key={src} className={`masonry-item image-card overflow-hidden rounded-[34px] shadow-[0_28px_80px_rgba(29,36,34,.12)] ${height}`}>
+                <img src={src} alt={`Visual Art portfolio ${i + 1}`} className="h-full w-full object-cover" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-24">
-        <div className="luxury-container grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="rounded-[3rem] bg-sand p-10 shadow-sm">
-            <Gem className="mb-6 text-gold" size={42} />
-            <h2 className="font-serif text-4xl md:text-5xl">זיכרונות שלא נשארים רק במסך</h2>
-            <p className="mt-6 leading-9 text-[#48514F]">
-              הרגעים החשובים ביותר יכולים להפוך לאלבום יוקרתי, קנבס מעוצב או יצירת קיר שמכניסה רגש, עומק ואופי לבית.
-            </p>
+      <section id="process" className="bg-[#0f3d3e] px-6 py-24 text-white md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 max-w-4xl">
+            <div className="mb-4 text-sm tracking-[.32em] text-[#e0bd73]">THE EXPERIENCE</div>
+            <h2 className="font-serif text-5xl font-semibold leading-tight md:text-7xl">מהרעיון הראשון ועד לתמונה שתישאר איתך שנים</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-5">
+            {steps.map(([num, title, text]) => (
+              <div key={num} className="rounded-[30px] border border-white/12 bg-white/[.07] p-6 backdrop-blur-md">
+                <div className="mb-8 font-serif text-4xl text-[#e0bd73]">{num}</div>
+                <h3 className="mb-3 text-xl font-bold">{title}</h3>
+                <p className="leading-7 text-white/72">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-stretch">
+          <div className="rounded-[42px] bg-[#f7f0e2] p-10 shadow-[0_28px_80px_rgba(29,36,34,.08)] md:p-14">
+            <div className="mb-4 text-sm tracking-[.32em] text-[#c99332]">FINE ART PRODUCTS</div>
+            <h2 className="font-serif text-5xl font-semibold leading-tight md:text-7xl">זיכרונות שלא נשארים רק במסך</h2>
+            <p className="mt-6 text-lg leading-9 text-[#625c54]">אלבומי פרימיום, קנבסים, הדפסות זכוכית ותמונות קיר — מוצרים מוחשיים שמכניסים רגש, עומק ואופי לבית.</p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {['אלבום פרימיום', 'קנבס מעוצב', 'הדפסות זכוכית', 'תמונות קיר Fine Art'].map((item) => (
-              <div key={item} className="rounded-[2rem] border border-[#E5D8C2] bg-white p-6 shadow-sm">
-                <CheckCircle className="mb-4 text-gold" />
-                <h3 className="font-serif text-2xl">{item}</h3>
+            {['אלבומי פרימיום', 'קנבסים מעוצבים', 'הדפסות זכוכית', 'Fine Art Wall Prints'].map((item) => (
+              <div key={item} className="rounded-[34px] border border-[#ead9b5] bg-white p-8 shadow-[0_20px_55px_rgba(29,36,34,.07)]">
+                <div className="mb-8 h-px w-20 bg-[#c99332]" />
+                <h3 className="font-serif text-3xl font-semibold">{item}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="bg-sand px-4 py-24">
-        <div className="luxury-container grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+      <section id="contact" className="bg-[#f7f0e2] px-6 py-24 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.85fr_1fr] md:items-center">
           <div>
-            <p className="mb-3 text-sm tracking-[0.25em] text-gold">INQUIRY</p>
-            <h2 className="font-serif text-4xl md:text-6xl">רוצים לקבל הצעת מחיר מותאמת אישית?</h2>
-            <p className="mt-6 leading-9 text-[#48514F]">
-              השאירו פרטים ונחזור אליכם לתיאום סשן צילום שמתאים בדיוק לסגנון, למטרה ולחוויה שאתם מחפשים.
-            </p>
+            <div className="mb-4 text-sm tracking-[.32em] text-[#c99332]">INQUIRY</div>
+            <h2 className="font-serif text-5xl font-semibold leading-tight md:text-7xl">רוצים לקבל הצעת מחיר מותאמת אישית?</h2>
+            <p className="mt-6 text-lg leading-9 text-[#625c54]">השאירו פרטים ונחזור אליכם לתיאום סשן שמתאים בדיוק לסגנון, למטרה ולחוויה שאתם מחפשים.</p>
           </div>
-
-          <form className="rounded-[3rem] border border-white/70 bg-white/70 p-7 shadow-xl backdrop-blur md:p-10">
+          <form className="rounded-[42px] border border-white/80 bg-white/70 p-7 shadow-[0_30px_90px_rgba(29,36,34,.12)] backdrop-blur-md md:p-10">
             <div className="grid gap-5 md:grid-cols-2">
-              <input className="input-field" placeholder="שם מלא" />
-              <input className="input-field" placeholder="טלפון" />
-              <select className="input-field" defaultValue="">
-                <option value="" disabled>סוג צילום</option>
+              <input className="input-luxury" placeholder="שם מלא" />
+              <input className="input-luxury" placeholder="טלפון" />
+              <select className="input-luxury text-[#6d6860]">
+                <option>סוג צילום</option>
                 <option>זוגיות</option>
                 <option>תדמית</option>
                 <option>אופנה</option>
                 <option>בת מצווה</option>
                 <option>אלבומים / קנבסים</option>
               </select>
-              <input className="input-field" placeholder="תאריך רצוי" />
+              <input className="input-luxury" placeholder="תאריך רצוי" />
             </div>
-            <textarea className="input-field mt-5 min-h-[130px]" placeholder="ספרו לנו בקצרה מה אתם מחפשים" />
-            <div className="mt-6 flex flex-wrap gap-4">
-              <button type="button" className="rounded-full bg-gold px-8 py-3 font-semibold text-white shadow-lg shadow-gold/20">שליחת פרטים</button>
-              <button type="button" className="inline-flex items-center gap-2 rounded-full border border-gold px-8 py-3 font-semibold text-graphite">
-                <MessageCircle size={18} /> WhatsApp
-              </button>
+            <textarea className="mt-5 min-h-[140px] w-full rounded-[28px] border border-[#c99332]/25 bg-white/75 p-5 outline-none transition focus:border-[#c99332] focus:ring-4 focus:ring-[#c99332]/10" placeholder="ספרו לנו בקצרה מה אתם מחפשים" />
+            <div className="mt-7 flex flex-wrap gap-4">
+              <button type="button" className="gold-gradient rounded-full px-8 py-4 font-bold text-white shadow-[0_20px_45px_rgba(201,147,50,.28)]">שליחת פרטים</button>
+              <a href="https://wa.me/972000000000" className="rounded-full border border-[#c99332]/45 bg-white/70 px-8 py-4 font-bold text-[#1d2422]">WhatsApp</a>
             </div>
           </form>
         </div>
       </section>
 
-      <footer className="bg-graphite px-4 py-14 text-white">
-        <div className="luxury-container flex flex-col justify-between gap-8 md:flex-row md:items-center">
+      <footer className="bg-[#1d2422] px-6 py-16 text-white">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <div className="font-serif text-4xl tracking-[0.18em]">Visual Art</div>
-            <p className="mt-2 text-sm tracking-[0.18em] text-gold">Capturing Moments. Creating Memories.</p>
+            <div className="font-serif text-4xl tracking-[.28em]">Visual Art</div>
+            <p className="mt-2 text-sm tracking-[.24em] text-[#e0bd73]">Capturing Moments. Creating Memories.</p>
           </div>
-          <div className="flex flex-wrap gap-5 text-sm text-white/75">
-            <span>WhatsApp</span>
+          <div className="flex flex-wrap gap-5 text-sm text-white/70">
+            <a href="#contact">יצירת קשר</a>
             <span>Instagram</span>
+            <span>WhatsApp</span>
             <span>מדיניות פרטיות</span>
             <span>הצהרת נגישות</span>
           </div>
