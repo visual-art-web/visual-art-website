@@ -1,26 +1,13 @@
 import './globals.css';
-import { Cormorant_Garamond, Heebo } from 'next/font/google';
-
-const display = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-display'
-});
-
-const body = Heebo({
-  subsets: ['hebrew', 'latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-body'
-});
 
 export const metadata = {
-  title: 'Visual Art | צילום יוקרתי וקולנועי',
-  description: 'Visual Art — צילום זוגיות, תדמית, אופנה, בת מצווה, אלבומים וקנבסים בסגנון Bright Luxury Cinematic.',
+  title: 'Visual Art | צילום יוקרתי',
+  description: 'Visual Art — צילום זוגיות, תדמית, אופנה, בת מצווה, אלבומים וקנבסים בגישת Fine Art יוקרתית.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="he" dir="rtl" className={`${display.variable} ${body.variable}`}>
+    <html lang="he" dir="rtl">
       <body>{children}</body>
     </html>
   );
