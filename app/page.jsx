@@ -35,9 +35,21 @@ export default function Home() {
       <header className="navBar">
         
         
-        <a className="logo selectedPremiumLogo" href="#top" aria-label="Visual Art">
-          <img src="/main-logo.png" alt="Visual Art Logo" />
+        
+        <a className="logo cleanInlineLogo" href="#top" aria-label="Visual Art">
+          <span className="cameraIcon" aria-hidden="true">
+            <span className="cameraTop"></span>
+            <span className="cameraLens"></span>
+          </span>
+
+          <span className="logoDivider" aria-hidden="true"></span>
+
+          <span className="logoTextBlock">
+            <strong>VISUAL ART</strong>
+            <small>CAPTURING MOMENTS, CREATING MEMORIES</small>
+          </span>
         </a>
+
 
 
 
