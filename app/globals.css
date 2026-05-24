@@ -1353,3 +1353,19 @@ body{
     letter-spacing:.08em !important;
   }
 }
+
+
+/* ===== V12.3 LOGO RIGHT ALIGN FIX ===== */
+
+.brandLogoTextOnly{
+  justify-self:end !important;
+  margin-right:22px !important;
+  padding-right:0 !important;
+}
+
+@media(max-width:980px){
+
+  .brandLogoTextOnly{
+    margin-right:8px !important;
+  }
+}
