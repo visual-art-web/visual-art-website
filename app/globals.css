@@ -698,37 +698,27 @@ textarea::placeholder {
 }
 
 
-/* REAL FIX 6.5 */
-/* remove the vertical SCROLL text near the hero buttons */
+/* V6.6 correct fix */
+/* remove vertical SCROLL label */
 .scrollCue {
   display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
 }
 
-/* remove all text overlays inside gallery images */
+/* remove text on gallery images only */
 .workCard > div,
 .workCard h3,
 .workCard p {
   display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
 }
 
-/* stop strong hover/flicker effect on gallery */
+/* keep premium hover movement */
 .workCard img {
-  transition: none !important;
-  transform: none !important;
-  filter: saturate(.9) contrast(1.04) !important;
+  transition: transform 1.2s ease, filter 1.2s ease !important;
+  transform: scale(1.02);
+  filter: saturate(.82) contrast(1.06);
 }
 
 .workCard:hover img {
-  transform: none !important;
-  filter: saturate(.9) contrast(1.04) !important;
-}
-
-/* keep a subtle dark overlay, no text */
-.workCard:after {
-  background: linear-gradient(0deg, rgba(0,0,0,.28), transparent 62%) !important;
-  pointer-events: none !important;
+  transform: scale(1.08) !important;
+  filter: saturate(1) contrast(1.12) !important;
 }

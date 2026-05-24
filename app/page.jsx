@@ -18,7 +18,7 @@ const galleryImages = [
   {
     title: 'Fine Art Details',
     text: 'פרטים קטנים שנראים כמו מתוך מגזין.',
-    src: 'https://images.unsplash.com/photo-1523438097201-512ae7d59c84?auto=format&fit=crop&w=1200&q=90'
+    src: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=90'
   }
 ];
 
@@ -97,7 +97,7 @@ export default function Home() {
         <div className="editorialGrid">
           {galleryImages.map((item, index) => (
             <article className={`workCard card${index + 1}`} key={item.title}>
-              <img src={item.src} alt={item.title} />
+              <img src={item.src} alt="" />
             </article>
           ))}
         </div>
