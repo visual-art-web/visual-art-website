@@ -260,3 +260,64 @@ a{text-decoration:none;color:inherit}
     margin-top:58px !important;
   }
 }
+
+
+/* ===== FOOTER SOCIAL LABELS ===== */
+
+.footerSocials{
+  gap:34px !important;
+}
+
+.socialItem{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:12px !important;
+  width:auto !important;
+  height:auto !important;
+  border:none !important;
+  background:none !important;
+}
+
+.socialCircle{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.02);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s ease;
+  color:#d8dee4;
+}
+
+.socialCircle svg{
+  width:20px !important;
+  height:20px !important;
+}
+
+.socialItem small{
+  position:static !important;
+  width:auto !important;
+  height:auto !important;
+  overflow:visible !important;
+  clip:auto !important;
+  white-space:normal !important;
+  margin:0 !important;
+  color:rgba(255,255,255,.58);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.socialItem:hover{
+  transform:none !important;
+}
+
+.socialItem:hover .socialCircle{
+  border-color:rgba(255,255,255,.34);
+  background:rgba(255,255,255,.06);
+  color:#ffffff;
+  transform:translateY(-4px);
+}
