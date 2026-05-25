@@ -93,5 +93,27 @@ return (
 
 </section>
 
+
+<footer className="footer">
+  <div className="footerQuote">
+    <span className="footerLine"></span>
+    <h3>Every frame tells a story.</h3>
+    <p>Designed to feel like cinema.</p>
+  </div>
+
+  <div className="footerBottom">
+    <div className="socials">
+      <a href="#"><span>◎</span>Instagram</a>
+      <a href="#"><span>◉</span>WhatsApp</a>
+      <a href="#"><span>◌</span>TikTok</a>
+      <a href="#"><span>◍</span>Facebook</a>
+    </div>
+
+    <div className="copyright">
+      © VISUAL ART 2026
+    </div>
+  </div>
+</footer>
+
 </main>
 )}
