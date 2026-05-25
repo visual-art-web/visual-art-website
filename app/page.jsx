@@ -51,45 +51,48 @@ return (
 </header>
 
 
-<section className="gallery cinematicGallery" id="gallery">
 
-  <div className="galleryIntro">
+<section className="gallery galleryWide" id="gallery">
+
+  <div className="galleryWideHead">
     <span className="eyebrow">SELECTED WORK</span>
     <h2>גלריה קולנועית</h2>
     <p>
-      אוסף פריימים בסגנון editorial luxury — תאורה עמוקה, קומפוזיציה נקייה
-      וצבעים שמרגישים כמו סצנה מתוך סרט.
+      פריימים נבחרים בסגנון יוקרתי — אור, תנועה, צבע וקומפוזיציה שמרגישים כמו סצנה מתוך סרט.
     </p>
   </div>
 
-  <div className="cinematicGrid">
-    <figure className="cinematicItem large">
+  <div className="wideMasonry">
+
+    <figure className="widePhoto big">
       <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop" alt="צילום חתונה" />
-      <figcaption>Weddings</figcaption>
+      <figcaption>חתונות</figcaption>
     </figure>
 
-    <figure className="cinematicItem tall">
+    <figure className="widePhoto">
       <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1800&auto=format&fit=crop" alt="צילום אופנה" />
-      <figcaption>Fashion</figcaption>
+      <figcaption>אופנה</figcaption>
     </figure>
 
-    <figure className="cinematicItem">
+    <figure className="widePhoto tall">
       <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" alt="צילום תדמית" />
-      <figcaption>Portrait</figcaption>
+      <figcaption>תדמית</figcaption>
     </figure>
 
-    <figure className="cinematicItem wide">
+    <figure className="widePhoto">
       <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" alt="צילום זוגיות" />
-      <figcaption>Couple Story</figcaption>
+      <figcaption>זוגיות</figcaption>
     </figure>
 
-    <figure className="cinematicItem">
-      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1800&auto=format&fit=crop" alt="צילום lifestyle" />
+    <figure className="widePhoto wide">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1800&auto=format&fit=crop" alt="צילום Fine Art" />
       <figcaption>Fine Art</figcaption>
     </figure>
+
   </div>
 
 </section>
+
 
 
 

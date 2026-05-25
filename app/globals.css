@@ -668,3 +668,137 @@ a{text-decoration:none;color:inherit}
     font-size:20px;
   }
 }
+
+
+/* ===== GALLERY FIX — WIDE CINEMATIC LAYOUT ===== */
+
+.galleryWide{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:120px clamp(24px,4vw,70px) 150px !important;
+  background:#05090d !important;
+}
+
+.galleryWideHead{
+  width:min(1320px,100%);
+  margin:0 auto 54px !important;
+  text-align:right !important;
+}
+
+.galleryWideHead h2{
+  margin-top:14px !important;
+  font-size:clamp(42px,5vw,76px) !important;
+  line-height:1.04 !important;
+  color:#f5efe6 !important;
+}
+
+.galleryWideHead p{
+  margin-top:18px !important;
+  max-width:760px !important;
+  color:#b8c0c8 !important;
+  font-size:18px !important;
+  line-height:1.9 !important;
+}
+
+.wideMasonry{
+  width:min(1460px,100%) !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:1.2fr .9fr 1.05fr !important;
+  grid-auto-rows:260px !important;
+  gap:24px !important;
+}
+
+.widePhoto{
+  position:relative !important;
+  overflow:hidden !important;
+  min-height:260px !important;
+  background:#0a1117 !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+  box-shadow:0 28px 80px rgba(0,0,0,.22) !important;
+}
+
+.widePhoto.big{
+  grid-row:span 2 !important;
+}
+
+.widePhoto.tall{
+  grid-row:span 2 !important;
+}
+
+.widePhoto.wide{
+  grid-column:span 2 !important;
+}
+
+.widePhoto img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  filter:saturate(.88) contrast(1.08) brightness(.86) !important;
+  transform:scale(1.01) !important;
+  transition:transform 1s ease, filter 1s ease !important;
+}
+
+.widePhoto::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(to top, rgba(0,0,0,.72), transparent 58%) !important;
+  z-index:2 !important;
+  pointer-events:none !important;
+}
+
+.widePhoto figcaption{
+  position:absolute !important;
+  z-index:3 !important;
+  right:26px !important;
+  bottom:24px !important;
+  color:#f5efe6 !important;
+  font-size:28px !important;
+  font-family:Georgia, "Times New Roman", serif !important;
+  line-height:1 !important;
+  text-shadow:0 10px 24px rgba(0,0,0,.55) !important;
+}
+
+.widePhoto:hover img{
+  transform:scale(1.07) !important;
+  filter:saturate(1.03) contrast(1.12) brightness(.96) !important;
+}
+
+/* neutralize previous broken cinematic gallery styles */
+.cinematicGallery,
+.cinematicGrid,
+.cinematicItem,
+.galleryIntro{
+  all:unset;
+}
+
+@media(max-width:1050px){
+  .galleryWide{
+    padding:90px 20px 110px !important;
+  }
+
+  .wideMasonry{
+    grid-template-columns:1fr !important;
+    grid-auto-rows:420px !important;
+  }
+
+  .widePhoto.big,
+  .widePhoto.tall,
+  .widePhoto.wide{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+  }
+}
+
+@media(max-width:600px){
+  .wideMasonry{
+    grid-auto-rows:330px !important;
+  }
+
+  .widePhoto figcaption{
+    font-size:23px !important;
+  }
+}
