@@ -50,11 +50,47 @@ return (
 
 </header>
 
-<section className="gallery" id="gallery">
-<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop" />
-<img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" />
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" />
+
+<section className="gallery cinematicGallery" id="gallery">
+
+  <div className="galleryIntro">
+    <span className="eyebrow">SELECTED WORK</span>
+    <h2>גלריה קולנועית</h2>
+    <p>
+      אוסף פריימים בסגנון editorial luxury — תאורה עמוקה, קומפוזיציה נקייה
+      וצבעים שמרגישים כמו סצנה מתוך סרט.
+    </p>
+  </div>
+
+  <div className="cinematicGrid">
+    <figure className="cinematicItem large">
+      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop" alt="צילום חתונה" />
+      <figcaption>Weddings</figcaption>
+    </figure>
+
+    <figure className="cinematicItem tall">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1800&auto=format&fit=crop" alt="צילום אופנה" />
+      <figcaption>Fashion</figcaption>
+    </figure>
+
+    <figure className="cinematicItem">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" alt="צילום תדמית" />
+      <figcaption>Portrait</figcaption>
+    </figure>
+
+    <figure className="cinematicItem wide">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" alt="צילום זוגיות" />
+      <figcaption>Couple Story</figcaption>
+    </figure>
+
+    <figure className="cinematicItem">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1800&auto=format&fit=crop" alt="צילום lifestyle" />
+      <figcaption>Fine Art</figcaption>
+    </figure>
+  </div>
+
 </section>
+
 
 
 <section className="aboutStory" id="about">
