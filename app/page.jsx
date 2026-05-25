@@ -94,6 +94,7 @@ return (
 </section>
 
 
+
 <footer className="footer">
   <div className="footerQuote">
     <span className="footerLine"></span>
@@ -101,19 +102,36 @@ return (
     <p>Designed to feel like cinema.</p>
   </div>
 
-  <div className="footerBottom">
-    <div className="socials">
-      <a href="#"><span>◎</span>Instagram</a>
-      <a href="#"><span>◉</span>WhatsApp</a>
-      <a href="#"><span>◌</span>TikTok</a>
-      <a href="#"><span>◍</span>Facebook</a>
-    </div>
+  <div className="footerSocials" aria-label="Social links">
+    <a href="#" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.5" cy="6.5" r="1"></circle>
+      </svg>
+      <span>Instagram</span>
+    </a>
 
-    <div className="copyright">
-      © VISUAL ART 2026
-    </div>
+    <a href="#" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14 8h2V4h-3c-3 0-5 2-5 5v3H6v4h2v4h4v-4h3l1-4h-4V9c0-.6.4-1 1-1h1z"></path>
+      </svg>
+      <span>Facebook</span>
+    </a>
+
+    <a href="#" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14 4v10.2a4.2 4.2 0 1 1-4.2-4.2c.3 0 .6 0 .9.1v3.7a1.2 1.2 0 1 0 .9 1.1V4h2.4c.4 2.2 1.9 3.8 4 4.4v3.7c-1.5-.2-2.8-.8-4-1.7z"></path>
+      </svg>
+      <span>TikTok</span>
+    </a>
+  </div>
+
+  <div className="footerCopyright">
+    © VISUAL ART 2026
   </div>
 </footer>
+
 
 </main>
 )}
