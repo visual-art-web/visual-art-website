@@ -34,7 +34,6 @@ img {
 
 ::-webkit-scrollbar-track {
   background: #05090d;
-  border-left: 1px solid rgba(255, 255, 255, 0.045);
 }
 
 ::-webkit-scrollbar-thumb {
