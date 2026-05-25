@@ -7,17 +7,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  scrollbar-width: none !important;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-  background: transparent !important;
-}
+  }
 
 body {
   background: #05090d;
@@ -25,8 +15,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   overflow-y: scroll;
-  -ms-overflow-style: none !important;
-}
+  }
 
 a {
   color: inherit;
@@ -35,6 +24,27 @@ a {
 
 img {
   display: block;
+}
+
+
+/* MODERN RIGHT SCROLLBAR */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05090d;
+  border-left: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(215, 165, 77, 0.72), rgba(215, 165, 77, 0.28));
+  border-radius: 999px;
+  border: 2px solid #05090d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(230, 187, 99, 0.95), rgba(215, 165, 77, 0.45));
 }
 
 .va-site {
@@ -230,7 +240,7 @@ img {
 }
 
 .va-gallery {
-  padding: 56px 0 76px;
+  padding: 48px 0 66px;
 }
 
 .va-section-head {
@@ -392,7 +402,7 @@ img {
 }
 
 .va-contact {
-  padding: 62px 0 82px;
+  padding: 54px 0 74px;
   display: grid;
   grid-template-columns: 0.96fr 1.04fr;
   gap: 64px;
@@ -547,7 +557,7 @@ img {
 .va-brand-intro {
   width: min(1360px, calc(100% - 88px));
   margin: 0 auto;
-  padding: 56px 0 18px;
+  padding: 46px 0 16px;
 }
 
 .va-intro-line {
@@ -742,7 +752,7 @@ img {
 }
 
 .va-process {
-  padding: 52px 0 70px;
+  padding: 46px 0 64px;
   position: relative;
 }
 
