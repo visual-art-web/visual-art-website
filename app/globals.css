@@ -81,3 +81,84 @@ button{height:56px;border:0;background:#d7a54d;color:#05090d;font-weight:900;cur
 .galleryGrid{grid-auto-rows:400px}
 .services{padding-bottom:110px}
 }
+
+
+/* ===== NAVBAR + SPACING POLISH FIX ===== */
+
+/* Fix navbar visual order:
+   logo on the left, menu on the right */
+.navbar{
+  direction:ltr !important;
+}
+
+.brand{
+  order:1 !important;
+  margin-right:auto !important;
+  margin-left:0 !important;
+}
+
+.navLinks{
+  order:2 !important;
+  direction:rtl !important;
+  margin-left:auto !important;
+  margin-right:0 !important;
+}
+
+/* Keep hero cleaner */
+.heroActions{
+  margin-top:30px !important;
+}
+
+.gallerySection{
+  padding-top:90px !important;
+}
+
+/* Gallery captions: move away from edges */
+.shot figcaption{
+  right:34px !important;
+  bottom:32px !important;
+}
+
+/* About: slightly tighter and more balanced */
+.about{
+  padding-top:95px !important;
+  gap:90px !important;
+}
+
+.aboutCopy{
+  max-width:720px !important;
+}
+
+/* Contact: more premium alignment */
+.contact{
+  max-width:1500px !important;
+  margin:0 auto !important;
+}
+
+.contactForm{
+  border-color:rgba(255,255,255,.11) !important;
+}
+
+input:focus,
+textarea:focus{
+  outline:none !important;
+  border-color:rgba(215,165,77,.45) !important;
+}
+
+/* Footer icons cleaner */
+.footerSocials a:hover .icon{
+  border-color:rgba(255,255,255,.36) !important;
+  background:rgba(255,255,255,.055) !important;
+}
+
+@media(max-width:1050px){
+  .navbar{
+    direction:rtl !important;
+  }
+
+  .brand,
+  .navLinks{
+    order:initial !important;
+    margin:0 !important;
+  }
+}
