@@ -198,6 +198,37 @@ export default function Home() {
         ))}
       </section>
 
+      <section className="va-section va-process va-reveal">
+        <div className="va-section-head">
+          <span className="va-eyebrow">OUR PROCESS</span>
+          <h2>איך נוצר צילום ברמה גבוהה?</h2>
+          <p>
+            תהליך מסודר שמתחיל בהבנת הסגנון, ממשיך בתכנון מדויק ומסתיים בעריכה
+            נקייה שמרגישה יוקרתית ולא עמוסה.
+          </p>
+        </div>
+
+        <div className="va-process-grid">
+          <article>
+            <span>01</span>
+            <h3>אפיון קצר</h3>
+            <p>מבינים מה מטרת הצילום, איזה סגנון מתאים ומה חשוב להבליט.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>תכנון לוקיישן ואווירה</h3>
+            <p>בוחרים קומפוזיציה, תאורה וזוויות שמתאימות לשפה של המותג.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>צילום ועריכה</h3>
+            <p>מצלמים בצורה רגועה ומדויקת ומסיימים בעריכה קולנועית נקייה.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="va-section va-contact va-reveal" id="contact">
         <div className="va-contact-copy">
           <span className="va-eyebrow">BOOK YOUR SESSION</span>
