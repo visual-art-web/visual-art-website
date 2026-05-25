@@ -623,3 +623,24 @@ img {
     font-size: 30px;
   }
 }
+
+
+/* FORCE HIDE SCROLLBAR - all browsers */
+html,
+body,
+#__next,
+.va-site {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#__next::-webkit-scrollbar,
+.va-site::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
