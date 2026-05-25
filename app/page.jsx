@@ -107,27 +107,53 @@ return (
 </section>
 
 
+
 <section className="services" id="services">
 
-<div className="service">
-<span>01</span>
-<h3>צילומי זוגיות</h3>
-<p>סשנים קולנועיים עם צבעים עמוקים ואווירה יוקרתית.</p>
-</div>
+  <div className="service">
+    <h3>חתונות</h3>
+    <p>
+      צילום חתונות בסגנון קולנועי עם צבעים עמוקים, רגעים אמיתיים ועריכה יוקרתית.
+    </p>
+  </div>
 
-<div className="service">
-<span>02</span>
-<h3>צילום אופנה</h3>
-<p>הפקות פרימיום למותגים ויוצרים.</p>
-</div>
+  <div className="service">
+    <h3>זוגיות</h3>
+    <p>
+      סשנים רומנטיים עם תאורה טבעית ואווירה שנראית כמו סצנה מתוך סרט.
+    </p>
+  </div>
 
-<div className="service">
-<span>03</span>
-<h3>אירועים ובת מצווה</h3>
-<p>צילום אלגנטי עם עריכה נקייה ומודרנית.</p>
-</div>
+  <div className="service">
+    <h3>תדמית</h3>
+    <p>
+      צילומי תדמית לעסקים, יוצרים ומותגים שרוצים להיראות ברמה אחרת.
+    </p>
+  </div>
+
+  <div className="service">
+    <h3>אופנה</h3>
+    <p>
+      הפקות אופנה עם קומפוזיציה נקייה, סטיילינג וצבעים editorial luxury.
+    </p>
+  </div>
+
+  <div className="service">
+    <h3>רילסים</h3>
+    <p>
+      תוכן קצר לרשתות חברתיות עם צילום דינמי ועריכה שמושכת תשומת לב.
+    </p>
+  </div>
+
+  <div className="service">
+    <h3>רחפן</h3>
+    <p>
+      זוויות אוויר יוקרתיות לצילום אירועים, לוקיישנים ותוכן cinematic premium.
+    </p>
+  </div>
 
 </section>
+
 
 <section className="contact" id="contact">
 
