@@ -112,6 +112,39 @@ export default function Home() {
         </section>
       </header>
 
+      <section className="va-brand-intro va-reveal">
+        <div className="va-intro-line" />
+
+        <div className="va-intro-heading">
+          <span className="va-eyebrow">THE VISUAL ART EXPERIENCE</span>
+          <h2>כל פריים נבנה כמו סצנה.</h2>
+          <p>
+            אנחנו משלבים צילום מדויק, תאורה נכונה ועריכה מוקפדת כדי להפוך כל רגע
+            לתמונה שמרגישה עמוקה, נקייה ובלתי נשכחת.
+          </p>
+        </div>
+
+        <div className="va-intro-cards">
+          <article>
+            <span>01</span>
+            <h3>אווירה קולנועית</h3>
+            <p>צבעים עמוקים, קונטרסט מדויק ותחושה של סרט פרימיום.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>עריכה יוקרתית</h3>
+            <p>כל תמונה עוברת עיבוד נקי שמבליט את הרגש בלי להעמיס.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>חוויית צילום רגועה</h3>
+            <p>ליווי נעים ומקצועי מהרגע הראשון ועד למסירת התוצר הסופי.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="va-section va-gallery va-reveal" id="gallery">
         <div className="va-section-head">
           <span className="va-eyebrow">SELECTED WORK</span>

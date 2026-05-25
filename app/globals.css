@@ -537,6 +537,84 @@ img {
   letter-spacing: 0.12em;
 }
 
+
+.va-brand-intro {
+  width: min(1360px, calc(100% - 88px));
+  margin: 0 auto;
+  padding: 72px 0 22px;
+}
+
+.va-intro-line {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 42px;
+  background: linear-gradient(90deg, transparent, rgba(215, 165, 77, 0.42), transparent);
+}
+
+.va-intro-heading {
+  max-width: 900px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.va-intro-heading h2 {
+  margin: 12px 0 14px;
+  color: #fff8ea;
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.va-intro-heading p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #c1c7ce;
+  font-size: 16.5px;
+  line-height: 1.8;
+}
+
+.va-intro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.va-intro-cards article {
+  min-height: 170px;
+  padding: 28px 26px;
+  background:
+    linear-gradient(180deg, rgba(13, 22, 30, 0.92), rgba(6, 12, 17, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.va-intro-cards article:hover {
+  transform: translateY(-6px);
+  border-color: rgba(215, 165, 77, 0.38);
+}
+
+.va-intro-cards span {
+  display: block;
+  margin-bottom: 12px;
+  color: #d7a54d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.va-intro-cards h3 {
+  margin-bottom: 10px;
+  color: #fff8ea;
+  font-size: 24px;
+}
+
+.va-intro-cards p {
+  color: #b9c0c7;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 @media (max-width: 1050px) {
   .va-hero {
     min-height: auto;
@@ -575,14 +653,16 @@ img {
     font-size: 46px;
   }
 
-  .va-section {
+  .va-section,
+  .va-brand-intro {
     width: min(100% - 40px, 1360px);
   }
 
   .va-gallery-grid,
   .va-about,
   .va-services,
-  .va-contact {
+  .va-contact,
+  .va-intro-cards {
     grid-template-columns: 1fr;
   }
 
@@ -622,25 +702,4 @@ img {
   .va-footer h2 {
     font-size: 30px;
   }
-}
-
-
-/* FORCE HIDE SCROLLBAR - all browsers */
-html,
-body,
-#__next,
-.va-site {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-#__next::-webkit-scrollbar,
-.va-site::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-  background: transparent !important;
 }
