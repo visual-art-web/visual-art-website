@@ -126,19 +126,16 @@ export default function Home() {
 
         <div className="va-intro-cards">
           <article>
-            <span>01</span>
             <h3>אווירה קולנועית</h3>
             <p>צבעים עמוקים, קונטרסט מדויק ותחושה של סרט פרימיום.</p>
           </article>
 
           <article>
-            <span>02</span>
             <h3>עריכה יוקרתית</h3>
             <p>כל תמונה עוברת עיבוד נקי שמבליט את הרגש בלי להעמיס.</p>
           </article>
 
           <article>
-            <span>03</span>
             <h3>חוויית צילום רגועה</h3>
             <p>ליווי נעים ומקצועי מהרגע הראשון ועד למסירת התוצר הסופי.</p>
           </article>

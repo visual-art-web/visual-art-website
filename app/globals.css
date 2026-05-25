@@ -224,7 +224,7 @@ img {
 }
 
 .va-gallery {
-  padding: 78px 0 86px;
+  padding: 56px 0 76px;
 }
 
 .va-section-head {
@@ -304,7 +304,7 @@ img {
 }
 
 .va-about {
-  padding: 76px 0 84px;
+  padding: 62px 0 76px;
   display: grid;
   grid-template-columns: 0.96fr 1.04fr;
   gap: 56px;
@@ -345,7 +345,7 @@ img {
 }
 
 .va-services {
-  padding: 8px 0 82px;
+  padding: 0 0 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
@@ -386,7 +386,7 @@ img {
 }
 
 .va-contact {
-  padding: 72px 0 82px;
+  padding: 58px 0 76px;
   display: grid;
   grid-template-columns: 0.96fr 1.04fr;
   gap: 46px;
@@ -541,7 +541,7 @@ img {
 .va-brand-intro {
   width: min(1360px, calc(100% - 88px));
   margin: 0 auto;
-  padding: 72px 0 22px;
+  padding: 56px 0 18px;
 }
 
 .va-intro-line {
@@ -593,16 +593,6 @@ img {
   transform: translateY(-6px);
   border-color: rgba(215, 165, 77, 0.38);
 }
-
-.va-intro-cards span {
-  display: block;
-  margin-bottom: 12px;
-  color: #d7a54d;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-}
-
 .va-intro-cards h3 {
   margin-bottom: 10px;
   color: #fff8ea;
@@ -702,4 +692,63 @@ img {
   .va-footer h2 {
     font-size: 30px;
   }
+}
+
+/* FINAL: hide browser scrollbar but keep normal scrolling */
+html,
+body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+body {
+  overflow-y: auto !important;
+}
+
+.va-brand-intro,
+.va-gallery,
+.va-about,
+.va-services,
+.va-contact {
+  position: relative;
+}
+
+.va-brand-intro::after,
+.va-gallery::after,
+.va-about::after,
+.va-services::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(860px, 72vw);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.055), transparent);
+}
+
+.va-intro-cards article {
+  position: relative;
+  overflow: hidden;
+}
+
+.va-intro-cards article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(215,165,77,0.06), transparent 42%);
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+.va-intro-cards article:hover::before {
+  opacity: 1;
 }
