@@ -52,46 +52,52 @@ return (
 
 
 
-<section className="gallery galleryWide" id="gallery">
 
-  <div className="galleryWideHead">
+<section className="gallery premiumGallery" id="gallery">
+
+  <div className="premiumGalleryHead">
     <span className="eyebrow">SELECTED WORK</span>
     <h2>גלריה קולנועית</h2>
     <p>
-      פריימים נבחרים בסגנון יוקרתי — אור, תנועה, צבע וקומפוזיציה שמרגישים כמו סצנה מתוך סרט.
+      פריימים נבחרים מתוך עולמות הצילום שלנו — חתונות, זוגיות, אופנה, תדמית,
+      רילסים ורחפן. גלריה רחבה, נקייה ויוקרתית שמרגישה כמו מגזין.
     </p>
   </div>
 
-  <div className="wideMasonry">
-
-    <figure className="widePhoto big">
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop" alt="צילום חתונה" />
+  <div className="premiumGalleryGrid">
+    <figure className="premiumShot heroShot">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1900&auto=format&fit=crop" alt="חתונות" />
       <figcaption>חתונות</figcaption>
     </figure>
 
-    <figure className="widePhoto">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1800&auto=format&fit=crop" alt="צילום אופנה" />
-      <figcaption>אופנה</figcaption>
-    </figure>
-
-    <figure className="widePhoto tall">
-      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" alt="צילום תדמית" />
-      <figcaption>תדמית</figcaption>
-    </figure>
-
-    <figure className="widePhoto">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" alt="צילום זוגיות" />
+    <figure className="premiumShot">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1400&auto=format&fit=crop" alt="זוגיות" />
       <figcaption>זוגיות</figcaption>
     </figure>
 
-    <figure className="widePhoto wide">
-      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1800&auto=format&fit=crop" alt="צילום Fine Art" />
-      <figcaption>Fine Art</figcaption>
+    <figure className="premiumShot">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop" alt="אופנה" />
+      <figcaption>אופנה</figcaption>
     </figure>
 
+    <figure className="premiumShot wideShot">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" alt="תדמית" />
+      <figcaption>תדמית</figcaption>
+    </figure>
+
+    <figure className="premiumShot">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="רחפן" />
+      <figcaption>רחפן</figcaption>
+    </figure>
+
+    <figure className="premiumShot">
+      <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1400&auto=format&fit=crop" alt="רילסים" />
+      <figcaption>רילסים</figcaption>
+    </figure>
   </div>
 
 </section>
+
 
 
 
@@ -100,7 +106,7 @@ return (
 
   <div className="aboutImage">
     <img
-      src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1500&auto=format&fit=crop"
+      src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1500&auto=format&fit=crop"
       alt="Visual Art studio story"
     />
   </div>
@@ -150,6 +156,7 @@ return (
 <section className="services" id="services">
 
   <div className="service">
+    <span className="serviceIcon">✦</span>
     <h3>חתונות</h3>
     <p>
       צילום חתונות בסגנון קולנועי עם צבעים עמוקים, רגעים אמיתיים ועריכה יוקרתית.
@@ -157,6 +164,7 @@ return (
   </div>
 
   <div className="service">
+    <span className="serviceIcon">◐</span>
     <h3>זוגיות</h3>
     <p>
       סשנים רומנטיים עם תאורה טבעית ואווירה שנראית כמו סצנה מתוך סרט.
@@ -164,6 +172,7 @@ return (
   </div>
 
   <div className="service">
+    <span className="serviceIcon">▣</span>
     <h3>תדמית</h3>
     <p>
       צילומי תדמית לעסקים, יוצרים ומותגים שרוצים להיראות ברמה אחרת.
@@ -171,6 +180,7 @@ return (
   </div>
 
   <div className="service">
+    <span className="serviceIcon">◇</span>
     <h3>אופנה</h3>
     <p>
       הפקות אופנה עם קומפוזיציה נקייה, סטיילינג וצבעים editorial luxury.
@@ -178,6 +188,7 @@ return (
   </div>
 
   <div className="service">
+    <span className="serviceIcon">▶</span>
     <h3>רילסים</h3>
     <p>
       תוכן קצר לרשתות חברתיות עם צילום דינמי ועריכה שמושכת תשומת לב.
@@ -185,6 +196,7 @@ return (
   </div>
 
   <div className="service">
+    <span className="serviceIcon">⌁</span>
     <h3>רחפן</h3>
     <p>
       זוויות אוויר יוקרתיות לצילום אירועים, לוקיישנים ותוכן cinematic premium.
@@ -203,8 +215,8 @@ return (
 
 <form className="contactForm">
 <input placeholder="שם מלא" />
-<input placeholder="טלפון" />
-<textarea placeholder="ספרו בקצרה על סוג הצילום שתרצו"></textarea>
+<input placeholder="טלפון / WhatsApp" />
+<textarea placeholder="ספרו בקצרה איזה צילום תרצו, תאריך ולוקיישן אם יש"></textarea>
 <button type="button">שליחת פנייה</button>
 </form>
 
