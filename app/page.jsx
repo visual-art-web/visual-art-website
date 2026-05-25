@@ -1,61 +1,209 @@
-
-"use client"
+"use client";
 
 import { useEffect } from "react";
 
+const galleryItems = [
+  {
+    title: "חתונות",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop",
+    className: "va-gallery-card va-gallery-tall",
+  },
+  {
+    title: "זוגיות",
+    image:
+      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600&auto=format&fit=crop",
+    className: "va-gallery-card",
+  },
+  {
+    title: "אופנה",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop",
+    className: "va-gallery-card",
+  },
+  {
+    title: "תדמית",
+    image:
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1900&auto=format&fit=crop",
+    className: "va-gallery-card va-gallery-wide",
+  },
+  {
+    title: "רילסים",
+    image:
+      "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1600&auto=format&fit=crop",
+    className: "va-gallery-card",
+  },
+  {
+    title: "רחפן",
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+    className: "va-gallery-card",
+  },
+];
+
+const services = [
+  ["חתונות", "צילום חתונות בסגנון קולנועי עם צבעים עמוקים, רגעים אמיתיים ועריכה יוקרתית."],
+  ["זוגיות", "סשנים רומנטיים עם תאורה טבעית ואווירה שנראית כמו סצנה מתוך סרט."],
+  ["תדמית", "צילומי תדמית לעסקים, יוצרים ומותגים שרוצים להיראות ברמה אחרת."],
+  ["אופנה", "הפקות אופנה עם קומפוזיציה נקייה, סטיילינג וצבעים editorial luxury."],
+  ["רילסים", "תוכן קצר לרשתות חברתיות עם צילום דינמי ועריכה שמושכת תשומת לב."],
+  ["רחפן", "זוויות אוויר יוקרתיות לצילום אירועים, לוקיישנים ותוכן cinematic premium."],
+];
+
 export default function Home() {
-
   useEffect(() => {
+    const items = document.querySelectorAll(".va-reveal");
 
-    const reveals = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("va-visible");
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-    const handleScroll = () => {
-
-      reveals.forEach(el => {
-
-        const top = el.getBoundingClientRect().top;
-
-        if(top < window.innerHeight - 120){
-          el.classList.add('show');
-        }
-
-      });
-
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <>
-      <section className="hero fade-up">
-        Hero Section
+    <main className="va-site" id="top">
+      <header className="va-hero">
+        <nav className="va-navbar">
+          <a className="va-brand" href="#top">
+            <strong>VISUAL ART</strong>
+            <span>CAPTURING MOMENTS, CREATING MEMORIES</span>
+          </a>
+
+          <div className="va-nav-links">
+            <a href="#gallery">גלריה</a>
+            <a href="#services">שירותים</a>
+            <a href="#about">אודות</a>
+            <a href="#contact">יצירת קשר</a>
+          </div>
+        </nav>
+
+        <section className="va-hero-inner va-reveal">
+          <div className="va-hero-copy">
+            <span className="va-eyebrow">LUXURY CINEMATIC PHOTOGRAPHY</span>
+            <h1>צילום יוקרתי עם אווירה קולנועית</h1>
+            <p>
+              סטודיו צילום בסגנון editorial luxury — זוגיות, אופנה ותוכן פרימיום
+              עם תאורה דרמטית ותחושה של מותג בינלאומי.
+            </p>
+
+            <div className="va-buttons">
+              <a className="va-button va-button-gold" href="#contact">
+                קבלת הצעת מחיר
+              </a>
+              <a className="va-button va-button-outline" href="#gallery">
+                צפייה בגלריה
+              </a>
+            </div>
+          </div>
+
+          <div className="va-hero-photo">
+            <img
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1800&auto=format&fit=crop"
+              alt="מצלמה מקצועית"
+            />
+          </div>
+        </section>
+      </header>
+
+      <section className="va-section va-gallery va-reveal" id="gallery">
+        <div className="va-section-head">
+          <span className="va-eyebrow">SELECTED WORK</span>
+          <h2>גלריה קולנועית</h2>
+          <p>
+            פריימים נבחרים מתוך עולמות הצילום שלנו — חתונות, זוגיות, אופנה,
+            תדמית, רילסים ורחפן. גלריה נקייה, רחבה ומדויקת.
+          </p>
+        </div>
+
+        <div className="va-gallery-grid">
+          {galleryItems.map((item) => (
+            <figure className={item.className} key={item.title}>
+              <img src={item.image} alt={item.title} />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
-      <section className="gallery fade-up">
-        Gallery Section
+      <section className="va-section va-about va-reveal" id="about">
+        <div className="va-about-image">
+          <img
+            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop"
+            alt="צלם בנוף קולנועי"
+          />
+        </div>
+
+        <div className="va-about-copy">
+          <span className="va-eyebrow">ABOUT VISUAL ART</span>
+          <h2>
+            לא מצלמים רק תמונה.
+            <br />
+            יוצרים תחושה שנשארת.
+          </h2>
+          <p>
+            יש רגעים שלא צריכים רק מצלמה — הם צריכים אור, תנועה, רגש ואווירה.
+            VISUAL ART נוצר מתוך אהבה לפריימים קולנועיים, לתאורה עמוקה ולתמונות
+            שמרגישות כמו סצנה מתוך סרט.
+          </p>
+          <p>
+            כל צילום נבנה בקפידה: מהקומפוזיציה, דרך הלוקיישן ועד העריכה הסופית —
+            כדי ליצור תוצאה נקייה, יוקרתית ובלתי נשכחת.
+          </p>
+        </div>
       </section>
 
-      <section className="about fade-up">
-        About Section
+      <section className="va-section va-services va-reveal" id="services">
+        {services.map(([title, text]) => (
+          <article className="va-service-card" key={title}>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
       </section>
 
-      <section className="services fade-up">
-        Services Section
+      <section className="va-section va-contact va-reveal" id="contact">
+        <div className="va-contact-copy">
+          <span className="va-eyebrow">BOOK YOUR SESSION</span>
+          <h2>בואו ניצור משהו מיוחד.</h2>
+        </div>
+
+        <form className="va-contact-form">
+          <input placeholder="שם מלא" />
+          <input placeholder="טלפון / WhatsApp" />
+          <textarea placeholder="ספרו בקצרה איזה צילום תרצו, תאריך ולוקיישן אם יש" />
+          <button type="button">שליחת פנייה</button>
+        </form>
       </section>
 
-      <section className="contact fade-up">
-        Contact Section
-      </section>
+      <footer className="va-footer va-reveal">
+        <span className="va-footer-line" />
+        <h2>Every frame tells a story.</h2>
+        <p>Designed to feel like cinema.</p>
 
-      <footer className="footer fade-up">
-        Footer
+        <div className="va-socials">
+          <a href="#" aria-label="Instagram">
+            <span>◎</span>
+            <small>Instagram</small>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <span>f</span>
+            <small>Facebook</small>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <span>♫</span>
+            <small>TikTok</small>
+          </a>
+        </div>
+
+        <div className="va-copyright">© VISUAL ART 2026</div>
       </footer>
-    </>
+    </main>
   );
 }
