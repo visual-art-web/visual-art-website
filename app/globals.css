@@ -162,3 +162,636 @@ textarea:focus{
     margin:0 !important;
   }
 }
+
+
+/* ===== FINAL SPACING + MOTION POLISH ===== */
+
+/* General smooth premium feel */
+html{
+  scroll-behavior:smooth !important;
+}
+
+body{
+  background:#05090d !important;
+}
+
+/* subtle reveal without JS */
+.heroCopy,
+.heroImage,
+.sectionText,
+.shot,
+.aboutCopy,
+.aboutPhoto,
+.service,
+.contactCopy,
+.contactForm,
+.footerQuote,
+.footerSocials{
+  animation:softReveal .8s ease both;
+}
+
+@keyframes softReveal{
+  from{
+    opacity:0;
+    transform:translateY(22px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* HERO: less dead space, cleaner balance */
+.hero{
+  min-height:92vh !important;
+  padding-bottom:46px !important;
+  background:
+    linear-gradient(90deg,rgba(5,9,13,.93),rgba(5,9,13,.68)),
+    url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2200&auto=format&fit=crop") center/cover !important;
+}
+
+.heroGrid{
+  min-height:calc(92vh - 120px) !important;
+  align-items:center !important;
+}
+
+.heroImage{
+  height:620px !important;
+}
+
+.heroCopy h1{
+  font-size:clamp(54px,6vw,96px) !important;
+}
+
+.heroCopy p{
+  max-width:680px !important;
+}
+
+.heroActions{
+  margin-top:28px !important;
+}
+
+/* Header */
+.navLinks{
+  gap:42px !important;
+}
+
+.navLinks a{
+  transition:color .25s ease, transform .25s ease !important;
+}
+
+.navLinks a:hover{
+  color:#d7a54d !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Gallery: less vertical waste, more balanced grid */
+.gallerySection{
+  padding-top:86px !important;
+  padding-bottom:120px !important;
+}
+
+.sectionText{
+  margin-bottom:42px !important;
+  text-align:center !important;
+}
+
+.sectionText p{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.galleryGrid{
+  grid-template-columns:1fr 1fr 1fr !important;
+  grid-auto-rows:285px !important;
+  gap:24px !important;
+}
+
+.shotLarge{
+  grid-row:span 2 !important;
+}
+
+.shotWide{
+  grid-column:span 2 !important;
+}
+
+.shot{
+  box-shadow:0 28px 75px rgba(0,0,0,.26) !important;
+  transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease !important;
+}
+
+.shot:hover{
+  transform:translateY(-5px) !important;
+  border-color:rgba(215,165,77,.32) !important;
+  box-shadow:0 32px 95px rgba(0,0,0,.34), 0 0 34px rgba(215,165,77,.055) !important;
+}
+
+.shot figcaption{
+  right:34px !important;
+  bottom:32px !important;
+  font-size:26px !important;
+}
+
+/* About: bigger visual, less dead spacing */
+.about{
+  padding-top:92px !important;
+  padding-bottom:120px !important;
+  grid-template-columns:.98fr 1.02fr !important;
+  gap:70px !important;
+}
+
+.aboutCopy h2{
+  font-size:clamp(42px,4.5vw,74px) !important;
+  line-height:1.06 !important;
+  margin-bottom:22px !important;
+}
+
+.aboutCopy p{
+  font-size:17px !important;
+  line-height:1.9 !important;
+}
+
+.aboutPhoto{
+  height:680px !important;
+  box-shadow:0 38px 110px rgba(0,0,0,.36) !important;
+}
+
+/* Services: tighter, deeper, more premium */
+.services{
+  padding-bottom:110px !important;
+}
+
+.service{
+  min-height:235px !important;
+  padding:36px !important;
+  text-align:center !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  background:
+    radial-gradient(circle at top, rgba(215,165,77,.035), transparent 45%),
+    #0a1117 !important;
+  transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease, background .35s ease !important;
+}
+
+.service:hover{
+  transform:translateY(-8px) !important;
+  border-color:rgba(215,165,77,.36) !important;
+  box-shadow:0 28px 85px rgba(0,0,0,.28), 0 0 36px rgba(215,165,77,.055) !important;
+  background:#0d151c !important;
+}
+
+.service h3{
+  font-size:32px !important;
+  margin-bottom:16px !important;
+}
+
+.service p{
+  max-width:310px !important;
+}
+
+/* Contact: better ratio and less empty middle */
+.contact{
+  padding-top:95px !important;
+  padding-bottom:115px !important;
+  grid-template-columns:1.05fr .95fr !important;
+  gap:54px !important;
+}
+
+.contactCopy h2{
+  font-size:clamp(44px,4.5vw,76px) !important;
+  line-height:1.08 !important;
+}
+
+.contactForm{
+  width:100% !important;
+  max-width:720px !important;
+  justify-self:start !important;
+  padding:38px !important;
+}
+
+input,
+textarea{
+  transition:border-color .25s ease, background .25s ease, transform .25s ease !important;
+}
+
+input:focus,
+textarea:focus{
+  background:rgba(255,255,255,.045) !important;
+  border-color:rgba(215,165,77,.45) !important;
+}
+
+/* Footer: slightly tighter, better hover */
+.footer{
+  padding-top:92px !important;
+}
+
+.footerSocials{
+  margin-top:56px !important;
+}
+
+.icon{
+  width:58px !important;
+  height:58px !important;
+  transition:transform .28s ease, border-color .28s ease, color .28s ease, background .28s ease !important;
+}
+
+.footerSocials a:hover .icon{
+  color:#d7a54d !important;
+  border-color:rgba(215,165,77,.55) !important;
+  background:rgba(215,165,77,.055) !important;
+  transform:translateY(-4px) !important;
+}
+
+/* Mobile */
+@media(max-width:1050px){
+  .hero{
+    min-height:auto !important;
+    padding-bottom:70px !important;
+  }
+
+  .heroGrid{
+    min-height:auto !important;
+    padding-top:70px !important;
+  }
+
+  .galleryGrid{
+    grid-template-columns:1fr !important;
+    grid-auto-rows:390px !important;
+  }
+
+  .shotLarge,
+  .shotWide{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+  }
+
+  .about{
+    grid-template-columns:1fr !important;
+    gap:42px !important;
+  }
+
+  .aboutPhoto{
+    height:460px !important;
+  }
+
+  .contact{
+    grid-template-columns:1fr !important;
+    gap:34px !important;
+  }
+
+  .contactForm{
+    max-width:none !important;
+  }
+}
+
+@media(max-width:600px){
+  .heroCopy h1{
+    font-size:48px !important;
+  }
+
+  .galleryGrid{
+    grid-auto-rows:320px !important;
+  }
+
+  .service{
+    min-height:220px !important;
+  }
+
+  .footerQuote h2{
+    font-size:34px !important;
+  }
+}
+
+
+/* ===== PREMIUM FINAL BALANCE FIX ===== */
+
+/* 1. Global rhythm */
+.hero,
+.gallerySection,
+.about,
+.services,
+.contact,
+.footer{
+  overflow:hidden !important;
+}
+
+/* 2. Hero: reduce height, remove dead black space */
+.hero{
+  min-height:84vh !important;
+  padding-top:28px !important;
+  padding-bottom:24px !important;
+}
+
+.heroGrid{
+  min-height:calc(84vh - 110px) !important;
+  gap:52px !important;
+}
+
+.heroImage{
+  height:560px !important;
+  max-height:62vh !important;
+}
+
+.heroCopy{
+  max-width:690px !important;
+}
+
+.heroCopy h1{
+  font-size:clamp(50px,5.4vw,86px) !important;
+  line-height:.98 !important;
+  margin:22px 0 18px !important;
+}
+
+.heroCopy p{
+  font-size:18px !important;
+  line-height:1.75 !important;
+}
+
+.heroActions{
+  margin-top:24px !important;
+}
+
+.goldBtn,
+.ghostBtn{
+  height:58px !important;
+  padding:0 34px !important;
+  font-size:15px !important;
+}
+
+/* 3. Navbar polish */
+.navbar{
+  height:78px !important;
+}
+
+.brand strong{
+  font-size:29px !important;
+}
+
+.navLinks{
+  gap:46px !important;
+}
+
+/* 4. Gallery: reduce title gap, more editorial balance */
+.gallerySection{
+  padding-top:72px !important;
+  padding-bottom:92px !important;
+}
+
+.sectionText{
+  margin-bottom:34px !important;
+}
+
+.sectionText h2{
+  font-size:clamp(40px,4.6vw,68px) !important;
+  margin-top:12px !important;
+  margin-bottom:12px !important;
+}
+
+.sectionText p{
+  font-size:17px !important;
+  line-height:1.75 !important;
+}
+
+.galleryGrid{
+  max-width:1420px !important;
+  grid-template-columns:1fr 1fr 1fr !important;
+  grid-auto-rows:260px !important;
+  gap:22px !important;
+}
+
+.shot{
+  border-color:rgba(255,255,255,.095) !important;
+}
+
+.shot figcaption{
+  right:28px !important;
+  bottom:26px !important;
+  font-size:25px !important;
+}
+
+.shotLarge{
+  grid-row:span 2 !important;
+}
+
+.shotWide{
+  grid-column:span 2 !important;
+}
+
+/* 5. About: tighter, cleaner, more balanced */
+.about{
+  padding-top:76px !important;
+  padding-bottom:88px !important;
+  grid-template-columns:.95fr 1.05fr !important;
+  gap:58px !important;
+  max-width:1320px !important;
+}
+
+.aboutCopy{
+  max-width:690px !important;
+}
+
+.aboutCopy h2{
+  font-size:clamp(40px,4vw,66px) !important;
+  line-height:1.08 !important;
+  margin:18px 0 20px !important;
+}
+
+.aboutCopy p{
+  font-size:16.5px !important;
+  line-height:1.82 !important;
+  margin-bottom:14px !important;
+}
+
+.aboutPhoto{
+  height:560px !important;
+}
+
+/* 6. Services: less empty, more premium card depth */
+.services{
+  padding-top:16px !important;
+  padding-bottom:82px !important;
+  max-width:1320px !important;
+  gap:24px !important;
+}
+
+.service{
+  min-height:210px !important;
+  padding:32px 30px !important;
+  background:
+    linear-gradient(180deg, rgba(12,21,28,.98), rgba(6,12,17,.98)) !important;
+}
+
+.service h3{
+  font-size:30px !important;
+  margin-bottom:14px !important;
+}
+
+.service p{
+  font-size:16px !important;
+  line-height:1.75 !important;
+  max-width:320px !important;
+}
+
+/* 7. Contact: align form and title, reduce empty gap */
+.contact{
+  padding-top:76px !important;
+  padding-bottom:82px !important;
+  max-width:1320px !important;
+  grid-template-columns:.95fr 1.05fr !important;
+  gap:46px !important;
+}
+
+.contactCopy{
+  align-self:center !important;
+}
+
+.contactCopy h2{
+  font-size:clamp(42px,4vw,68px) !important;
+  line-height:1.08 !important;
+}
+
+.contactForm{
+  max-width:640px !important;
+  justify-self:start !important;
+  padding:30px !important;
+}
+
+input,
+textarea{
+  padding:16px !important;
+  font-size:15px !important;
+}
+
+textarea{
+  min-height:145px !important;
+}
+
+button{
+  height:54px !important;
+}
+
+/* 8. Footer: cinematic but not huge */
+.footer{
+  padding-top:70px !important;
+  padding-bottom:28px !important;
+}
+
+.footerDivider{
+  margin-bottom:24px !important;
+}
+
+.footerQuote h2{
+  font-size:clamp(32px,3.5vw,54px) !important;
+}
+
+.footerQuote p{
+  margin-top:14px !important;
+  font-size:13px !important;
+}
+
+.footerSocials{
+  margin-top:42px !important;
+  margin-bottom:26px !important;
+  padding-top:28px !important;
+}
+
+.icon{
+  width:52px !important;
+  height:52px !important;
+}
+
+.copyright{
+  padding-top:22px !important;
+}
+
+/* 9. Better visual consistency */
+.eyebrow{
+  font-size:11px !important;
+  letter-spacing:.36em !important;
+}
+
+.shot,
+.service,
+.contactForm,
+.aboutPhoto{
+  will-change:transform !important;
+}
+
+/* 10. Mobile safe */
+@media(max-width:1050px){
+  .hero{
+    min-height:auto !important;
+    padding-bottom:56px !important;
+  }
+
+  .navbar{
+    height:auto !important;
+  }
+
+  .heroGrid{
+    min-height:auto !important;
+    gap:34px !important;
+  }
+
+  .heroImage{
+    display:none !important;
+  }
+
+  .heroCopy h1{
+    font-size:48px !important;
+  }
+
+  .gallerySection{
+    padding-top:70px !important;
+  }
+
+  .galleryGrid{
+    grid-template-columns:1fr !important;
+    grid-auto-rows:340px !important;
+  }
+
+  .shotLarge,
+  .shotWide{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+  }
+
+  .about{
+    grid-template-columns:1fr !important;
+    gap:36px !important;
+    padding-top:70px !important;
+  }
+
+  .aboutPhoto{
+    height:420px !important;
+  }
+
+  .services{
+    grid-template-columns:1fr !important;
+  }
+
+  .contact{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+
+  .contactForm{
+    max-width:none !important;
+  }
+}
+
+@media(max-width:600px){
+  .heroCopy h1{
+    font-size:42px !important;
+  }
+
+  .galleryGrid{
+    grid-auto-rows:300px !important;
+  }
+
+  .footerQuote h2{
+    font-size:32px !important;
+  }
+}
