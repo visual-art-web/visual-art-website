@@ -9,6 +9,7 @@ return (
 <div className="navLinks">
 <a href="#gallery">גלריה</a>
 <a href="#services">שירותים</a>
+<a href="#about">אודות</a>
 <a href="#contact">יצירת קשר</a>
 </div>
 
@@ -54,6 +55,57 @@ return (
 <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" />
 <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop" />
 </section>
+
+
+<section className="aboutStory" id="about">
+
+  <div className="aboutImage">
+    <img
+      src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1500&auto=format&fit=crop"
+      alt="Visual Art studio story"
+    />
+  </div>
+
+  <div className="aboutContent">
+    <span className="eyebrow">ABOUT VISUAL ART</span>
+
+    <h2>
+      לא מצלמים רק תמונה.
+      <br />
+      יוצרים תחושה שנשארת.
+    </h2>
+
+    <p>
+      יש רגעים שלא צריכים רק מצלמה — הם צריכים אור, תנועה, רגש ואווירה.
+      VISUAL ART נוצר מתוך אהבה לפריימים קולנועיים, לתאורה עמוקה ולתמונות
+      שמרגישות כמו סצנה מתוך סרט.
+    </p>
+
+    <p>
+      כל צילום נבנה בקפידה: מהקומפוזיציה, דרך הלוקיישן ועד העריכה הסופית —
+      כדי ליצור תוצאה נקייה, יוקרתית ובלתי נשכחת.
+    </p>
+
+    <div className="aboutFacts">
+      <div>
+        <strong>01</strong>
+        <span>סגנון קולנועי</span>
+      </div>
+
+      <div>
+        <strong>02</strong>
+        <span>עריכה פרימיום</span>
+      </div>
+
+      <div>
+        <strong>03</strong>
+        <span>חוויה אישית</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 
 <section className="services" id="services">
 
