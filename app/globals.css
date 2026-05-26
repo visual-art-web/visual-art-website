@@ -810,3 +810,107 @@ main,
 .process-number {
   display: none !important;
 }
+
+
+/* ===== SAFE PREMIUM POLISH — NO SCROLLBAR CHANGES ===== */
+
+/* Gallery cards: smoother premium hover */
+.va-gallery-item {
+  transition:
+    transform 0.38s ease,
+    border-color 0.38s ease,
+    box-shadow 0.38s ease,
+    filter 0.38s ease;
+}
+
+.va-gallery-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(215, 165, 77, 0.34);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.34),
+    0 0 38px rgba(215, 165, 77, 0.055);
+}
+
+.va-gallery-item img {
+  transition: transform 0.55s ease, filter 0.55s ease;
+}
+
+.va-gallery-item:hover img {
+  transform: scale(1.035);
+  filter: contrast(1.04) saturate(1.03);
+}
+
+/* Service cards: subtle luxury interaction */
+.va-service-card,
+.va-process-grid article {
+  transition:
+    transform 0.34s ease,
+    border-color 0.34s ease,
+    box-shadow 0.34s ease,
+    background 0.34s ease;
+}
+
+.va-service-card:hover,
+.va-process-grid article:hover {
+  transform: translateY(-7px);
+  border-color: rgba(215, 165, 77, 0.32);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.30),
+    0 0 34px rgba(215, 165, 77, 0.05);
+}
+
+/* CTA buttons: cleaner premium feedback */
+.va-btn,
+button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.va-btn:hover,
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Form polish */
+.va-contact input,
+.va-contact textarea {
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+
+.va-contact input:focus,
+.va-contact textarea:focus {
+  outline: none;
+  border-color: rgba(215, 165, 77, 0.46);
+  box-shadow: 0 0 0 3px rgba(215, 165, 77, 0.08);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* Slightly tighter section rhythm, without changing layout structure */
+.va-section {
+  position: relative;
+}
+
+.va-section-head {
+  margin-bottom: 42px;
+}
+
+/* Better mobile spacing without affecting desktop */
+@media (max-width: 768px) {
+  .va-section-head {
+    margin-bottom: 30px;
+  }
+
+  .va-gallery-item:hover,
+  .va-service-card:hover,
+  .va-process-grid article:hover,
+  .va-btn:hover,
+  button:hover {
+    transform: none;
+  }
+}
