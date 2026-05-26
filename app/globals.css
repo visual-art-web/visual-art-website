@@ -7,7 +7,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  direction: ltr;
+  overflow-y: auto;
+  direction: ltr !important;
   scrollbar-width: thin;
   scrollbar-color: rgba(215, 165, 77, 0.65) #05090d;
 }
@@ -17,8 +18,8 @@ body {
   color: #f6efe5;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  overflow-y: scroll;
-  direction: ltr;
+  overflow-y: visible;
+  direction: ltr !important;
 }
 
 a {
@@ -30,25 +31,6 @@ img {
   display: block;
 }
 
-
-/* MODERN RIGHT SCROLLBAR */
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: #05090d;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(215, 165, 77, 0.72), rgba(215, 165, 77, 0.28));
-  border-radius: 999px;
-  border: 2px solid #05090d;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(230, 187, 99, 0.95), rgba(215, 165, 77, 0.45));
-}
 
 .va-site {
   direction: rtl;
@@ -845,40 +827,61 @@ img {
 }
 
 
-/* FINAL FIX: scrollbar stays on the RIGHT, content stays RTL */
-html,
+
+
+/* SINGLE SCROLLBAR FIX — only one scrollbar on the RIGHT */
+html {
+  direction: ltr !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(215, 165, 77, 0.65) #05090d;
+}
+
 body {
   direction: ltr !important;
+  overflow-y: visible !important;
+  min-height: 100%;
 }
 
-.va-site,
-.va-site * {
+.va-site {
   direction: rtl;
+  overflow: visible !important;
 }
 
-.va-brand,
-.va-brand *,
-.va-navbar {
-  direction: ltr;
+html::-webkit-scrollbar {
+  width: 9px;
 }
 
+html::-webkit-scrollbar-track {
+  background: #05090d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(215, 165, 77, 0.78), rgba(215, 165, 77, 0.34));
+  border-radius: 999px;
+  border: 2px solid #05090d;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(230, 187, 99, 0.95), rgba(215, 165, 77, 0.52));
+}
+
+body::-webkit-scrollbar,
+.va-site::-webkit-scrollbar,
+#__next::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.va-site *,
 .va-nav-links,
 .va-nav-links * {
   direction: rtl;
 }
 
-::-webkit-scrollbar-track {
-  background: #05090d !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
-}
-
-::-webkit-scrollbar {
-  width: 9px !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(215, 165, 77, 0.72), rgba(215, 165, 77, 0.28)) !important;
-  border-radius: 999px !important;
-  border: 2px solid #05090d !important;
+.va-navbar,
+.va-brand,
+.va-brand * {
+  direction: ltr;
 }
