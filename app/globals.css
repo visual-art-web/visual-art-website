@@ -914,3 +914,143 @@ button:hover {
     transform: none;
   }
 }
+
+
+/* ===== SAFE LAYOUT POLISH V2 — NO SCROLLBAR CHANGES ===== */
+
+/* tighter premium rhythm between sections */
+.va-process {
+  padding-top: clamp(46px, 5vw, 76px) !important;
+  padding-bottom: clamp(52px, 5.5vw, 82px) !important;
+}
+
+.va-gallery {
+  padding-top: clamp(52px, 5.5vw, 82px) !important;
+  padding-bottom: clamp(58px, 6vw, 92px) !important;
+}
+
+.va-about {
+  padding-top: clamp(58px, 6vw, 92px) !important;
+  padding-bottom: clamp(58px, 6vw, 92px) !important;
+}
+
+.va-services {
+  padding-top: clamp(54px, 5.5vw, 84px) !important;
+  padding-bottom: clamp(58px, 6vw, 92px) !important;
+}
+
+.va-contact {
+  padding-top: clamp(58px, 6vw, 92px) !important;
+  padding-bottom: clamp(66px, 7vw, 108px) !important;
+}
+
+/* about section: prevent giant title from feeling cut/heavy */
+.va-about h2 {
+  font-size: clamp(44px, 5.2vw, 86px) !important;
+  line-height: 1.08 !important;
+  max-width: 760px;
+}
+
+.va-about p {
+  max-width: 760px;
+  line-height: 2.05 !important;
+}
+
+/* balance about image */
+.va-about img,
+.va-about .va-about-image img {
+  max-height: 620px;
+  object-fit: cover;
+}
+
+/* process cards: cleaner, less empty */
+.va-process-grid {
+  gap: clamp(18px, 2vw, 28px) !important;
+}
+
+.va-process-grid article {
+  min-height: 178px !important;
+  padding: 30px 28px !important;
+}
+
+/* service cards: better visual weight */
+.va-services-grid {
+  gap: clamp(18px, 2vw, 28px) !important;
+}
+
+.va-service-card {
+  min-height: 184px !important;
+  padding: 32px 28px !important;
+}
+
+/* gallery: more consistent and premium */
+.va-gallery-grid {
+  gap: clamp(18px, 2vw, 28px) !important;
+}
+
+.va-gallery-item {
+  overflow: hidden;
+  background: rgba(255,255,255,0.025);
+}
+
+.va-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* contact: align better and reduce floating feeling */
+.va-contact h2 {
+  font-size: clamp(42px, 5vw, 82px) !important;
+  line-height: 1.08 !important;
+}
+
+.va-contact-form,
+.va-contact form {
+  max-width: 720px;
+}
+
+/* footer: more compact, premium */
+.va-footer {
+  padding-top: clamp(48px, 5vw, 72px) !important;
+  padding-bottom: 28px !important;
+}
+
+.va-footer h2 {
+  font-size: clamp(36px, 4.5vw, 68px) !important;
+}
+
+/* mobile polish */
+@media (max-width: 900px) {
+  .va-about,
+  .va-contact {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  .va-about h2,
+  .va-contact h2 {
+    max-width: 100%;
+  }
+
+  .va-process-grid,
+  .va-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .va-gallery,
+  .va-process,
+  .va-about,
+  .va-services,
+  .va-contact {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .va-about h2,
+  .va-contact h2 {
+    font-size: clamp(36px, 12vw, 52px) !important;
+  }
+}
