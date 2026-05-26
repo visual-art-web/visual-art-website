@@ -1440,3 +1440,142 @@ button:hover {
     transform: none;
   }
 }
+
+
+/* ===== GALLERY CINEMATIC UPGRADE V6 — SAFE, NO SCROLLBAR CHANGES ===== */
+
+/* Make gallery feel more editorial and high-end */
+.va-gallery {
+  position: relative;
+  isolation: isolate;
+}
+
+.va-gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0 -8%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(215, 165, 77, 0.055), transparent 26rem),
+    radial-gradient(circle at 88% 74%, rgba(255, 255, 255, 0.035), transparent 22rem);
+}
+
+.va-gallery-grid,
+.va-gallery-list {
+  perspective: 1200px;
+}
+
+/* support both possible class names */
+.va-gallery-card,
+.va-gallery-item {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease,
+    filter 0.45s ease;
+}
+
+.va-gallery-card::before,
+.va-gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(135deg, rgba(215, 165, 77, 0.12), transparent 36%),
+    radial-gradient(circle at 50% 40%, transparent 20%, rgba(0,0,0,0.22) 100%);
+  transition: opacity 0.45s ease;
+}
+
+.va-gallery-card::after,
+.va-gallery-item::after {
+  transition: opacity 0.45s ease;
+}
+
+.va-gallery-card:hover,
+.va-gallery-item:hover {
+  transform: translateY(-8px) scale(1.008);
+  border-color: rgba(215, 165, 77, 0.34) !important;
+  box-shadow:
+    0 34px 95px rgba(0, 0, 0, 0.38),
+    0 0 42px rgba(215, 165, 77, 0.06);
+}
+
+.va-gallery-card:hover::before,
+.va-gallery-item:hover::before {
+  opacity: 1;
+}
+
+.va-gallery-card:hover::after,
+.va-gallery-item:hover::after {
+  opacity: 0.9;
+}
+
+.va-gallery-card img,
+.va-gallery-item img {
+  will-change: transform, filter;
+  transition:
+    transform 1.15s ease,
+    filter 1.15s ease;
+}
+
+.va-gallery-card:hover img,
+.va-gallery-item:hover img {
+  transform: scale(1.075);
+  filter: saturate(1.03) contrast(1.12) brightness(0.95);
+}
+
+.va-gallery-card figcaption,
+.va-gallery-card span,
+.va-gallery-item figcaption,
+.va-gallery-item span {
+  z-index: 4 !important;
+  transition:
+    transform 0.38s ease,
+    color 0.38s ease,
+    opacity 0.38s ease;
+}
+
+.va-gallery-card:hover figcaption,
+.va-gallery-card:hover span,
+.va-gallery-item:hover figcaption,
+.va-gallery-item:hover span {
+  transform: translateY(-4px);
+  color: #fff4d6 !important;
+}
+
+/* Slightly more premium image rhythm on desktop only */
+@media (min-width: 1051px) {
+  .va-gallery-grid {
+    grid-auto-rows: 255px !important;
+  }
+
+  .va-gallery-tall,
+  .va-gallery-large {
+    grid-row: span 2 !important;
+  }
+
+  .va-gallery-wide {
+    grid-column: span 2 !important;
+  }
+}
+
+/* Mobile: no annoying hover movement */
+@media (max-width: 900px) {
+  .va-gallery-card:hover,
+  .va-gallery-item:hover {
+    transform: none;
+  }
+
+  .va-gallery-card:hover img,
+  .va-gallery-item:hover img {
+    transform: scale(1.02);
+  }
+}
