@@ -6,7 +6,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  direction: ltr;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   overflow-y: visible;
+  direction: ltr;
 }
 
 a {
@@ -727,22 +729,26 @@ img {
 .va-process-grid span,
 .va-process-grid article > span,
 .process-number {
-  display: none !important;
-}
+  display: none !important;}
 
-/* ===== ONE CLEAN SCROLLBAR ONLY ===== */
+/* ===== FINAL VIEWPORT SCROLLBAR FIX ===== */
+/* IMPORTANT: app/layout.jsx must use <html dir="ltr"> */
 html {
   direction: ltr !important;
   overflow-x: hidden !important;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100% !important;
   scrollbar-width: thin !important;
-  scrollbar-color: rgba(215, 165, 77, 0.7) #05090d !important;
+  scrollbar-color: rgba(215, 165, 77, 0.72) #05090d !important;
 }
 
 body {
-  direction: rtl !important;
+  direction: ltr !important;
   overflow-x: hidden !important;
   overflow-y: visible !important;
+  height: auto !important;
+  min-height: 100% !important;
 }
 
 .va-site {
@@ -750,6 +756,7 @@ body {
   overflow: visible !important;
 }
 
+/* ONE scrollbar only: viewport scrollbar */
 html::-webkit-scrollbar {
   width: 10px !important;
 }
@@ -768,6 +775,7 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, rgba(230, 187, 99, 0.98), rgba(215, 165, 77, 0.58)) !important;
 }
 
+/* Do not allow inner containers to create extra scrollbars */
 body::-webkit-scrollbar,
 .va-site::-webkit-scrollbar,
 #__next::-webkit-scrollbar,
@@ -777,14 +785,22 @@ main::-webkit-scrollbar {
   display: none !important;
 }
 
+/* RTL content, LTR logo */
+.va-site *,
+.va-nav-links,
+.va-nav-links * {
+  direction: rtl;
+}
+
 .va-navbar,
 .va-brand,
 .va-brand * {
   direction: ltr !important;
 }
 
-.va-nav-links,
-.va-nav-links *,
-.va-site * {
-  direction: rtl;
+/* Remove orange numbers from process cards */
+.va-process-grid span,
+.va-process-grid article > span,
+.process-number {
+  display: none !important;
 }
