@@ -1054,3 +1054,112 @@ button:hover {
     font-size: clamp(36px, 12vw, 52px) !important;
   }
 }
+
+
+/* ===== SAFE POLISH V3 — ABOUT / CONTACT / FOOTER ONLY, NO SCROLLBAR CHANGES ===== */
+
+/* About section: prevent oversized title and improve balance */
+.va-about h2 {
+  font-size: clamp(38px, 4.35vw, 72px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.va-about p {
+  font-size: clamp(15px, 1vw, 18px) !important;
+  line-height: 2 !important;
+  max-width: 720px !important;
+}
+
+.va-about {
+  align-items: center !important;
+  gap: clamp(46px, 5vw, 86px) !important;
+}
+
+/* Contact section: better alignment and less floating feeling */
+.va-contact {
+  align-items: center !important;
+  gap: clamp(52px, 6vw, 96px) !important;
+}
+
+.va-contact h2 {
+  font-size: clamp(40px, 4.4vw, 76px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.va-contact .va-eyebrow,
+.va-contact-eyebrow {
+  margin-bottom: 22px !important;
+}
+
+.va-contact-form,
+.va-contact form {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)) !important;
+  border-color: rgba(255, 255, 255, 0.13) !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Footer: make it premium but calmer */
+.va-footer {
+  padding-top: clamp(42px, 4.5vw, 66px) !important;
+}
+
+.va-footer h2 {
+  font-size: clamp(32px, 3.8vw, 56px) !important;
+  line-height: 1.12 !important;
+  opacity: 0.92;
+}
+
+.va-footer p,
+.va-footer .va-footer-subtitle {
+  font-size: 13px !important;
+  letter-spacing: 0.22em !important;
+  opacity: 0.78;
+}
+
+.va-socials,
+.va-footer-socials {
+  margin-top: 34px !important;
+}
+
+/* General premium spacing correction near bottom */
+.va-services {
+  padding-bottom: clamp(48px, 5vw, 78px) !important;
+}
+
+.va-process {
+  padding-bottom: clamp(44px, 5vw, 76px) !important;
+}
+
+/* Better desktop visual density */
+@media (min-width: 1200px) {
+  .va-about h2,
+  .va-contact h2 {
+    max-width: 690px !important;
+  }
+
+  .va-contact-form,
+  .va-contact form {
+    transform: translateY(-8px);
+  }
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .va-about h2,
+  .va-contact h2 {
+    font-size: clamp(34px, 10.5vw, 48px) !important;
+    line-height: 1.14 !important;
+  }
+
+  .va-footer h2 {
+    font-size: clamp(30px, 9vw, 42px) !important;
+  }
+
+  .va-contact-form,
+  .va-contact form {
+    transform: none !important;
+  }
+}
