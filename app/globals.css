@@ -1163,3 +1163,99 @@ button:hover {
     transform: none !important;
   }
 }
+
+
+/* ===== SAFE POLISH V4 — HEADER / HERO / GALLERY ONLY, NO SCROLLBAR CHANGES ===== */
+
+/* Header feels more premium and less heavy */
+.va-header,
+.va-navbar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.va-navbar {
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.18);
+}
+
+/* Logo/nav refinement */
+.va-brand h1,
+.va-logo,
+.va-brand-title {
+  letter-spacing: 0.24em !important;
+}
+
+.va-nav-links a {
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.va-nav-links a:hover {
+  color: #e6bb63 !important;
+  opacity: 1;
+}
+
+/* Hero: cleaner cinematic balance */
+.va-hero {
+  min-height: clamp(680px, 78vh, 860px) !important;
+}
+
+.va-hero h1 {
+  font-size: clamp(54px, 5.7vw, 104px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.va-hero p {
+  max-width: 720px !important;
+  line-height: 1.95 !important;
+}
+
+/* Hero image: more premium depth */
+.va-hero-image,
+.va-hero-media {
+  box-shadow:
+    0 36px 120px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.075);
+}
+
+/* Gallery title spacing refinement */
+.va-gallery .va-section-head {
+  margin-bottom: clamp(36px, 4vw, 56px) !important;
+}
+
+.va-gallery h2 {
+  font-size: clamp(44px, 5vw, 86px) !important;
+  line-height: 1.08 !important;
+}
+
+/* Gallery image labels: cleaner readability */
+.va-gallery-item span,
+.va-gallery-card span,
+.va-gallery-title {
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.65);
+  letter-spacing: -0.02em;
+}
+
+/* Make empty-looking gaps less dramatic */
+.va-section-head p {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile hero safety */
+@media (max-width: 900px) {
+  .va-hero {
+    min-height: auto !important;
+    padding-top: 120px !important;
+    padding-bottom: 72px !important;
+  }
+
+  .va-hero h1 {
+    font-size: clamp(42px, 12vw, 66px) !important;
+  }
+
+  .va-hero p {
+    max-width: 100% !important;
+  }
+}
