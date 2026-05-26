@@ -826,21 +826,22 @@ img {
   display: none !important;
 }
 
-
-
-
-/* SINGLE SCROLLBAR FIX — only one scrollbar on the RIGHT */
+/* FINAL FIX — ONE scrollbar only, on the right */
 html {
   direction: ltr !important;
-  overflow-y: auto !important;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(215, 165, 77, 0.65) #05090d;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  height: 100%;
+  scrollbar-width: none !important;
 }
 
 body {
   direction: ltr !important;
-  overflow-y: visible !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
   min-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(215, 165, 77, 0.65) #05090d;
 }
 
 .va-site {
@@ -848,27 +849,36 @@ body {
   overflow: visible !important;
 }
 
+/* hide html scrollbar completely */
 html::-webkit-scrollbar {
-  width: 9px;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
-html::-webkit-scrollbar-track {
-  background: #05090d;
+/* style ONLY body scrollbar */
+body::-webkit-scrollbar {
+  width: 9px !important;
 }
 
-html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(215, 165, 77, 0.78), rgba(215, 165, 77, 0.34));
-  border-radius: 999px;
-  border: 2px solid #05090d;
+body::-webkit-scrollbar-track {
+  background: #05090d !important;
 }
 
-html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(230, 187, 99, 0.95), rgba(215, 165, 77, 0.52));
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(215, 165, 77, 0.78), rgba(215, 165, 77, 0.34)) !important;
+  border-radius: 999px !important;
+  border: 2px solid #05090d !important;
 }
 
-body::-webkit-scrollbar,
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(230, 187, 99, 0.95), rgba(215, 165, 77, 0.52)) !important;
+}
+
+/* prevent any internal second scrollbar */
 .va-site::-webkit-scrollbar,
-#__next::-webkit-scrollbar {
+#__next::-webkit-scrollbar,
+main::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
   display: none !important;
