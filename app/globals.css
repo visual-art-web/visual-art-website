@@ -1929,12 +1929,144 @@ button:hover {
 }
 
 
-/* ===== RESTORE WORKING STATE — VIDEO OFF / ORIGINAL HERO PHOTO ON ===== */
-.va-hero-photo {
-  display: block !important;
+/* ===== FULL BACKGROUND VIDEO HERO — CLEAN FINAL ===== */
+/* Keeps the working site design. Replaces only the old camera hero image/background with video. */
+
+/* Header becomes one cinematic video area */
+header.va-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background: #05090d !important;
 }
 
-.va-hero-video,
+/* Video covers the whole hero background under the navbar */
+header.va-hero > .va-hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 0.72 !important;
+  filter: brightness(0.64) contrast(1.12) saturate(0.9) !important;
+  pointer-events: none !important;
+}
+
+/* Dark cinematic overlay over the full video */
+header.va-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 72% 34%, rgba(215,165,77,0.13), transparent 30rem),
+    linear-gradient(90deg, rgba(5,9,13,0.92) 0%, rgba(5,9,13,0.70) 42%, rgba(5,9,13,0.44) 100%),
+    linear-gradient(180deg, rgba(5,9,13,0.20) 0%, rgba(5,9,13,0.30) 52%, rgba(5,9,13,0.88) 100%);
+}
+
+/* Navbar and content stay above video */
+header.va-hero .va-navbar,
+header.va-hero .va-hero-inner {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Remove old camera image completely */
+header.va-hero .va-hero-photo,
+header.va-hero .va-hero-image,
+header.va-hero .va-hero-media {
+  display: none !important;
+}
+
+/* Hero content becomes one clean text block on the right */
+header.va-hero .va-hero-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  min-height: clamp(640px, 78vh, 860px) !important;
+  padding-left: clamp(34px, 6vw, 100px) !important;
+  padding-right: clamp(34px, 6vw, 100px) !important;
+  background: transparent !important;
+}
+
+/* Cancel inner overlays/backgrounds from old hero image layout */
+header.va-hero .va-hero-inner::before,
+header.va-hero .va-hero-inner::after {
+  display: none !important;
+  content: none !important;
+}
+
+header.va-hero .va-hero-copy {
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  text-align: right !important;
+  direction: rtl !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+header.va-hero .va-eyebrow {
+  direction: ltr !important;
+  text-align: right !important;
+}
+
+header.va-hero h1 {
+  font-size: clamp(56px, 5.4vw, 98px) !important;
+  line-height: 1.04 !important;
+  max-width: 100% !important;
+  text-align: right !important;
+  text-shadow:
+    0 28px 90px rgba(0,0,0,0.82),
+    0 0 34px rgba(215,165,77,0.09) !important;
+}
+
+header.va-hero p {
+  max-width: 700px !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  text-align: right !important;
+  color: rgba(246,239,229,0.88) !important;
+  text-shadow: 0 14px 45px rgba(0,0,0,0.72) !important;
+}
+
+header.va-hero .va-buttons {
+  justify-content: flex-start !important;
+  flex-direction: row-reverse !important;
+}
+
+/* No temporary badge */
 .va-video-badge {
   display: none !important;
+}
+
+@media (max-width: 900px) {
+  header.va-hero .va-hero-inner {
+    justify-content: center !important;
+    min-height: 82vh !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  header.va-hero .va-hero-copy,
+  header.va-hero .va-eyebrow,
+  header.va-hero h1,
+  header.va-hero p {
+    text-align: center !important;
+  }
+
+  header.va-hero h1 {
+    font-size: clamp(40px, 12vw, 66px) !important;
+  }
+
+  header.va-hero .va-buttons {
+    justify-content: center !important;
+  }
+
+  header.va-hero > .va-hero-video {
+    opacity: 0.56 !important;
+  }
 }

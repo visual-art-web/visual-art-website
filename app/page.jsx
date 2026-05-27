@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import HeroVideoLayer from "../components/HeroVideoLayer";
 
 const galleryItems = [
   {
@@ -84,6 +85,8 @@ export default function Home() {
           </div>
         </nav>
 
+        <HeroVideoLayer />
+
         <section className="va-hero-inner va-reveal">
           <div className="va-hero-copy">
             <span className="va-eyebrow">LUXURY CINEMATIC PHOTOGRAPHY</span>
@@ -103,12 +106,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="va-hero-photo">
-            <img
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1800&auto=format&fit=crop"
-              alt="מצלמה מקצועית"
-            />
-          </div>
         </section>
       </header>
 
