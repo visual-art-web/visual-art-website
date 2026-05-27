@@ -1929,37 +1929,45 @@ button:hover {
 }
 
 
-/* ===== SAFE VIDEO HERO FIX — FULL DESIGN PRESERVED ===== */
-/* This does NOT change typography, navbar, gallery, about, services, contact, footer or scrollbar. */
+/* ===== FINAL HERO VIDEO FIX V13 — FULL SITE DESIGN PRESERVED ===== */
+/* Fixes: video visible, old camera image removed, hero text inside screen, no broken layout. */
+/* Does NOT change gallery/about/services/contact/footer/scrollbar. */
 
-/* Hide only the old static camera image inside the hero */
-.va-hero-photo {
-  display: none !important;
-}
-
-/* Make sure the hero remains the same section, but can host video */
-.va-hero,
-.va-hero-inner {
+.va-hero {
   position: relative !important;
   overflow: hidden !important;
   isolation: isolate;
 }
 
-/* Video background */
+.va-hero-photo {
+  display: none !important;
+}
+
+.va-hero-inner {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-items: center !important;
+  justify-items: end !important;
+  padding-left: clamp(28px, 6vw, 96px) !important;
+  padding-right: clamp(28px, 6vw, 96px) !important;
+}
+
 .va-hero-video {
   position: absolute !important;
   inset: 0 !important;
+  z-index: 0 !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center center !important;
-  z-index: 0 !important;
-  opacity: 0.62 !important;
-  filter: brightness(0.68) contrast(1.12) saturate(0.88) !important;
+  opacity: 0.64 !important;
+  filter: brightness(0.68) contrast(1.12) saturate(0.92) !important;
   pointer-events: none !important;
 }
 
-/* Dark cinematic overlay above video, below text */
 .va-hero-inner::before {
   content: "";
   position: absolute;
@@ -1967,28 +1975,76 @@ button:hover {
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 72% 34%, rgba(215,165,77,0.12), transparent 30rem),
-    linear-gradient(90deg, rgba(5,9,13,0.92) 0%, rgba(5,9,13,0.68) 44%, rgba(5,9,13,0.38) 100%),
-    linear-gradient(180deg, rgba(5,9,13,0.18), rgba(5,9,13,0.76));
+    radial-gradient(circle at 72% 35%, rgba(215, 165, 77, 0.10), transparent 30rem),
+    linear-gradient(90deg, rgba(5, 9, 13, 0.90) 0%, rgba(5, 9, 13, 0.66) 48%, rgba(5, 9, 13, 0.42) 100%),
+    linear-gradient(180deg, rgba(5, 9, 13, 0.14) 0%, rgba(5, 9, 13, 0.78) 100%);
 }
 
-/* Keep text/buttons above video */
-.va-hero-copy,
-.va-hero-text,
-.va-hero-content,
-.va-buttons {
+.va-hero-copy {
   position: relative !important;
   z-index: 3 !important;
+  width: min(760px, 100%) !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  text-align: right !important;
+  justify-self: end !important;
 }
 
-/* Remove temporary badge if old component had it */
+.va-hero-copy .va-eyebrow,
+.va-hero-copy h1,
+.va-hero-copy p,
+.va-hero-copy .va-buttons {
+  max-width: 100% !important;
+}
+
+.va-hero h1 {
+  font-size: clamp(56px, 5.4vw, 96px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.76),
+    0 0 34px rgba(215, 165, 77, 0.08);
+}
+
+.va-hero p {
+  max-width: 700px !important;
+  line-height: 1.9 !important;
+  color: rgba(246, 239, 229, 0.86) !important;
+}
+
+.va-buttons {
+  justify-content: flex-start !important;
+}
+
 .va-video-badge {
   display: none !important;
 }
 
-/* Mobile safety */
 @media (max-width: 900px) {
+  .va-hero-inner {
+    justify-items: center !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .va-hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    justify-self: center !important;
+  }
+
+  .va-hero h1 {
+    font-size: clamp(42px, 12vw, 66px) !important;
+  }
+
+  .va-buttons {
+    justify-content: center !important;
+  }
+
   .va-hero-video {
-    opacity: 0.48 !important;
+    opacity: 0.50 !important;
   }
 }
