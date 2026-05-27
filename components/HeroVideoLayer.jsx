@@ -7,7 +7,6 @@ export default function HeroVideoLayer() {
       loop
       playsInline
       preload="auto"
-      poster="/visual-art-hero-fallback.jpg"
       aria-hidden="true"
     >
       <source src="/visual-art-hero-video.mp4" type="video/mp4" />
