@@ -2110,3 +2110,63 @@ button:hover {
     opacity: 0.36;
   }
 }
+
+
+/* ===== VIDEO HERO V11 FIX — MAKE VIDEO VISIBLE, REMOVE BADGE LOOK ===== */
+/* Works even if <HeroVideoLayer /> was placed inside .va-hero-inner */
+
+.va-hero,
+.va-hero-inner {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+.va-hero-inner {
+  z-index: 1;
+}
+
+.va-hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  opacity: 0.68 !important;
+  filter: brightness(0.62) contrast(1.18) saturate(0.88) !important;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+/* dark cinematic layer above video, below text */
+.va-hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 66% 36%, rgba(215,165,77,0.16), transparent 28rem),
+    linear-gradient(90deg, rgba(5,9,13,0.92) 0%, rgba(5,9,13,0.68) 46%, rgba(5,9,13,0.38) 100%),
+    linear-gradient(180deg, rgba(5,9,13,0.20), rgba(5,9,13,0.78));
+}
+
+.va-hero-copy,
+.va-hero-text,
+.va-hero-content {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* remove the temporary video badge */
+.va-video-badge {
+  display: none !important;
+}
+
+/* make sure the old camera image never appears */
+.va-hero-photo,
+.va-hero-image,
+.va-hero-media {
+  display: none !important;
+}
