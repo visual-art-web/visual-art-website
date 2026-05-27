@@ -2721,3 +2721,53 @@ header.va-hero::before {
     aspect-ratio: 16 / 10.5 !important;
   }
 }
+
+
+/* ===== HOVER SHADOW / LINE FIX V21 ===== */
+/* Removes the moving inner shadow + bright bottom line on hover */
+
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  isolation: isolate !important;
+}
+
+.va-gallery-grid > figure::before,
+.va-gallery-grid > .va-gallery-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+.va-gallery-grid > figure::after,
+.va-gallery-grid > .va-gallery-card::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.va-gallery-grid > figure img,
+.va-gallery-grid > .va-gallery-card img {
+  will-change: transform !important;
+  transform-origin: center center !important;
+}
+
+.va-gallery-grid > figure:hover,
+.va-gallery-grid > .va-gallery-card:hover {
+  overflow: hidden !important;
+}
+
+.va-gallery-grid > figure:hover img,
+.va-gallery-grid > .va-gallery-card:hover img {
+  transform: scale(1.045) translateZ(0) !important;
+}
+
+/* removes bright line artifacts */
+.va-gallery-grid * {
+  outline: none !important;
+}
+
+.va-gallery-grid img {
+  border: none !important;
+}
