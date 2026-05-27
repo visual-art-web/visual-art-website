@@ -1927,3 +1927,186 @@ button:hover {
     max-width: 100% !important;
   }
 }
+
+
+/* ===== CINEMATIC VIDEO HERO PREP V10 — SAFE, NO SCROLLBAR CHANGES ===== */
+/* This upgrade removes the static camera-image feeling and prepares the hero for real video.
+   Put your video in: /public/visual-art-hero-video.mp4
+   Recommended video: photographer in mountains / beach / nature, slow motion, dark cinematic grade. */
+
+/* Hide the old camera image block only in hero */
+.va-hero-photo,
+.va-hero-image,
+.va-hero-media {
+  display: none !important;
+}
+
+/* Make the hero itself feel like a cinematic video stage */
+.va-hero {
+  position: relative;
+  min-height: clamp(720px, 88vh, 940px) !important;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(5,9,13,0.96) 0%, rgba(5,9,13,0.72) 34%, rgba(5,9,13,0.36) 100%),
+    linear-gradient(180deg, rgba(5,9,13,0.18), rgba(5,9,13,0.86)),
+    url("/visual-art-hero-fallback.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Video layer placeholder:
+   If page.jsx contains <video className="va-hero-video" ...>, this styles it perfectly. */
+.va-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.52;
+  filter: brightness(0.74) contrast(1.12) saturate(0.82);
+  transform: scale(1.04);
+  animation: vaVideoSlowZoom 18s ease-in-out infinite alternate;
+}
+
+/* Cinematic overlays */
+.va-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 72% 34%, rgba(215,165,77,0.13), transparent 28rem),
+    radial-gradient(circle at 18% 72%, rgba(255,255,255,0.045), transparent 24rem),
+    linear-gradient(90deg, rgba(5,9,13,0.98) 0%, rgba(5,9,13,0.70) 38%, rgba(5,9,13,0.32) 100%);
+}
+
+.va-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 6% 7% 6%;
+  z-index: -1;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(215,165,77,0.42), transparent);
+}
+
+/* Hero content now becomes the visual focus */
+.va-hero-inner {
+  position: relative;
+  z-index: 2;
+  min-height: clamp(650px, 78vh, 840px);
+  display: flex;
+  align-items: center;
+}
+
+.va-hero-copy,
+.va-hero-text,
+.va-hero-content {
+  max-width: 820px !important;
+  margin-inline-start: auto;
+  text-align: right;
+  animation: vaHeroTextIn 0.95s ease both;
+}
+
+.va-hero h1 {
+  font-size: clamp(58px, 6vw, 112px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.04em !important;
+  text-shadow:
+    0 28px 90px rgba(0,0,0,0.72),
+    0 0 38px rgba(215,165,77,0.08);
+}
+
+.va-hero p {
+  max-width: 760px !important;
+  color: rgba(246,239,229,0.84) !important;
+  text-shadow: 0 12px 45px rgba(0,0,0,0.62);
+}
+
+/* Premium cinematic label */
+.va-hero-kicker,
+.va-hero .va-eyebrow,
+.va-hero span {
+  color: #e6bb63 !important;
+  letter-spacing: 0.45em !important;
+  text-shadow: 0 0 24px rgba(215,165,77,0.18);
+}
+
+/* Buttons over video */
+.va-hero .va-btn,
+.va-hero .va-button,
+.va-hero a,
+.va-hero button {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Optional mute/play badge if added later */
+.va-video-badge {
+  position: absolute;
+  left: clamp(24px, 4vw, 70px);
+  bottom: clamp(28px, 5vw, 78px);
+  z-index: 4;
+  color: rgba(246,239,229,0.72);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(5,9,13,0.44);
+  padding: 12px 16px;
+}
+
+@keyframes vaVideoSlowZoom {
+  from {
+    transform: scale(1.035);
+  }
+  to {
+    transform: scale(1.095);
+  }
+}
+
+@keyframes vaHeroTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile safe */
+@media (max-width: 900px) {
+  .va-hero {
+    min-height: auto !important;
+    padding-top: 120px !important;
+    padding-bottom: 84px !important;
+    background:
+      linear-gradient(180deg, rgba(5,9,13,0.82), rgba(5,9,13,0.90)),
+      url("/visual-art-hero-fallback.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .va-hero-inner {
+    min-height: auto;
+  }
+
+  .va-hero-copy,
+  .va-hero-text,
+  .va-hero-content {
+    max-width: 100% !important;
+  }
+
+  .va-hero h1 {
+    font-size: clamp(42px, 12vw, 68px) !important;
+  }
+
+  .va-hero-video {
+    opacity: 0.36;
+  }
+}
