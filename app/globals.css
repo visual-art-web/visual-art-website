@@ -2771,3 +2771,80 @@ header.va-hero::before {
 .va-gallery-grid img {
   border: none !important;
 }
+
+
+/* ===== GALLERY ARTIFACT FINAL FIX V22 ===== */
+/* Final fix: removes the bright bottom line and inner moving shadow completely. */
+
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,0.075) !important;
+  box-shadow: 0 18px 58px rgba(0,0,0,0.22) !important;
+  background: #05090d !important;
+  transform: none !important;
+}
+
+/* Disable hover frame glow that created the visible bottom line */
+.va-gallery-grid > figure:hover,
+.va-gallery-grid > .va-gallery-card:hover {
+  transform: none !important;
+  border-color: rgba(255,255,255,0.075) !important;
+  box-shadow: 0 18px 58px rgba(0,0,0,0.22) !important;
+}
+
+/* Remove all pseudo-layer artifacts */
+.va-gallery-grid > figure::before,
+.va-gallery-grid > figure::after,
+.va-gallery-grid > .va-gallery-card::before,
+.va-gallery-grid > .va-gallery-card::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep image stable: no moving shadow / no zoom gap / no artifact line */
+.va-gallery-grid > figure img,
+.va-gallery-grid > .va-gallery-card img,
+.va-gallery-grid > figure:hover img,
+.va-gallery-grid > .va-gallery-card:hover img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: none !important;
+  filter: brightness(0.92) contrast(1.04) saturate(0.98) !important;
+  transition: filter 0.35s ease !important;
+}
+
+/* Very clean premium hover: only slightly brighter, no movement */
+.va-gallery-grid > figure:hover img,
+.va-gallery-grid > .va-gallery-card:hover img {
+  filter: brightness(1.02) contrast(1.05) saturate(1.01) !important;
+}
+
+/* Caption gets its own static readable shadow instead of overlay gradient */
+.va-gallery-grid > figure figcaption,
+.va-gallery-grid > .va-gallery-card figcaption {
+  position: absolute !important;
+  right: 22px !important;
+  bottom: 20px !important;
+  z-index: 5 !important;
+  padding: 8px 12px !important;
+  border-radius: 2px !important;
+  background: linear-gradient(90deg, rgba(0,0,0,0.58), rgba(0,0,0,0.18)) !important;
+  text-shadow: 0 10px 28px rgba(0,0,0,0.9) !important;
+  transform: none !important;
+  transition: color 0.25s ease, background 0.25s ease !important;
+}
+
+.va-gallery-grid > figure:hover figcaption,
+.va-gallery-grid > .va-gallery-card:hover figcaption {
+  transform: none !important;
+  color: #fff4df !important;
+  background: linear-gradient(90deg, rgba(0,0,0,0.62), rgba(0,0,0,0.22)) !important;
+}
