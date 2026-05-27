@@ -2515,47 +2515,67 @@ header.va-hero::before {
 }
 
 
-
-/* ===== GALLERY UNIFORM GRID V17 ===== */
-/* Makes all gallery images equal size for a cleaner luxury layout */
+/* ===== GALLERY UNIFORM GRID V18 — REAL FIX ===== */
+/* All gallery items same size. No tall/wide layout, no holes. */
 
 .va-gallery-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 24px !important;
+  align-items: stretch !important;
 }
 
-.va-gallery-card,
-.va-gallery-tall,
-.va-gallery-wide {
-  position: relative !important;
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
   height: 320px !important;
   min-height: 320px !important;
   max-height: 320px !important;
+  margin: 0 !important;
+  position: relative !important;
   overflow: hidden !important;
-  border-radius: 0 !important;
 }
 
-.va-gallery-card img,
-.va-gallery-tall img,
-.va-gallery-wide img {
+.va-gallery-wide,
+.va-gallery-tall {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+}
+
+.va-gallery-grid > figure img,
+.va-gallery-grid > .va-gallery-card img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: center center !important;
   display: block !important;
+}
+
+.va-gallery-grid > figure figcaption,
+.va-gallery-grid > .va-gallery-card figcaption {
+  position: absolute !important;
+  right: 24px !important;
+  bottom: 22px !important;
+  z-index: 4 !important;
 }
 
 @media (max-width: 1100px) {
   .va-gallery-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  .va-gallery-card,
-  .va-gallery-tall,
-  .va-gallery-wide {
-    height: 280px !important;
-    min-height: 280px !important;
-    max-height: 280px !important;
+  .va-gallery-grid > figure,
+  .va-gallery-grid > .va-gallery-card,
+  .va-gallery-wide,
+  .va-gallery-tall {
+    height: 290px !important;
+    min-height: 290px !important;
+    max-height: 290px !important;
   }
 }
 
@@ -2564,11 +2584,12 @@ header.va-hero::before {
     grid-template-columns: 1fr !important;
   }
 
-  .va-gallery-card,
-  .va-gallery-tall,
-  .va-gallery-wide {
-    height: 240px !important;
-    min-height: 240px !important;
-    max-height: 240px !important;
+  .va-gallery-grid > figure,
+  .va-gallery-grid > .va-gallery-card,
+  .va-gallery-wide,
+  .va-gallery-tall {
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
   }
 }

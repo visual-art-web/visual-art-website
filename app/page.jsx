@@ -8,37 +8,31 @@ const galleryItems = [
     title: "חתונות",
     image:
       "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop",
-    className: "va-gallery-card va-gallery-tall",
   },
   {
     title: "זוגיות",
     image:
       "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600&auto=format&fit=crop",
-    className: "va-gallery-card",
   },
   {
     title: "אופנה",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop",
-    className: "va-gallery-card",
   },
   {
     title: "תדמית",
     image:
       "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1900&auto=format&fit=crop",
-    className: "va-gallery-card va-gallery-wide",
   },
   {
     title: "רילסים",
     image:
       "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1600&auto=format&fit=crop",
-    className: "va-gallery-card",
   },
   {
     title: "רחפן",
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
-    className: "va-gallery-card",
   },
 ];
 
@@ -151,7 +145,7 @@ export default function Home() {
 
         <div className="va-gallery-grid">
           {galleryItems.map((item) => (
-            <figure className={item.className} key={item.title}>
+            <figure className="va-gallery-card" key={item.title}>
               <img src={item.image} alt={item.title} />
               <figcaption>{item.title}</figcaption>
             </figure>
