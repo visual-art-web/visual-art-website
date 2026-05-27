@@ -2848,3 +2848,52 @@ header.va-hero::before {
   color: #fff4df !important;
   background: linear-gradient(90deg, rgba(0,0,0,0.62), rgba(0,0,0,0.22)) !important;
 }
+
+
+/* ===== GALLERY BOTTOM LINE REMOVE V23 ===== */
+/* Removes the visible bottom line completely from gallery cards. */
+
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Add only a very soft outer frame without bottom line */
+.va-gallery-grid > figure {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.055) !important;
+}
+
+.va-gallery-grid > figure:hover {
+  box-shadow: 0 0 0 1px rgba(215,165,77,0.16), 0 22px 70px rgba(0,0,0,0.28) !important;
+}
+
+/* Stop all bottom gradients/lines from pseudo elements */
+.va-gallery-grid > figure::before,
+.va-gallery-grid > figure::after,
+.va-gallery-grid > .va-gallery-card::before,
+.va-gallery-grid > .va-gallery-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Image fills the full card, no extra 1px line */
+.va-gallery-grid > figure img,
+.va-gallery-grid > .va-gallery-card img {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove any inherited border line from images/captions */
+.va-gallery-grid img,
+.va-gallery-grid figcaption {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
