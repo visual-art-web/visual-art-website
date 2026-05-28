@@ -1,2 +1,14 @@
-# Visual Art clean premium v2
-Clean rebuild without duplicated CSS conflicts.
+# VISUAL ART — Real Normal Rebuild
+
+גרסה חדשה ונקייה לאתר צילום בעברית.
+
+מה השתנה:
+- מבנה חדש לגמרי: תפריט אנכי קבוע בצד ימין בדסקטופ, ולא navbar עליון כמו קודם.
+- RTL מלא: כל הטקסטים מיושרים לימין.
+- הווידאו נשאר כרקע הראשי דרך `/public/visual-art-hero-video.mp4`.
+- גלריה בסגנון editorial לא סימטרי.
+- קטגוריות בשורות נקיות במקום כרטיסיות ישנות.
+- אזור אודות, תהליך ויצירת קשר נבנו מחדש.
+
+חשוב:
+שים את קובץ הווידאו בשם `visual-art-hero-video.mp4` בתוך תיקיית `public`.
