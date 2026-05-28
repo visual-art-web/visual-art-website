@@ -2943,65 +2943,82 @@ header.va-hero::before {
 }
 
 
-/* ===== NAVBAR MENU ONLY V27 ===== */
-/* Removes text logo area. Keeps only the premium menu block on the right side.
-   Later a transparent PNG logo can be placed separately on the left. */
+/* ===== NAVBAR OUTSIDE HERO FIX V31 ===== */
+/* Final structural fix: navbar is outside hero, fixed to viewport center, follows scroll. */
 
+/* Removed text logo area */
+.va-brand {
+  display: none !important;
+}
+
+/* Fixed glass menu in the exact center of the screen */
 .va-navbar {
-  width: min(880px, calc(100% - 60px)) !important;
-  min-height: 74px !important;
-  margin: 24px 30px 0 auto !important;
+  position: fixed !important;
+  top: 24px !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateX(-50%) !important;
+
+  width: min(860px, calc(100vw - 64px)) !important;
+  min-height: 70px !important;
+  margin: 0 !important;
   padding: 0 34px !important;
 
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 
-  background: rgba(5, 10, 15, 0.82) !important;
-  border: 1px solid rgba(255,255,255,0.075) !important;
+  background: rgba(7, 12, 18, 0.28) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
   box-shadow:
-    0 18px 60px rgba(0,0,0,0.24),
-    inset 0 1px 0 rgba(255,255,255,0.045) !important;
+    0 18px 55px rgba(0,0,0,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.035) !important;
 
-  backdrop-filter: blur(16px) saturate(1.08) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(1.08) !important;
+  backdrop-filter: blur(18px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
 
-  position: relative !important;
-  z-index: 30 !important;
+  z-index: 999999 !important;
+  overflow: visible !important;
 }
 
-.va-brand {
-  display: none !important;
-}
-
+/* Full menu row */
+.va-navbar .va-nav-links,
 .va-nav-links {
   position: static !important;
-  transform: none !important;
   inset: auto !important;
+  transform: none !important;
 
   width: 100% !important;
   margin: 0 !important;
+  padding: 0 !important;
 
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 0 !important;
+
+  direction: rtl !important;
 }
 
+/* Menu items */
+.va-navbar .va-nav-links a,
 .va-nav-links a {
   position: relative !important;
+  min-width: 120px !important;
+  padding: 26px 8px 23px !important;
+
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
 
-  min-width: 108px !important;
-  padding: 25px 0 22px !important;
-
-  color: rgba(246,239,229,0.90) !important;
+  color: rgba(255,248,236,0.92) !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   letter-spacing: 0.15px !important;
   line-height: 1 !important;
+  text-align: center !important;
+  text-shadow: 0 8px 22px rgba(0,0,0,0.42) !important;
 
   transition:
     color 0.28s ease,
@@ -3009,6 +3026,7 @@ header.va-hero::before {
     text-shadow 0.28s ease !important;
 }
 
+.va-navbar .va-nav-links a::after,
 .va-nav-links a::after {
   content: "" !important;
   position: absolute !important;
@@ -3018,247 +3036,29 @@ header.va-hero::before {
   height: 1px !important;
   transform: translateX(50%) !important;
   background: linear-gradient(90deg, transparent, #d7a54d, transparent) !important;
-  opacity: 0.9 !important;
   transition: width 0.32s ease !important;
 }
 
+.va-navbar .va-nav-links a:hover,
 .va-nav-links a:hover {
   color: #f2d79d !important;
   transform: translateY(-1px) !important;
   text-shadow: 0 0 18px rgba(215,165,77,0.18) !important;
 }
 
+.va-navbar .va-nav-links a:hover::after,
 .va-nav-links a:hover::after {
   width: 76% !important;
 }
 
-@media (max-width: 900px) {
-  .va-navbar {
-    width: calc(100% - 24px) !important;
-    margin: 14px auto 0 !important;
-    min-height: auto !important;
-    padding: 12px 16px !important;
-  }
-
-  .va-nav-links {
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 20px !important;
-  }
-
-  .va-nav-links a {
-    min-width: auto !important;
-    padding: 10px 0 !important;
-    font-size: 13px !important;
-  }
-
-  .va-nav-links a::after {
-    bottom: 2px !important;
-  }
+/* Add top space so fixed menu doesn't cover hero content */
+.va-site {
+  padding-top: 0 !important;
 }
 
-
-/* ===== STICKY TRANSPARENT MENU V28 ===== */
-/* Menu stays with the user while scrolling + transparent glass area */
-
-.va-navbar {
-  position: sticky !important;
-  top: 18px !important;
-  z-index: 999 !important;
-
-  background: rgba(5, 10, 15, 0.28) !important;
-  border: 1px solid rgba(255,255,255,0.055) !important;
-
-  backdrop-filter: blur(18px) saturate(1.12) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
-
-  box-shadow:
-    0 18px 55px rgba(0,0,0,0.16),
-    inset 0 1px 0 rgba(255,255,255,0.035) !important;
-}
-
-/* Keeps transparent style even over dark/video sections */
-header.va-hero .va-navbar {
-  background: rgba(5, 10, 15, 0.26) !important;
-}
-
-/* Better readability on transparent menu */
-.va-nav-links a {
-  color: rgba(255,248,236,0.92) !important;
-  text-shadow: 0 8px 22px rgba(0,0,0,0.38) !important;
-}
-
-/* Optional tiny glass shine, still transparent */
-.va-navbar::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  pointer-events: none !important;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.005)) !important;
-  opacity: 0.75 !important;
-}
-
-.va-nav-links {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-@media (max-width: 900px) {
-  .va-navbar {
-    top: 10px !important;
-    background: rgba(5,10,15,0.36) !important;
-  }
-}
-
-
-/* ===== CENTER STICKY MENU FIX V29 ===== */
-/* Menu stays fixed while scrolling + centered in page */
-
-.va-navbar {
-  position: fixed !important;
-  top: 22px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-
-  width: min(920px, calc(100% - 60px)) !important;
-
-  margin: 0 !important;
-
-  z-index: 9999 !important;
-
-  background: rgba(8, 12, 18, 0.34) !important;
-  border: 1px solid rgba(255,255,255,0.06) !important;
-
-  backdrop-filter: blur(18px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.1) !important;
-
-  box-shadow:
-    0 18px 55px rgba(0,0,0,0.18),
-    inset 0 1px 0 rgba(255,255,255,0.04) !important;
-}
-
-/* Make hero content not hide behind fixed menu */
 header.va-hero {
-  padding-top: 120px !important;
-}
-
-/* Perfect centered menu items */
-.va-nav-links {
-  width: 100% !important;
-  justify-content: space-evenly !important;
-  align-items: center !important;
-}
-
-/* Cleaner premium spacing */
-.va-nav-links a {
-  min-width: 120px !important;
-  text-align: center !important;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .va-navbar {
-    width: calc(100% - 22px) !important;
-    top: 10px !important;
-    padding: 12px 16px !important;
-  }
-
-  header.va-hero {
-    padding-top: 100px !important;
-  }
-
-  .va-nav-links {
-    gap: 18px !important;
-    justify-content: center !important;
-  }
-
-  .va-nav-links a {
-    min-width: auto !important;
-  }
-}
-
-
-/* ===== NAVBAR REAL CENTER FIX V30 ===== */
-/* Hard fix: menu is fixed to viewport center and always stays while scrolling. */
-
-html,
-body {
-  overflow-x: hidden !important;
-}
-
-/* The actual menu block */
-.va-navbar {
-  position: fixed !important;
-  top: 24px !important;
-  left: 50vw !important;
-  right: auto !important;
-  bottom: auto !important;
-
-  transform: translate3d(-50%, 0, 0) !important;
-
-  width: min(760px, calc(100vw - 48px)) !important;
-  min-height: 68px !important;
-  margin: 0 !important;
-  padding: 0 34px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  background: rgba(8, 12, 18, 0.26) !important;
-  border: 1px solid rgba(255,255,255,0.055) !important;
-  box-shadow:
-    0 18px 55px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.035) !important;
-
-  backdrop-filter: blur(18px) saturate(1.12) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
-
-  z-index: 999999 !important;
-}
-
-/* Remove every old positioning rule from links */
-.va-navbar .va-nav-links,
-.va-nav-links {
-  position: static !important;
-  inset: auto !important;
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  transform: none !important;
-
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 0 !important;
-}
-
-/* Menu text */
-.va-navbar .va-nav-links a,
-.va-nav-links a {
-  min-width: auto !important;
-  padding: 25px 12px 22px !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  color: rgba(255,248,236,0.92) !important;
-  text-align: center !important;
-}
-
-/* Make sure header video/layout cannot clip fixed navbar */
-header.va-hero {
-  overflow: visible !important;
   padding-top: 112px !important;
-}
-
-/* Keep video layer inside hero only */
-header.va-hero > .va-hero-video {
-  position: absolute !important;
+  overflow: hidden !important;
 }
 
 /* Mobile */
@@ -3273,14 +3073,20 @@ header.va-hero > .va-hero-video {
   .va-navbar .va-nav-links,
   .va-nav-links {
     justify-content: center !important;
-    gap: 20px !important;
     flex-wrap: wrap !important;
+    gap: 20px !important;
   }
 
   .va-navbar .va-nav-links a,
   .va-nav-links a {
+    min-width: auto !important;
     padding: 9px 0 !important;
     font-size: 13px !important;
+  }
+
+  .va-navbar .va-nav-links a::after,
+  .va-nav-links a::after {
+    bottom: 2px !important;
   }
 
   header.va-hero {

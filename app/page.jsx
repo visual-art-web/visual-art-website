@@ -64,8 +64,7 @@ export default function Home() {
 
   return (
     <main className="va-site" id="top">
-      <header className="va-hero">
-        <nav className="va-navbar">
+      <nav className="va-navbar">
           <div className="va-nav-links">
             <a href="#gallery">גלריה</a>
             <a href="#services">שירותים</a>
@@ -74,7 +73,8 @@ export default function Home() {
           </div>
         </nav>
 
-        <HeroVideoLayer />
+      <header className="va-hero">
+<HeroVideoLayer />
 
         <section className="va-hero-inner va-reveal">
           <div className="va-hero-copy">
