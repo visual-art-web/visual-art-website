@@ -3198,3 +3198,70 @@ header.va-hero .va-hero-copy::before {
     justify-content: center !important;
   }
 }
+
+
+/* ===== HERO TEXT REAL RIGHT FIX V34 ===== */
+/* Forces the hero text block to the real right side for Hebrew RTL layout. */
+
+header.va-hero .va-hero-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding-right: clamp(70px, 7vw, 150px) !important;
+  padding-left: clamp(24px, 4vw, 70px) !important;
+}
+
+header.va-hero .va-hero-copy {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  align-self: center !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+  transform: translateY(28px) !important;
+
+  width: min(720px, 42vw) !important;
+  max-width: 720px !important;
+
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+header.va-hero .va-eyebrow,
+header.va-hero h1,
+header.va-hero p {
+  text-align: right !important;
+}
+
+header.va-hero p {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+header.va-hero .va-buttons {
+  justify-content: flex-start !important;
+  flex-direction: row-reverse !important;
+}
+
+@media (max-width: 900px) {
+  header.va-hero .va-hero-inner {
+    justify-content: center !important;
+    padding-right: 22px !important;
+    padding-left: 22px !important;
+  }
+
+  header.va-hero .va-hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  header.va-hero .va-eyebrow,
+  header.va-hero h1,
+  header.va-hero p {
+    text-align: center !important;
+  }
+
+  header.va-hero .va-buttons {
+    justify-content: center !important;
+  }
+}
