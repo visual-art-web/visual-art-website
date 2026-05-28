@@ -66,11 +66,6 @@ export default function Home() {
     <main className="va-site" id="top">
       <header className="va-hero">
         <nav className="va-navbar">
-          <a className="va-brand" href="#top">
-            <strong>VISUAL ART</strong>
-            <span>CAPTURING MOMENTS, CREATING MEMORIES</span>
-          </a>
-
           <div className="va-nav-links">
             <a href="#gallery">גלריה</a>
             <a href="#services">שירותים</a>

@@ -2943,70 +2943,83 @@ header.va-hero::before {
 }
 
 
-/* ===== NAVBAR CORRECTED V26 ===== */
-/* Correct navbar update: keep logo size/design, improve only menu style and position. */
+/* ===== NAVBAR MENU ONLY V27 ===== */
+/* Removes text logo area. Keeps only the premium menu block on the right side.
+   Later a transparent PNG logo can be placed separately on the left. */
 
 .va-navbar {
-  width: calc(100% - 60px) !important;
-  margin: 24px auto 0 !important;
-  padding: 16px 28px !important;
-  min-height: 76px !important;
-
-  background: rgba(5, 10, 15, 0.78) !important;
-  border: 1px solid rgba(255,255,255,0.07) !important;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.20) !important;
-
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-
-  position: relative !important;
-}
-
-/* keep logo like before — do not enlarge/change it */
-.va-brand strong {
-  font-size: inherit;
-}
-
-.va-brand span {
-  font-size: inherit;
-}
-
-/* move categories toward the middle/right area without touching logo */
-.va-nav-links {
-  position: absolute !important;
-  right: clamp(120px, 13vw, 260px) !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  width: min(880px, calc(100% - 60px)) !important;
+  min-height: 74px !important;
+  margin: 24px 30px 0 auto !important;
+  padding: 0 34px !important;
 
   display: flex !important;
   align-items: center !important;
-  gap: clamp(42px, 4.2vw, 76px) !important;
-  margin: 0 !important;
+  justify-content: center !important;
+
+  background: rgba(5, 10, 15, 0.82) !important;
+  border: 1px solid rgba(255,255,255,0.075) !important;
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.045) !important;
+
+  backdrop-filter: blur(16px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.08) !important;
+
+  position: relative !important;
+  z-index: 30 !important;
 }
 
-/* cleaner premium category font */
+.va-brand {
+  display: none !important;
+}
+
+.va-nav-links {
+  position: static !important;
+  transform: none !important;
+  inset: auto !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
+}
+
 .va-nav-links a {
   position: relative !important;
-  padding: 10px 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
+  min-width: 108px !important;
+  padding: 25px 0 22px !important;
+
+  color: rgba(246,239,229,0.90) !important;
   font-size: 15px !important;
   font-weight: 700 !important;
-  color: rgba(246,239,229,0.88) !important;
-  letter-spacing: 0.2px !important;
+  letter-spacing: 0.15px !important;
+  line-height: 1 !important;
 
-  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease !important;
+  transition:
+    color 0.28s ease,
+    transform 0.28s ease,
+    text-shadow 0.28s ease !important;
 }
 
 .va-nav-links a::after {
   content: "" !important;
   position: absolute !important;
-  right: 0 !important;
-  bottom: 3px !important;
+  right: 50% !important;
+  bottom: 16px !important;
   width: 0 !important;
   height: 1px !important;
-  background: #d7a54d !important;
-  opacity: 0.85 !important;
-  transition: width 0.28s ease !important;
+  transform: translateX(50%) !important;
+  background: linear-gradient(90deg, transparent, #d7a54d, transparent) !important;
+  opacity: 0.9 !important;
+  transition: width 0.32s ease !important;
 }
 
 .va-nav-links a:hover {
@@ -3016,29 +3029,84 @@ header.va-hero::before {
 }
 
 .va-nav-links a:hover::after {
-  width: 100% !important;
+  width: 76% !important;
 }
 
-/* mobile */
 @media (max-width: 900px) {
   .va-navbar {
     width: calc(100% - 24px) !important;
-    padding: 16px 18px !important;
-    flex-direction: column !important;
-    gap: 16px !important;
+    margin: 14px auto 0 !important;
+    min-height: auto !important;
+    padding: 12px 16px !important;
   }
 
   .va-nav-links {
-    position: static !important;
-    transform: none !important;
-    right: auto !important;
-    top: auto !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    gap: 22px !important;
+    gap: 20px !important;
   }
 
   .va-nav-links a {
+    min-width: auto !important;
+    padding: 10px 0 !important;
     font-size: 13px !important;
+  }
+
+  .va-nav-links a::after {
+    bottom: 2px !important;
+  }
+}
+
+
+/* ===== STICKY TRANSPARENT MENU V28 ===== */
+/* Menu stays with the user while scrolling + transparent glass area */
+
+.va-navbar {
+  position: sticky !important;
+  top: 18px !important;
+  z-index: 999 !important;
+
+  background: rgba(5, 10, 15, 0.28) !important;
+  border: 1px solid rgba(255,255,255,0.055) !important;
+
+  backdrop-filter: blur(18px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
+
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+/* Keeps transparent style even over dark/video sections */
+header.va-hero .va-navbar {
+  background: rgba(5, 10, 15, 0.26) !important;
+}
+
+/* Better readability on transparent menu */
+.va-nav-links a {
+  color: rgba(255,248,236,0.92) !important;
+  text-shadow: 0 8px 22px rgba(0,0,0,0.38) !important;
+}
+
+/* Optional tiny glass shine, still transparent */
+.va-navbar::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.005)) !important;
+  opacity: 0.75 !important;
+}
+
+.va-nav-links {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 900px) {
+  .va-navbar {
+    top: 10px !important;
+    background: rgba(5,10,15,0.36) !important;
   }
 }
