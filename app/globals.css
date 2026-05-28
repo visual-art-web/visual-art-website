@@ -5032,3 +5032,230 @@ p,
 .va-footer h2 {
   color: #f5f1ea !important;
 }
+
+
+/* ===== SECTION FLOW REDESIGN V48 ===== */
+/* Real section separation + luxury editorial flow */
+
+/* GLOBAL */
+body,
+html,
+.va-site {
+  background: #f7f5f1 !important;
+  color: #1f1f1f !important;
+}
+
+/* HERO */
+header.va-hero {
+  background: #161616 !important;
+}
+
+header.va-hero::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.62) 0%,
+      rgba(0,0,0,0.42) 42%,
+      rgba(0,0,0,0.22) 100%
+    ),
+    radial-gradient(
+      circle at 65% 40%,
+      rgba(212,164,55,0.12),
+      transparent 28rem
+    ) !important;
+}
+
+/* INTRO */
+.va-brand-intro,
+.intro-section {
+  background: #ffffff !important;
+  padding-top: 140px !important;
+  padding-bottom: 140px !important;
+}
+
+/* GALLERY */
+.va-gallery,
+#gallery,
+.gallery-section {
+  background:
+    linear-gradient(
+      180deg,
+      #efe8dc 0%,
+      #e7dfd2 100%
+    ) !important;
+
+  position: relative !important;
+
+  padding-top: 150px !important;
+  padding-bottom: 150px !important;
+}
+
+.va-gallery::before,
+.gallery-section::before {
+  content: "" !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(212,164,55,0.10),
+      transparent 38%
+    ) !important;
+
+  pointer-events: none !important;
+}
+
+/* ABOUT */
+.va-about,
+#about,
+.about-section {
+  background:
+    linear-gradient(
+      135deg,
+      #faf8f3 0%,
+      #f2ece1 100%
+    ) !important;
+
+  padding-top: 160px !important;
+  padding-bottom: 160px !important;
+}
+
+/* PROCESS */
+.va-process,
+#process,
+.process-section {
+  background: #1b1b1b !important;
+
+  color: white !important;
+
+  padding-top: 160px !important;
+  padding-bottom: 160px !important;
+}
+
+.va-process h2,
+.process-section h2 {
+  color: #ffffff !important;
+}
+
+.va-process p,
+.process-section p {
+  color: rgba(255,255,255,0.74) !important;
+}
+
+/* PROCESS CARDS */
+.va-process-grid article,
+.process-section .card {
+  background: rgba(255,255,255,0.05) !important;
+
+  border: 1px solid rgba(255,255,255,0.08) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.42) !important;
+}
+
+.va-process-grid article h3,
+.process-section .card h3 {
+  color: #ffffff !important;
+}
+
+.va-process-grid article p,
+.process-section .card p {
+  color: rgba(255,255,255,0.72) !important;
+}
+
+/* CONTACT */
+.va-contact,
+#contact,
+.contact-section {
+  background: #f5f1e9 !important;
+
+  padding-top: 160px !important;
+  padding-bottom: 160px !important;
+}
+
+/* CONTACT FORM */
+.va-contact-form,
+.contact-form {
+  background: rgba(255,255,255,0.74) !important;
+
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+
+  border: 1px solid rgba(255,255,255,0.6) !important;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.12) !important;
+
+  border-radius: 28px !important;
+}
+
+/* INPUTS */
+.va-contact-form input,
+.va-contact-form textarea,
+.contact-form input,
+.contact-form textarea {
+  background: #ffffff !important;
+
+  border: 1px solid #ddd !important;
+
+  color: #222 !important;
+
+  border-radius: 14px !important;
+}
+
+/* FOOTER */
+.va-footer,
+footer {
+  background: #121212 !important;
+
+  color: white !important;
+
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+}
+
+.va-footer h2,
+footer h2 {
+  color: #ffffff !important;
+}
+
+.va-footer p,
+footer p {
+  color: rgba(255,255,255,0.74) !important;
+}
+
+/* GENERAL SECTION SPACING */
+section {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* GENERAL CARDS */
+.card,
+.va-service-card,
+.va-intro-cards article {
+  background: #ffffff !important;
+
+  border-radius: 24px !important;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.06) !important;
+
+  transition: 0.4s ease !important;
+}
+
+.card:hover,
+.va-service-card:hover,
+.va-intro-cards article:hover {
+  transform: translateY(-8px) !important;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.12) !important;
+}
