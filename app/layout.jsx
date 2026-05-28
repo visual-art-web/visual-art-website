@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "VISUAL ART | Cinematic Photography",
-  description: "סטודיו צילום קולנועי בעברית, RTL מלא וחוויית מותג יוקרתית.",
+  title: "VISUAL ART | צילום קולנועי",
+  description: "סטודיו צילום קולנועי, אופנה, חתונות, זוגיות ותוכן פרימיום",
 };
 
 export default function RootLayout({ children }) {

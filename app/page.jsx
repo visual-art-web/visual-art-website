@@ -3,132 +3,109 @@
 import { useEffect } from "react";
 import HeroVideoLayer from "../components/HeroVideoLayer";
 
-const frames = [
-  ["חתונות", "רגעים אמיתיים, אור דרמטי ותנועה שמרגישה כמו סרט.", "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop"],
-  ["אופנה", "קומפוזיציות נקיות, סטיילינג חד ונראות של מגזין בינלאומי.", "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1700&auto=format&fit=crop"],
-  ["זוגיות", "צילום אינטימי, רגוע, טבעי ומלא אווירה.", "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1700&auto=format&fit=crop"],
-  ["תדמית", "מותגים, יוצרים ואנשים שרוצים להיראות אחרת.", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1700&auto=format&fit=crop"],
-  ["רילסים", "תוכן קצר שמרגיש יוקרתי ולא עוד סרטון רגיל.", "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1700&auto=format&fit=crop"],
-  ["רחפן", "פרספקטיבה רחבה, אוויר, תנועה ונוכחות קולנועית.", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1700&auto=format&fit=crop"],
+const portfolio = [
+  ["חתונות", "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop", "רגעים אמיתיים עם תאורה של סרט."],
+  ["אופנה", "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1700&auto=format&fit=crop", "קומפוזיציה נקייה, נוכחות וביטחון."],
+  ["זוגיות", "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1700&auto=format&fit=crop", "אינטימיות, תנועה ואווירה חמה."],
+  ["תדמית", "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1900&auto=format&fit=crop", "מותג אישי שמרגיש חד ומדויק."],
+  ["רילסים", "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1700&auto=format&fit=crop", "תוכן קצר עם קצב וסטייל."],
+  ["רחפן", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1700&auto=format&fit=crop", "זוויות אוויר שמוסיפות נשימה."],
 ];
 
-const experience = [
-  ["01", "בימוי", "לא מתחילים מצילום. מתחילים מהרגשה, קצב, תאורה וסיפור."],
-  ["02", "אווירה", "כל לוקיישן מקבל שפה: צל, עומק, צבע ותנועה."],
-  ["03", "צילום", "הפריים נבנה בזמן אמת — בלי עומס, בלי לחץ, עם דיוק."],
-  ["04", "עריכה", "צבעים קולנועיים, עור טבעי, קונטרסט נקי ותוצר שמרגיש יקר."],
+const flow = [
+  ["01", "בימוי", "לא מעמידים אתכם מול מצלמה. בונים סצנה, תנועה, אור ותחושה."],
+  ["02", "אווירה", "בחירת לוקיישן, צבעים, קצב ותאורה שמרגישים כמו פריים מסרט."],
+  ["03", "צילום", "עבודה רגועה, מדויקת ולא מאולצת — כדי שהרגע ירגיש טבעי."],
+  ["04", "עריכה", "צבע, עומק וקונטרסט נקי שמחבר את כל הסיפור לשפה אחת."],
 ];
 
 export default function Home() {
   useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
-      { threshold: 0.14 }
+    const nodes = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("visible")),
+      { threshold: 0.18 }
     );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <main className="site">
-      <header className="film-opening" id="top">
-        <HeroVideoLayer />
-        <div className="film-grain" />
-        <nav className="floating-menu" aria-label="ניווט ראשי">
-          <a className="brand" href="#top" aria-label="VISUAL ART דף הבית">
-            <span>VISUAL</span>
-            <strong>ART</strong>
-          </a>
-          <div className="menu-links">
-            <a href="#portfolio">עבודות</a>
-            <a href="#story">סיפור</a>
-            <a href="#experience">חוויה</a>
-            <a href="#contact">קשר</a>
-          </div>
-          <a className="menu-cta" href="#contact">להזמנת צילום</a>
+    <main className="va-app">
+      <aside className="side-nav" aria-label="ניווט ראשי">
+        <a className="brand-mark" href="#top" aria-label="חזרה להתחלה">
+          <span>VISUAL</span>
+          <b>ART</b>
+        </a>
+        <nav>
+          <a href="#works">עבודות</a>
+          <a href="#story">סיפור</a>
+          <a href="#flow">חוויה</a>
+          <a href="#contact">דיבור</a>
         </nav>
+        <div className="side-note">צילום / קולנוע / רגש</div>
+      </aside>
 
-        <section className="opening-copy reveal">
+      <section className="scene scene-video" id="top">
+        <HeroVideoLayer />
+        <div className="film-noise" />
+        <div className="hero-statement reveal">
           <p className="kicker">סטודיו צילום קולנועי</p>
           <h1>
             לא מצלמים רגעים.
             <br />
             יוצרים סצנות.
           </h1>
-          <p className="lead">
-            צילום בעברית, בקצב של מותג בינלאומי: אור, תנועה, רגש ועריכה שנראית כמו פריים מתוך סרט.
+          <p className="hero-text">
+            צילום שמרגיש כמו פריים מתוך סרט — אור מדויק, תנועה טבעית, עריכה עמוקה ושפה ויזואלית שנשארת בזיכרון.
           </p>
           <div className="hero-actions">
-            <a href="#portfolio">לראות עבודות</a>
-            <a href="#contact">לקביעת שיחה</a>
+            <a href="#contact">בואו נבנה סיפור</a>
+            <a href="#works">לראות עבודות</a>
           </div>
-        </section>
-
-        <div className="opening-index" aria-hidden="true">
-          <span>RTL</span>
-          <span>CINEMA</span>
-          <span>2026</span>
         </div>
-      </header>
+        <div className="scroll-cue">גלילה</div>
+      </section>
 
       <section className="marquee-strip" aria-label="תחומי צילום">
-        <div className="marquee-track">
-          <span>חתונות</span><span>אופנה</span><span>תדמית</span><span>זוגיות</span><span>רילסים</span><span>רחפן</span>
-          <span>חתונות</span><span>אופנה</span><span>תדמית</span><span>זוגיות</span><span>רילסים</span><span>רחפן</span>
-        </div>
-      </section>
-
-      <section className="manifest reveal" id="story">
-        <div className="statement-number">01</div>
         <div>
-          <p className="kicker">הגישה שלנו</p>
-          <h2>כל פריים צריך להרגיש חי — לא מסודר מדי, לא מלאכותי, לא עוד תמונה יפה.</h2>
+          <span>חתונות</span><span>אופנה</span><span>זוגיות</span><span>תדמית</span><span>רילסים</span><span>רחפן</span>
+          <span>חתונות</span><span>אופנה</span><span>זוגיות</span><span>תדמית</span><span>רילסים</span><span>רחפן</span>
         </div>
       </section>
 
-      <section className="portfolio reveal" id="portfolio">
-        <div className="section-title">
-          <p className="kicker">עבודות נבחרות</p>
-          <h2>גלריה שבורה. כמו מגזין. לא כמו תבנית.</h2>
-        </div>
+      <section className="statement-block reveal" id="story">
+        <p>VISUAL LANGUAGE</p>
+        <h2>כל פריים צריך להרגיש חי — לא יפה בלבד.</h2>
+      </section>
 
+      <section className="broken-portfolio" id="works">
+        <div className="section-title reveal">
+          <p>PORTFOLIO</p>
+          <h2>עבודות שנבנות כמו קמפיין.</h2>
+        </div>
         <div className="broken-grid">
-          {frames.map(([title, text, image], i) => (
-            <figure className={`frame frame-${i + 1}`} key={title}>
+          {portfolio.map(([title, image, text], index) => (
+            <article className={`work work-${index + 1} reveal`} key={title}>
               <img src={image} alt={title} />
-              <figcaption>
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <strong>{title}</strong>
+              <div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{title}</h3>
                 <p>{text}</p>
-              </figcaption>
-            </figure>
+              </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="editorial-story reveal">
-        <div className="portrait-stack">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1700&auto=format&fit=crop" alt="צלם בעבודה" />
-          <span>VISUAL DIRECTION</span>
+      <section className="experience" id="flow">
+        <div className="section-title reveal">
+          <p>THE EXPERIENCE</p>
+          <h2>לא עוד יום צילום. תהליך שמרגיש מבוים נכון.</h2>
         </div>
-        <div className="story-text">
-          <p className="kicker">מאחורי העדשה</p>
-          <h2>לא מחפשים רק יופי. מחפשים נוכחות.</h2>
-          <p>
-            לפני כל צילום בונים שפה: איזה אור מתאים, איזה קצב נכון, מה צריך להרגיש בפריים, ואיך הופכים את המצולם למרכז של סיפור ויזואלי.
-          </p>
-        </div>
-      </section>
-
-      <section className="experience reveal" id="experience">
-        <div className="section-title side-title">
-          <p className="kicker">The Experience</p>
-          <h2>תהליך צילום שמרגיש כמו בימוי.</h2>
-        </div>
-        <div className="experience-rows">
-          {experience.map(([num, title, text]) => (
-            <article key={num}>
+        <div className="flow-list">
+          {flow.map(([num, title, text]) => (
+            <article className="flow-row reveal" key={num}>
               <span>{num}</span>
               <h3>{title}</h3>
               <p>{text}</p>
@@ -137,46 +114,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quote-wall reveal">
-        <p>“צילום טוב לא רק מתעד. הוא משנה את הדרך שבה זוכרים את הרגע.”</p>
-      </section>
-
-      <section className="contact reveal" id="contact">
-        <div className="contact-copy">
-          <p className="kicker">בואו נבנה סצנה</p>
-          <h2>רוצה צילום שנראה אחרת?</h2>
-          <p>השאירו פרטים ונחזור אליכם עם כיוון צילום, זמינות והצעת מחיר מסודרת.</p>
+      <section className="contact-scene" id="contact">
+        <div className="contact-copy reveal">
+          <p>LET'S CREATE</p>
+          <h2>יש לכם רגע שצריך להיראות בלתי נשכח?</h2>
           <div className="contact-links">
             <a href="tel:+972000000000">טלפון</a>
-            <a href="https://wa.me/972000000000">WhatsApp</a>
-            <a href="https://instagram.com/">Instagram</a>
+            <a href="https://wa.me/972000000000">וואטסאפ</a>
+            <a href="https://instagram.com/">אינסטגרם</a>
           </div>
         </div>
-
-        <form className="contact-form">
-          <label>
-            שם מלא
-            <input type="text" placeholder="איך לפנות אליך?" />
-          </label>
-          <label>
-            טלפון
-            <input type="tel" placeholder="מספר לחזרה" />
-          </label>
-          <label>
-            סוג צילום
-            <input type="text" placeholder="חתונה / אופנה / תדמית / אחר" />
-          </label>
-          <label>
-            הודעה
-            <textarea placeholder="כמה מילים על מה שצריך לצלם" />
-          </label>
-          <button type="button">שליחת פנייה</button>
+        <form className="contact-form reveal">
+          <input type="text" placeholder="שם מלא" />
+          <input type="tel" placeholder="טלפון" />
+          <input type="text" placeholder="סוג צילום" />
+          <textarea placeholder="ספרו בקצרה מה אתם רוצים ליצור" />
+          <button type="submit">שליחת פנייה</button>
         </form>
       </section>
 
-      <footer className="footer">
-        <a className="brand" href="#top"><span>VISUAL</span><strong>ART</strong></a>
-        <p>© 2026 — Cinematic Photography Studio</p>
+      <footer className="footer-minimal">
+        <span>VISUAL ART</span>
+        <p>צילום קולנועי • עריכה עמוקה • חוויה יוקרתית</p>
       </footer>
     </main>
   );
