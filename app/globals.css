@@ -4756,3 +4756,279 @@ p,
 .va-footer .social-label {
   color: var(--va-gold) !important;
 }
+
+
+/* ===== LUXURY EDITORIAL BRIGHT SECTIONS V47 ===== */
+/* Bright luxury editorial palette with clear section separation.
+   White/cream base, charcoal text, soft gold accents, no green glow. */
+
+:root {
+  --lux-bg-main: #faf8f3;
+  --lux-bg-soft: #f3ede3;
+  --lux-bg-warm: #f6f1e8;
+  --lux-white: #ffffff;
+
+  --lux-text-main: #1f1f1f;
+  --lux-text-secondary: #666666;
+  --lux-text-light: #f8f4ee;
+
+  --lux-gold: #c79a3b;
+  --lux-gold-light: #dfbf7a;
+
+  --lux-border: #ece7de;
+  --lux-charcoal: #1f1f1f;
+}
+
+/* Global background */
+html,
+body,
+.va-site {
+  background: var(--lux-bg-main) !important;
+  color: var(--lux-text-main) !important;
+}
+
+/* Remove green/turquoise glow feeling */
+body,
+.va-site,
+.va-section,
+.va-about,
+.va-gallery,
+.va-contact,
+.va-brand-intro,
+.va-footer {
+  box-shadow: none !important;
+}
+
+/* HERO: keep premium drama only at the entrance */
+header.va-hero {
+  background: #1c1c1c !important;
+}
+
+header.va-hero::before {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.54) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.22) 100%),
+    radial-gradient(circle at 62% 44%, rgba(199,154,59,0.13), transparent 28rem) !important;
+}
+
+header.va-hero h1 {
+  color: var(--lux-text-light) !important;
+  text-shadow: 0 24px 70px rgba(0,0,0,0.64) !important;
+}
+
+header.va-hero p {
+  color: rgba(248,244,238,0.86) !important;
+}
+
+header.va-hero .va-eyebrow {
+  color: var(--lux-gold-light) !important;
+}
+
+/* NAVBAR: clean white glass */
+.va-navbar {
+  background: rgba(255,255,255,0.76) !important;
+  border: 1px solid rgba(236,231,222,0.92) !important;
+  backdrop-filter: blur(18px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.1) !important;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.78) !important;
+}
+
+.va-navbar::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), transparent) !important;
+}
+
+.va-navbar::after {
+  background: linear-gradient(90deg, transparent, rgba(199,154,59,0.55), transparent) !important;
+}
+
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  color: var(--lux-text-main) !important;
+  text-shadow: none !important;
+}
+
+.va-navbar .va-nav-links a:hover,
+.va-nav-links a:hover,
+.va-navbar .va-nav-links a.active,
+.va-nav-links a.active {
+  color: var(--lux-gold) !important;
+  text-shadow: 0 0 14px rgba(199,154,59,0.20) !important;
+}
+
+.va-navbar .va-nav-links a::before,
+.va-nav-links a::before {
+  background: var(--lux-gold) !important;
+  box-shadow: 0 0 12px rgba(199,154,59,0.45) !important;
+}
+
+.va-navbar .va-nav-links a::after,
+.va-nav-links a::after {
+  background: linear-gradient(90deg, transparent, var(--lux-gold), transparent) !important;
+}
+
+/* Shared typography */
+h1,
+h2,
+h3,
+.va-section-head h2,
+.va-intro-heading,
+.va-contact-copy h2,
+.va-footer h2 {
+  color: var(--lux-text-main) !important;
+}
+
+p,
+.va-section p,
+.va-intro-cards p,
+.va-service-card p,
+.va-process-grid p,
+.va-contact-copy p,
+.va-footer p {
+  color: var(--lux-text-secondary) !important;
+}
+
+.va-eyebrow,
+.va-section-kicker,
+.va-footer small,
+.va-contact-copy .va-section-kicker {
+  color: var(--lux-gold) !important;
+}
+
+/* SERVICES / experience section */
+.va-brand-intro,
+.va-section.va-brand-intro {
+  background: var(--lux-bg-main) !important;
+}
+
+/* Cards */
+.va-intro-cards article,
+.va-service-card,
+.va-process-grid article {
+  background: var(--lux-white) !important;
+  border: 1px solid var(--lux-border) !important;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.05) !important;
+}
+
+.va-intro-cards article:hover,
+.va-service-card:hover,
+.va-process-grid article:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.075) !important;
+  border-color: rgba(199,154,59,0.26) !important;
+}
+
+/* GALLERY: warm separation */
+.va-gallery,
+#gallery {
+  background: var(--lux-bg-soft) !important;
+}
+
+.va-gallery-card figcaption,
+.va-gallery-grid figcaption {
+  background: rgba(0,0,0,0.45) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* ABOUT: soft warm gradient */
+.va-about,
+#about {
+  background:
+    linear-gradient(180deg, var(--lux-bg-main), #f1eadf) !important;
+}
+
+.va-about p {
+  color: #444444 !important;
+}
+
+/* PROCESS: clean white */
+.va-process,
+#process {
+  background: var(--lux-white) !important;
+}
+
+.va-process-grid article {
+  background: var(--lux-bg-main) !important;
+}
+
+/* CONTACT: ivory section */
+.va-contact,
+#contact {
+  background: var(--lux-bg-warm) !important;
+}
+
+.va-contact-form {
+  background: var(--lux-white) !important;
+  border: 1px solid var(--lux-border) !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08) !important;
+}
+
+.va-contact-form input,
+.va-contact-form textarea {
+  background: var(--lux-bg-main) !important;
+  border: 1px solid #e5dccf !important;
+  color: var(--lux-text-main) !important;
+}
+
+.va-contact-form input::placeholder,
+.va-contact-form textarea::placeholder {
+  color: rgba(31,31,31,0.42) !important;
+}
+
+.va-contact-form input:focus,
+.va-contact-form textarea:focus {
+  border-color: rgba(199,154,59,0.45) !important;
+  box-shadow: 0 0 0 3px rgba(199,154,59,0.09) !important;
+}
+
+/* Buttons */
+.va-button-gold,
+.va-contact-form button {
+  background: var(--lux-gold) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(199,154,59,0.22) !important;
+}
+
+.va-button-gold:hover,
+.va-contact-form button:hover {
+  background: #b8892f !important;
+  box-shadow: 0 16px 36px rgba(199,154,59,0.28) !important;
+}
+
+.va-button-outline {
+  background: rgba(255,255,255,0.60) !important;
+  border: 1px solid var(--lux-border) !important;
+  color: var(--lux-text-main) !important;
+}
+
+/* FOOTER: strong elegant ending */
+.va-footer {
+  background: var(--lux-charcoal) !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.va-footer h2,
+.va-footer p {
+  color: #f5f1ea !important;
+}
+
+.va-footer a,
+.va-footer .social-label,
+.va-footer small {
+  color: var(--lux-gold) !important;
+}
+
+/* Section dividers */
+.va-section {
+  border-color: rgba(31,31,31,0.06) !important;
+}
+
+/* English footer title */
+.va-footer .va-footer-title,
+.va-footer h2 {
+  color: #f5f1ea !important;
+}
