@@ -4090,3 +4090,67 @@ header.va-hero::before {
     bottom: 1px !important;
   }
 }
+
+
+/* ===== NAVBAR WIDTH + FONT PERFECT BALANCE V42 ===== */
+/* Final proportional balance: slightly narrower navbar + larger typography */
+
+.va-navbar {
+  width: min(650px, calc(100vw - 90px)) !important;
+  height: 56px !important;
+  min-height: 56px !important;
+
+  padding: 0 24px !important;
+
+  border-radius: 21px !important;
+}
+
+.va-navbar::before {
+  border-radius: 20px !important;
+}
+
+.va-navbar::after {
+  left: 72px !important;
+  right: 72px !important;
+}
+
+.va-navbar .va-nav-links,
+.va-nav-links {
+  gap: 34px !important;
+}
+
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  font-size: 15.8px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.55px !important;
+
+  padding: 18px 4px 16px !important;
+}
+
+.va-navbar .va-nav-links a::before,
+.va-nav-links a::before {
+  top: 8px !important;
+}
+
+.va-navbar .va-nav-links a::after,
+.va-nav-links a::after {
+  bottom: 8px !important;
+}
+
+@media (max-width: 900px) {
+  .va-navbar {
+    width: calc(100vw - 24px) !important;
+    padding: 10px 14px !important;
+  }
+
+  .va-navbar .va-nav-links,
+  .va-nav-links {
+    gap: 18px !important;
+  }
+
+  .va-navbar .va-nav-links a,
+  .va-nav-links a {
+    font-size: 13.5px !important;
+  }
+}
