@@ -2943,143 +2943,102 @@ header.va-hero::before {
 }
 
 
-/* ===== PREMIUM GLASS NAVBAR V25 ===== */
-/* Upgrades only the top menu/navbar: glass, premium typography, centered links. */
+/* ===== NAVBAR CORRECTED V26 ===== */
+/* Correct navbar update: keep logo size/design, improve only menu style and position. */
 
 .va-navbar {
-  width: calc(100% - 54px) !important;
-  min-height: 76px !important;
+  width: calc(100% - 60px) !important;
   margin: 24px auto 0 !important;
-  padding: 14px 30px !important;
+  padding: 16px 28px !important;
+  min-height: 76px !important;
 
-  background:
-    linear-gradient(180deg, rgba(8, 14, 20, 0.74), rgba(5, 10, 15, 0.58)) !important;
-  border: 1px solid rgba(255, 255, 255, 0.075) !important;
-  box-shadow:
-    0 18px 70px rgba(0,0,0,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+  background: rgba(5, 10, 15, 0.78) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.20) !important;
 
-  backdrop-filter: blur(18px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.1) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+
+  position: relative !important;
 }
 
-/* subtle luxury line */
-.va-navbar::after {
-  content: "";
-  position: absolute;
-  left: 28px;
-  right: 28px;
-  bottom: -1px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(215,165,77,0.18), transparent);
-  pointer-events: none;
-}
-
-/* Logo refined */
+/* keep logo like before — do not enlarge/change it */
 .va-brand strong {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: clamp(28px, 2.2vw, 42px) !important;
-  letter-spacing: 9px !important;
-  line-height: 0.95 !important;
-  color: #fff7eb !important;
-  text-shadow: 0 12px 34px rgba(0,0,0,0.34);
+  font-size: inherit;
 }
 
 .va-brand span {
-  margin-top: 7px !important;
-  font-size: 10px !important;
-  letter-spacing: 3.7px !important;
-  color: #d7a54d !important;
-  opacity: 0.94 !important;
+  font-size: inherit;
 }
 
-/* Move categories more toward center, not glued to the edge */
+/* move categories toward the middle/right area without touching logo */
 .va-nav-links {
-  margin-left: auto !important;
-  margin-right: clamp(80px, 10vw, 210px) !important;
+  position: absolute !important;
+  right: clamp(120px, 13vw, 260px) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
   display: flex !important;
   align-items: center !important;
-  gap: clamp(38px, 4vw, 72px) !important;
+  gap: clamp(42px, 4.2vw, 76px) !important;
+  margin: 0 !important;
 }
 
-/* Premium category typography */
+/* cleaner premium category font */
 .va-nav-links a {
   position: relative !important;
-  padding: 12px 0 !important;
+  padding: 10px 0 !important;
 
-  font-family: Arial, sans-serif !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.25px !important;
   color: rgba(246,239,229,0.88) !important;
+  letter-spacing: 0.2px !important;
 
-  transition:
-    color 0.28s ease,
-    transform 0.28s ease,
-    text-shadow 0.28s ease !important;
+  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease !important;
 }
 
-/* Gold underline hover */
 .va-nav-links a::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 4px;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #d7a54d, transparent);
-  transition: width 0.32s ease;
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 3px !important;
+  width: 0 !important;
+  height: 1px !important;
+  background: #d7a54d !important;
+  opacity: 0.85 !important;
+  transition: width 0.28s ease !important;
 }
 
 .va-nav-links a:hover {
-  color: #f7dfaa !important;
-  transform: translateY(-1px);
-  text-shadow: 0 0 18px rgba(215,165,77,0.18);
+  color: #f2d79d !important;
+  transform: translateY(-1px) !important;
+  text-shadow: 0 0 18px rgba(215,165,77,0.18) !important;
 }
 
 .va-nav-links a:hover::after {
-  width: 100%;
+  width: 100% !important;
 }
 
-/* Navbar should stay above video cleanly */
-header.va-hero .va-navbar {
-  z-index: 20 !important;
-}
-
-/* Mobile */
+/* mobile */
 @media (max-width: 900px) {
   .va-navbar {
-    width: calc(100% - 26px) !important;
-    min-height: auto !important;
+    width: calc(100% - 24px) !important;
     padding: 16px 18px !important;
     flex-direction: column !important;
-    gap: 18px !important;
+    gap: 16px !important;
   }
 
   .va-nav-links {
-    margin: 0 !important;
-    gap: 22px !important;
+    position: static !important;
+    transform: none !important;
+    right: auto !important;
+    top: auto !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
+    gap: 22px !important;
   }
 
   .va-nav-links a {
     font-size: 13px !important;
-    padding: 8px 0 !important;
-  }
-
-  .va-brand {
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  .va-brand strong {
-    font-size: 28px !important;
-    letter-spacing: 7px !important;
-  }
-
-  .va-brand span {
-    font-size: 9px !important;
-    letter-spacing: 2.8px !important;
   }
 }
