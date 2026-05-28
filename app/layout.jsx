@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "VISUAL ART | צילום קולנועי",
-  description: "סטודיו צילום קולנועי, אופנה, חתונות, זוגיות ותוכן פרימיום",
+  title: "VISUAL ART | סטודיו צילום קולנועי",
+  description: "אתר פרימיום לצלמת — צילום חתונות, זוגיות, אופנה, תדמית, רילסים ורחפן.",
 };
 
 export default function RootLayout({ children }) {
