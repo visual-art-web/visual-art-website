@@ -3,166 +3,131 @@
 import { useEffect } from "react";
 import HeroVideoLayer from "../components/HeroVideoLayer";
 
-const portfolio = [
-  {
-    label: "חתונות",
-    title: "רגעים שמרגישים כמו סרט",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop",
-    className: "va-shot va-shot-large",
-  },
-  {
-    label: "זוגיות",
-    title: "אינטימיות, אור ותנועה",
-    image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600&auto=format&fit=crop",
-    className: "va-shot va-shot-tall",
-  },
-  {
-    label: "אופנה",
-    title: "שפה ויזואלית של מגזין",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop",
-    className: "va-shot",
-  },
-  {
-    label: "תדמית",
-    title: "מותג שנראה מדויק",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1600&auto=format&fit=crop",
-    className: "va-shot",
-  },
-  {
-    label: "רילסים",
-    title: "תוכן קצר עם נוכחות",
-    image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1600&auto=format&fit=crop",
-    className: "va-shot va-shot-wide",
-  },
-  {
-    label: "רחפן",
-    title: "זווית גבוהה, תחושה גדולה",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
-    className: "va-shot",
-  },
+const frames = [
+  ["חתונות", "רגעים אמיתיים, אור דרמטי ותנועה שמרגישה כמו סרט.", "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1800&auto=format&fit=crop"],
+  ["אופנה", "קומפוזיציות נקיות, סטיילינג חד ונראות של מגזין בינלאומי.", "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1700&auto=format&fit=crop"],
+  ["זוגיות", "צילום אינטימי, רגוע, טבעי ומלא אווירה.", "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1700&auto=format&fit=crop"],
+  ["תדמית", "מותגים, יוצרים ואנשים שרוצים להיראות אחרת.", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1700&auto=format&fit=crop"],
+  ["רילסים", "תוכן קצר שמרגיש יוקרתי ולא עוד סרטון רגיל.", "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1700&auto=format&fit=crop"],
+  ["רחפן", "פרספקטיבה רחבה, אוויר, תנועה ונוכחות קולנועית.", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1700&auto=format&fit=crop"],
 ];
 
-const experiences = [
-  ["01", "בימוי", "לא רק מצלמים — מכוונים את האור, התנועה והתחושה כדי שהצילום ירגיש חי."],
-  ["02", "אווירה", "בונים mood מדויק לפי הסיפור: רך, דרמטי, אלגנטי או מלא אנרגיה."],
-  ["03", "צילום", "עבודה רגועה ומקצועית, עם תשומת לב לפרטים הקטנים שמרימים את כל הפריים."],
-  ["04", "עריכה", "צבעים אחידים, קונטרסט קולנועי וגימור נקי שלא מרגיש כבד או מלאכותי."],
+const experience = [
+  ["01", "בימוי", "לא מתחילים מצילום. מתחילים מהרגשה, קצב, תאורה וסיפור."],
+  ["02", "אווירה", "כל לוקיישן מקבל שפה: צל, עומק, צבע ותנועה."],
+  ["03", "צילום", "הפריים נבנה בזמן אמת — בלי עומס, בלי לחץ, עם דיוק."],
+  ["04", "עריכה", "צבעים קולנועיים, עור טבעי, קונטרסט נקי ותוצר שמרגיש יקר."],
 ];
-
-const services = ["חתונות", "זוגיות", "אופנה", "תדמית", "רילסים", "רחפן", "אירועים", "עסקים"];
 
 export default function Home() {
   useEffect(() => {
-    const revealItems = document.querySelectorAll(".va-reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("va-visible");
-        });
-      },
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
       { threshold: 0.14 }
     );
-
-    revealItems.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
   return (
-    <main className="va-site" id="top">
-      <header className="va-hero">
+    <main className="site">
+      <header className="film-opening" id="top">
         <HeroVideoLayer />
-        <div className="va-film-grain" aria-hidden="true" />
-
-        <nav className="va-nav" aria-label="תפריט ראשי">
-          <a className="va-logo" href="#top" aria-label="VISUAL ART">
+        <div className="film-grain" />
+        <nav className="floating-menu" aria-label="ניווט ראשי">
+          <a className="brand" href="#top" aria-label="VISUAL ART דף הבית">
             <span>VISUAL</span>
             <strong>ART</strong>
           </a>
-
-          <div className="va-menu">
+          <div className="menu-links">
             <a href="#portfolio">עבודות</a>
             <a href="#story">סיפור</a>
             <a href="#experience">חוויה</a>
             <a href="#contact">קשר</a>
           </div>
-
-          <a className="va-nav-action" href="#contact">לתיאום צילום</a>
+          <a className="menu-cta" href="#contact">להזמנת צילום</a>
         </nav>
 
-        <section className="va-hero-content va-reveal">
-          <p className="va-kicker">סטודיו צילום קולנועי · ישראל</p>
+        <section className="opening-copy reveal">
+          <p className="kicker">סטודיו צילום קולנועי</p>
           <h1>
             לא מצלמים רגעים.
-            <span>מביימים אותם.</span>
+            <br />
+            יוצרים סצנות.
           </h1>
-          <p className="va-hero-text">
-            צילום חתונות, זוגיות, אופנה ותדמית בשפה ויזואלית עמוקה, אלגנטית ומדויקת — עם אור, תנועה ועריכה שמרגישים כמו סרט.
+          <p className="lead">
+            צילום בעברית, בקצב של מותג בינלאומי: אור, תנועה, רגש ועריכה שנראית כמו פריים מתוך סרט.
           </p>
-          <div className="va-hero-actions">
-            <a href="#portfolio" className="va-link-primary">לראות עבודות</a>
-            <a href="#contact" className="va-link-secondary">לקבלת הצעה</a>
+          <div className="hero-actions">
+            <a href="#portfolio">לראות עבודות</a>
+            <a href="#contact">לקביעת שיחה</a>
           </div>
         </section>
 
-        <aside className="va-hero-note va-reveal">
-          <span>VISUAL STORIES</span>
-          <p>אווירה, תאורה ורגש — בכל פריים.</p>
-        </aside>
+        <div className="opening-index" aria-hidden="true">
+          <span>RTL</span>
+          <span>CINEMA</span>
+          <span>2026</span>
+        </div>
       </header>
 
-      <section className="va-intro va-reveal">
-        <div className="va-intro-title">
-          <span>גישה חדשה לצילום</span>
-          <h2>אתר שמרגיש כמו פתיחה של סרט, לא כמו תבנית רגילה.</h2>
+      <section className="marquee-strip" aria-label="תחומי צילום">
+        <div className="marquee-track">
+          <span>חתונות</span><span>אופנה</span><span>תדמית</span><span>זוגיות</span><span>רילסים</span><span>רחפן</span>
+          <span>חתונות</span><span>אופנה</span><span>תדמית</span><span>זוגיות</span><span>רילסים</span><span>רחפן</span>
         </div>
-        <p>
-          כל אזור נבנה עם הרבה אוויר, טיפוגרפיה נקייה, צבעים עמוקים ותנועה עדינה. המטרה היא לגרום ללקוח להבין כבר בשנייה הראשונה שהוא הגיע למותג צילום ברמה גבוהה.
-        </p>
       </section>
 
-      <section className="va-section va-portfolio va-reveal" id="portfolio">
-        <div className="va-section-header">
-          <p>PORTFOLIO</p>
-          <h2>עבודות נבחרות</h2>
+      <section className="manifest reveal" id="story">
+        <div className="statement-number">01</div>
+        <div>
+          <p className="kicker">הגישה שלנו</p>
+          <h2>כל פריים צריך להרגיש חי — לא מסודר מדי, לא מלאכותי, לא עוד תמונה יפה.</h2>
+        </div>
+      </section>
+
+      <section className="portfolio reveal" id="portfolio">
+        <div className="section-title">
+          <p className="kicker">עבודות נבחרות</p>
+          <h2>גלריה שבורה. כמו מגזין. לא כמו תבנית.</h2>
         </div>
 
-        <div className="va-editorial-grid">
-          {portfolio.map((item) => (
-            <figure className={item.className} key={item.label}>
-              <img src={item.image} alt={item.label} />
+        <div className="broken-grid">
+          {frames.map(([title, text, image], i) => (
+            <figure className={`frame frame-${i + 1}`} key={title}>
+              <img src={image} alt={title} />
               <figcaption>
-                <span>{item.label}</span>
-                <strong>{item.title}</strong>
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <strong>{title}</strong>
+                <p>{text}</p>
               </figcaption>
             </figure>
           ))}
         </div>
       </section>
 
-      <section className="va-story va-reveal" id="story">
-        <div className="va-story-image">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1800&auto=format&fit=crop" alt="צילום קולנועי" />
+      <section className="editorial-story reveal">
+        <div className="portrait-stack">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1700&auto=format&fit=crop" alt="צלם בעבודה" />
+          <span>VISUAL DIRECTION</span>
         </div>
-        <div className="va-story-copy">
-          <p className="va-kicker">הסיפור שלנו</p>
-          <h2>כל פריים צריך להרגיש חי.</h2>
+        <div className="story-text">
+          <p className="kicker">מאחורי העדשה</p>
+          <h2>לא מחפשים רק יופי. מחפשים נוכחות.</h2>
           <p>
-            אנחנו לא רודפים אחרי תמונה יפה בלבד. אנחנו בונים סצנה: אור נכון, תנועה טבעית, קומפוזיציה נקייה ורגע שנשאר בזיכרון.
-          </p>
-          <p>
-            החוויה באתר ובצילום עצמו צריכה להרגיש מדויקת, רגועה ויוקרתית — בלי עומס, בלי רעש, בלי משהו שנראה כמו כולם.
+            לפני כל צילום בונים שפה: איזה אור מתאים, איזה קצב נכון, מה צריך להרגיש בפריים, ואיך הופכים את המצולם למרכז של סיפור ויזואלי.
           </p>
         </div>
       </section>
 
-      <section className="va-section va-experience va-reveal" id="experience">
-        <div className="va-section-header va-section-header-wide">
-          <p>THE EXPERIENCE</p>
-          <h2>מה קורה מאחורי הפריים?</h2>
+      <section className="experience reveal" id="experience">
+        <div className="section-title side-title">
+          <p className="kicker">The Experience</p>
+          <h2>תהליך צילום שמרגיש כמו בימוי.</h2>
         </div>
-
-        <div className="va-experience-list">
-          {experiences.map(([num, title, text]) => (
+        <div className="experience-rows">
+          {experience.map(([num, title, text]) => (
             <article key={num}>
               <span>{num}</span>
               <h3>{title}</h3>
@@ -172,61 +137,46 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="va-services-strip va-reveal" id="services">
-        <div className="va-services-inner">
-          {services.map((service) => (
-            <span key={service}>{service}</span>
-          ))}
-        </div>
+      <section className="quote-wall reveal">
+        <p>“צילום טוב לא רק מתעד. הוא משנה את הדרך שבה זוכרים את הרגע.”</p>
       </section>
 
-      <section className="va-quote va-reveal">
-        <p>“התמונה הנכונה לא רק נראית טוב — היא גורמת למי שצופה בה להרגיש משהו.”</p>
-      </section>
-
-      <section className="va-contact va-reveal" id="contact">
-        <div className="va-contact-copy">
-          <p className="va-kicker">BOOKING</p>
-          <h2>רוצים צילום שנראה אחרת?</h2>
-          <p>
-            השאירו פרטים ונבנה יחד את הכיוון המתאים: חתונה, זוגיות, תדמית, רילס, אופנה או פרויקט מיוחד.
-          </p>
-          <div className="va-contact-links">
-            <a href="tel:+972500000000">050-000-0000</a>
-            <a href="mailto:hello@visualart.co.il">hello@visualart.co.il</a>
+      <section className="contact reveal" id="contact">
+        <div className="contact-copy">
+          <p className="kicker">בואו נבנה סצנה</p>
+          <h2>רוצה צילום שנראה אחרת?</h2>
+          <p>השאירו פרטים ונחזור אליכם עם כיוון צילום, זמינות והצעת מחיר מסודרת.</p>
+          <div className="contact-links">
+            <a href="tel:+972000000000">טלפון</a>
+            <a href="https://wa.me/972000000000">WhatsApp</a>
+            <a href="https://instagram.com/">Instagram</a>
           </div>
         </div>
 
-        <form className="va-form">
+        <form className="contact-form">
           <label>
-            <span>שם מלא</span>
-            <input type="text" placeholder="איך לפנות אליכם?" />
+            שם מלא
+            <input type="text" placeholder="איך לפנות אליך?" />
           </label>
           <label>
-            <span>טלפון</span>
-            <input type="tel" placeholder="מספר ליצירת קשר" />
+            טלפון
+            <input type="tel" placeholder="מספר לחזרה" />
           </label>
           <label>
-            <span>סוג צילום</span>
-            <input type="text" placeholder="חתונה / זוגיות / תדמית / אחר" />
+            סוג צילום
+            <input type="text" placeholder="חתונה / אופנה / תדמית / אחר" />
           </label>
           <label>
-            <span>פרטים נוספים</span>
-            <textarea placeholder="תאריך, לוקיישן, סגנון וכל פרט שחשוב לדעת" />
+            הודעה
+            <textarea placeholder="כמה מילים על מה שצריך לצלם" />
           </label>
           <button type="button">שליחת פנייה</button>
         </form>
       </section>
 
-      <footer className="va-footer">
-        <a className="va-footer-logo" href="#top">VISUAL ART</a>
-        <div className="va-footer-menu">
-          <a href="#portfolio">עבודות</a>
-          <a href="#story">סיפור</a>
-          <a href="#experience">חוויה</a>
-          <a href="#contact">קשר</a>
-        </div>
-        <p>© 2026 VISUAL ART · CINEMATIC PHOTOGRAPHY</p>
+      <footer className="footer">
+        <a className="brand" href="#top"><span>VISUAL</span><strong>ART</strong></a>
+        <p>© 2026 — Cinematic Photography Studio</p>
       </footer>
     </main>
   );
