@@ -4224,3 +4224,161 @@ header.va-hero::before {
     top: 14px !important;
   }
 }
+
+
+/* ===== COLOR + FONT SYSTEM ONLY V44 ===== */
+/* Only colors + fonts. No layout/design structure changes. */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --va-bg-deep: #031514;
+  --va-bg-deep-2: #061f1d;
+  --va-turquoise-dark: #072b29;
+  --va-graphite: #1b2023;
+  --va-graphite-soft: #252b2e;
+  --va-gold: #d8a83f;
+  --va-gold-rich: #f1c45b;
+  --va-cream: #f6efe3;
+  --va-text-soft: rgba(246,239,227,0.84);
+}
+
+/* Base font */
+body,
+button,
+input,
+textarea,
+select,
+.va-nav-links a,
+.va-button,
+.va-contact-form button,
+.va-contact-form input,
+.va-contact-form textarea,
+.va-section p,
+.va-service-card p,
+.va-process-grid p,
+.va-intro-cards p {
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+
+/* Headline font */
+h1,
+h2,
+h3,
+.va-section-head h2,
+.va-intro-heading,
+.va-footer h2,
+.va-contact-copy h2,
+.va-gallery-card figcaption,
+.va-brand strong {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+/* Global color mood */
+body,
+.va-site {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(7,43,41,0.34), transparent 34rem),
+    linear-gradient(180deg, var(--va-bg-deep), #020908) !important;
+  color: var(--va-cream) !important;
+}
+
+/* Deep turquoise/graphite surfaces */
+.va-section,
+.va-brand-intro,
+.va-gallery,
+.va-about,
+.va-contact,
+.va-footer {
+  background-color: transparent !important;
+}
+
+.va-intro-cards article,
+.va-service-card,
+.va-process-grid article,
+.va-contact-form {
+  background:
+    linear-gradient(145deg, rgba(7,43,41,0.48), rgba(27,32,35,0.34)),
+    rgba(3,21,20,0.72) !important;
+  border-color: rgba(216,168,63,0.13) !important;
+}
+
+/* Gold accents */
+.va-eyebrow,
+.va-section-kicker,
+.va-footer small,
+.va-brand span,
+.va-nav-links a:hover,
+.va-nav-links a.active {
+  color: var(--va-gold-rich) !important;
+}
+
+.va-button-gold,
+.va-contact-form button {
+  background:
+    linear-gradient(135deg, #b98524, var(--va-gold-rich), #c7922c) !important;
+  color: #071211 !important;
+}
+
+.va-navbar {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(7,43,41,0.34), transparent 72%),
+    linear-gradient(180deg, rgba(6,31,29,0.66), rgba(3,21,20,0.44)) !important;
+  border-color: rgba(216,168,63,0.24) !important;
+}
+
+.va-navbar::after,
+.va-nav-links a::after,
+.va-section-head::after,
+.va-intro-heading::after {
+  background: linear-gradient(90deg, transparent, var(--va-gold-rich), transparent) !important;
+}
+
+.va-nav-links a::before {
+  background: var(--va-gold-rich) !important;
+  box-shadow: 0 0 14px rgba(241,196,91,0.65) !important;
+}
+
+/* Text colors */
+p,
+.va-section p,
+.va-intro-cards p,
+.va-service-card p,
+.va-process-grid p,
+.va-contact-copy p,
+.va-footer p {
+  color: var(--va-text-soft) !important;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--va-cream) !important;
+}
+
+/* Inputs */
+.va-contact-form input,
+.va-contact-form textarea {
+  background: rgba(7,43,41,0.28) !important;
+  border-color: rgba(216,168,63,0.13) !important;
+  color: var(--va-cream) !important;
+}
+
+.va-contact-form input:focus,
+.va-contact-form textarea:focus {
+  border-color: rgba(241,196,91,0.38) !important;
+  box-shadow: 0 0 0 3px rgba(216,168,63,0.08) !important;
+}
+
+/* Gallery border/accent color only */
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  border-color: rgba(216,168,63,0.11) !important;
+}
+
+.va-gallery-grid > figure:hover,
+.va-gallery-grid > .va-gallery-card:hover {
+  border-color: rgba(241,196,91,0.30) !important;
+}
