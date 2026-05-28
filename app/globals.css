@@ -3744,3 +3744,142 @@ header.va-hero::before {
     transform: scale(1.04) !important;
   }
 }
+
+
+
+/* ===== PREMIUM FLOATING NAVBAR FINAL ===== */
+
+.va-navbar {
+  position: fixed !important;
+  top: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  width: min(760px, calc(100vw - 40px)) !important;
+  height: 72px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 34px !important;
+
+  border-radius: 26px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 22, 28, 0.34),
+      rgba(10, 12, 18, 0.18)
+    ) !important;
+
+  border: 1px solid rgba(215,165,77,0.18) !important;
+
+  backdrop-filter: blur(24px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.3) !important;
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.42),
+    0 0 28px rgba(215,165,77,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  animation: navbarFloat 5s ease-in-out infinite;
+}
+
+@keyframes navbarFloat {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+}
+
+.va-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 82px;
+}
+
+.va-nav-links a {
+  position: relative;
+
+  color: rgba(255,255,255,0.84);
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition:
+    color .35s ease,
+    transform .35s ease,
+    text-shadow .35s ease;
+}
+
+.va-nav-links a:hover {
+  color: #f3c86a;
+
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 12px rgba(215,165,77,0.45),
+    0 0 24px rgba(215,165,77,0.16);
+}
+
+.va-nav-links a.active {
+  color: #f3c86a;
+}
+
+.va-nav-links a.active::before {
+  content: "";
+
+  position: absolute;
+
+  top: -14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #d7a54d;
+
+  box-shadow:
+    0 0 12px rgba(215,165,77,0.55),
+    0 0 22px rgba(215,165,77,0.28);
+}
+
+@media (max-width: 900px) {
+
+  .va-navbar {
+    width: calc(100vw - 24px) !important;
+
+    height: auto !important;
+
+    padding: 18px 18px !important;
+
+    top: 10px !important;
+  }
+
+  .va-nav-links {
+    gap: 24px;
+
+    flex-wrap: wrap;
+  }
+
+  .va-nav-links a {
+    font-size: 13px;
+  }
+}
