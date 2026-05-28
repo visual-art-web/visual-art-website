@@ -4539,3 +4539,220 @@ p,
 .va-footer {
   border-top: 1px solid rgba(18,51,49,0.08) !important;
 }
+
+
+/* ===== REFINED CREAM TEAL GOLD PALETTE V46 ===== */
+/* New balanced palette: warm cream base + deep teal + graphite + rich gold.
+   Fixes washed hero, too-white cards, and weak contrast. */
+
+/* Main palette */
+:root {
+  --va-cream-bg: #f3eadc;
+  --va-cream-light: #fbf7ef;
+  --va-cream-card: #fffaf1;
+
+  --va-teal-deep: #082f2c;
+  --va-teal-main: #0f4540;
+  --va-teal-soft: #dbe9e4;
+
+  --va-graphite: #2d3334;
+  --va-graphite-soft: #4d5556;
+
+  --va-gold: #c9942d;
+  --va-gold-rich: #dca83b;
+  --va-gold-soft: #f1d08a;
+
+  --va-text-main: #122b2a;
+  --va-text-muted: rgba(18,43,42,0.74);
+}
+
+/* General background: bright but not white/empty */
+html,
+body,
+.va-site {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(15,69,64,0.12), transparent 38rem),
+    radial-gradient(circle at 18% 45%, rgba(201,148,45,0.08), transparent 32rem),
+    linear-gradient(180deg, #fbf7ef 0%, #f5eddf 45%, #efe4d3 100%) !important;
+  color: var(--va-text-main) !important;
+}
+
+/* Hero: keep photo premium and readable, not washed out */
+header.va-hero::before {
+  background:
+    linear-gradient(90deg, rgba(8,47,44,0.66) 0%, rgba(8,47,44,0.34) 38%, rgba(8,47,44,0.12) 100%),
+    linear-gradient(180deg, rgba(251,247,239,0.08) 0%, rgba(8,47,44,0.10) 55%, rgba(8,47,44,0.42) 100%),
+    radial-gradient(circle at 64% 42%, rgba(220,168,59,0.12), transparent 27rem) !important;
+}
+
+header.va-hero h1 {
+  color: #fff7e8 !important;
+  text-shadow:
+    0 28px 80px rgba(0,0,0,0.74),
+    0 0 22px rgba(201,148,45,0.10) !important;
+}
+
+header.va-hero p {
+  color: rgba(255,247,232,0.88) !important;
+}
+
+header.va-hero .va-eyebrow {
+  color: var(--va-gold-soft) !important;
+}
+
+/* Navbar: cream glass with teal text */
+.va-navbar {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,250,241,0.72), transparent 78%),
+    linear-gradient(180deg, rgba(255,250,241,0.82), rgba(243,234,220,0.58)) !important;
+  border-color: rgba(201,148,45,0.26) !important;
+  box-shadow:
+    0 18px 48px rgba(8,47,44,0.12),
+    0 0 22px rgba(201,148,45,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.82),
+    inset 0 -1px 0 rgba(201,148,45,0.10) !important;
+}
+
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  color: var(--va-teal-deep) !important;
+  text-shadow: none !important;
+}
+
+.va-navbar .va-nav-links a:hover,
+.va-nav-links a:hover,
+.va-navbar .va-nav-links a.active,
+.va-nav-links a.active {
+  color: var(--va-gold) !important;
+  text-shadow: 0 0 18px rgba(201,148,45,0.18) !important;
+}
+
+/* Section typography */
+.va-section-kicker,
+.va-eyebrow,
+.va-footer small,
+.va-contact-copy .va-section-kicker {
+  color: var(--va-gold) !important;
+}
+
+h1,
+h2,
+h3,
+.va-section-head h2,
+.va-intro-heading,
+.va-contact-copy h2,
+.va-footer h2 {
+  color: var(--va-teal-deep) !important;
+}
+
+p,
+.va-section p,
+.va-intro-cards p,
+.va-service-card p,
+.va-process-grid p,
+.va-contact-copy p,
+.va-footer p {
+  color: var(--va-text-muted) !important;
+}
+
+/* Premium warm cards */
+.va-intro-cards article,
+.va-service-card,
+.va-process-grid article,
+.va-contact-form {
+  background:
+    linear-gradient(145deg, rgba(255,250,241,0.96), rgba(244,235,221,0.84)) !important;
+  border: 1px solid rgba(15,69,64,0.09) !important;
+  box-shadow:
+    0 24px 70px rgba(8,47,44,0.08),
+    0 0 18px rgba(201,148,45,0.045) !important;
+}
+
+/* Card headings */
+.va-intro-cards h3,
+.va-service-card h3,
+.va-process-grid h3 {
+  color: var(--va-teal-deep) !important;
+}
+
+/* Gallery labels: less black, more premium graphite */
+.va-gallery-card figcaption,
+.va-gallery-grid figcaption {
+  background: rgba(45,51,52,0.72) !important;
+  color: #fff7e8 !important;
+  border: 1px solid rgba(201,148,45,0.18) !important;
+}
+
+/* Gallery borders */
+.va-gallery-grid > figure,
+.va-gallery-grid > .va-gallery-card {
+  border-color: rgba(15,69,64,0.10) !important;
+  box-shadow: 0 18px 48px rgba(8,47,44,0.08) !important;
+}
+
+.va-gallery-grid > figure:hover,
+.va-gallery-grid > .va-gallery-card:hover {
+  border-color: rgba(201,148,45,0.34) !important;
+}
+
+/* About/contact area */
+.va-about,
+.va-contact {
+  background:
+    radial-gradient(circle at 50% 10%, rgba(15,69,64,0.07), transparent 36rem) !important;
+}
+
+/* Form: no grey block, warm graphite-teal */
+.va-contact-form {
+  background:
+    linear-gradient(145deg, rgba(47,54,55,0.86), rgba(8,47,44,0.80)) !important;
+  border-color: rgba(201,148,45,0.16) !important;
+  box-shadow:
+    0 26px 74px rgba(8,47,44,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+.va-contact-form input,
+.va-contact-form textarea {
+  background: rgba(255,250,241,0.90) !important;
+  border-color: rgba(201,148,45,0.18) !important;
+  color: var(--va-text-main) !important;
+}
+
+.va-contact-form input::placeholder,
+.va-contact-form textarea::placeholder {
+  color: rgba(18,43,42,0.48) !important;
+}
+
+/* Buttons */
+.va-button-gold,
+.va-contact-form button {
+  background:
+    linear-gradient(135deg, #b98222, var(--va-gold-rich), #c28b25) !important;
+  color: #fffaf1 !important;
+  box-shadow:
+    0 16px 38px rgba(201,148,45,0.26),
+    inset 0 1px 0 rgba(255,255,255,0.26) !important;
+}
+
+.va-button-outline {
+  background: rgba(255,250,241,0.62) !important;
+  border-color: rgba(8,47,44,0.18) !important;
+  color: var(--va-teal-deep) !important;
+}
+
+/* Footer */
+.va-footer {
+  background:
+    linear-gradient(180deg, #efe4d3, #e8dccb) !important;
+  border-top: 1px solid rgba(15,69,64,0.09) !important;
+}
+
+.va-footer h2 {
+  color: var(--va-teal-deep) !important;
+}
+
+.va-footer a,
+.va-footer .social-label {
+  color: var(--va-gold) !important;
+}
