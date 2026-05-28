@@ -4382,3 +4382,160 @@ h3 {
 .va-gallery-grid > .va-gallery-card:hover {
   border-color: rgba(241,196,91,0.30) !important;
 }
+
+
+/* ===== LIGHT LUXURY CREAM PALETTE V45 ===== */
+/* Transform site from black cinematic to luxury cream + teal + gold palette */
+
+:root {
+  --va-cream-bg: #f7f2ea;
+  --va-cream-soft: #efe6da;
+  --va-teal-deep: #123331;
+  --va-teal-soft: #214846;
+  --va-graphite: #303638;
+  --va-gold: #d4a13d;
+  --va-gold-soft: #e6bc63;
+  --va-text-dark: #1f2728;
+  --va-text-soft-dark: rgba(31,39,40,0.78);
+}
+
+/* Main site background */
+body,
+.va-site {
+  background:
+    radial-gradient(circle at top, rgba(18,51,49,0.08), transparent 34rem),
+    linear-gradient(180deg, #fbf7f1 0%, var(--va-cream-bg) 46%, var(--va-cream-soft) 100%) !important;
+
+  color: var(--va-text-dark) !important;
+}
+
+/* Sections become bright cream */
+.va-section,
+.va-about,
+.va-gallery,
+.va-contact,
+.va-brand-intro,
+.va-footer {
+  background: transparent !important;
+}
+
+/* Hero overlay lighter */
+header.va-hero::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247,242,234,0.72) 0%,
+      rgba(247,242,234,0.36) 42%,
+      rgba(247,242,234,0.10) 100%
+    ),
+    radial-gradient(circle at 65% 45%, rgba(212,161,61,0.12), transparent 26rem) !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+.va-section-head h2,
+.va-intro-heading {
+  color: var(--va-teal-deep) !important;
+}
+
+/* Paragraphs */
+p,
+.va-section p,
+.va-contact-copy p,
+.va-service-card p,
+.va-process-grid p,
+.va-intro-cards p {
+  color: var(--va-text-soft-dark) !important;
+}
+
+/* Cards */
+.va-intro-cards article,
+.va-service-card,
+.va-process-grid article,
+.va-contact-form,
+.va-gallery-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.88),
+      rgba(247,242,234,0.72)
+    ) !important;
+
+  border: 1px solid rgba(18,51,49,0.08) !important;
+
+  box-shadow:
+    0 20px 60px rgba(18,51,49,0.08),
+    0 0 18px rgba(212,161,61,0.04) !important;
+}
+
+/* Navbar brighter luxury glass */
+.va-navbar {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.72),
+      rgba(247,242,234,0.52)
+    ) !important;
+
+  border: 1px solid rgba(18,51,49,0.10) !important;
+
+  box-shadow:
+    0 18px 44px rgba(18,51,49,0.10),
+    0 0 16px rgba(212,161,61,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.75) !important;
+}
+
+/* Navbar links */
+.va-nav-links a {
+  color: var(--va-teal-deep) !important;
+}
+
+.va-nav-links a:hover,
+.va-nav-links a.active {
+  color: var(--va-gold) !important;
+}
+
+/* Gold accents */
+.va-eyebrow,
+.va-section-kicker,
+.va-footer small {
+  color: var(--va-gold) !important;
+}
+
+/* Buttons */
+.va-button-gold,
+.va-contact-form button {
+  background:
+    linear-gradient(
+      135deg,
+      #c58f2e,
+      var(--va-gold-soft),
+      #c89432
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 14px 34px rgba(212,161,61,0.22) !important;
+}
+
+.va-button-outline {
+  background: rgba(255,255,255,0.48) !important;
+  border-color: rgba(18,51,49,0.14) !important;
+  color: var(--va-teal-deep) !important;
+}
+
+/* Inputs */
+.va-contact-form input,
+.va-contact-form textarea {
+  background: rgba(255,255,255,0.72) !important;
+  border-color: rgba(18,51,49,0.10) !important;
+  color: var(--va-text-dark) !important;
+}
+
+/* Footer */
+.va-footer {
+  border-top: 1px solid rgba(18,51,49,0.08) !important;
+}
