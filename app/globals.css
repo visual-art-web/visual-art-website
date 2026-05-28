@@ -3177,3 +3177,113 @@ header.va-hero {
     min-width: auto !important;
   }
 }
+
+
+/* ===== NAVBAR REAL CENTER FIX V30 ===== */
+/* Hard fix: menu is fixed to viewport center and always stays while scrolling. */
+
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+/* The actual menu block */
+.va-navbar {
+  position: fixed !important;
+  top: 24px !important;
+  left: 50vw !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  transform: translate3d(-50%, 0, 0) !important;
+
+  width: min(760px, calc(100vw - 48px)) !important;
+  min-height: 68px !important;
+  margin: 0 !important;
+  padding: 0 34px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(8, 12, 18, 0.26) !important;
+  border: 1px solid rgba(255,255,255,0.055) !important;
+  box-shadow:
+    0 18px 55px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.035) !important;
+
+  backdrop-filter: blur(18px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
+
+  z-index: 999999 !important;
+}
+
+/* Remove every old positioning rule from links */
+.va-navbar .va-nav-links,
+.va-nav-links {
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
+}
+
+/* Menu text */
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  min-width: auto !important;
+  padding: 25px 12px 22px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: rgba(255,248,236,0.92) !important;
+  text-align: center !important;
+}
+
+/* Make sure header video/layout cannot clip fixed navbar */
+header.va-hero {
+  overflow: visible !important;
+  padding-top: 112px !important;
+}
+
+/* Keep video layer inside hero only */
+header.va-hero > .va-hero-video {
+  position: absolute !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .va-navbar {
+    top: 12px !important;
+    width: calc(100vw - 24px) !important;
+    min-height: auto !important;
+    padding: 12px 16px !important;
+  }
+
+  .va-navbar .va-nav-links,
+  .va-nav-links {
+    justify-content: center !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .va-navbar .va-nav-links a,
+  .va-nav-links a {
+    padding: 9px 0 !important;
+    font-size: 13px !important;
+  }
+
+  header.va-hero {
+    padding-top: 98px !important;
+  }
+}
