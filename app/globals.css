@@ -3551,3 +3551,196 @@ header.va-hero .va-hero-copy::before {
     letter-spacing: .5px !important;
   }
 }
+
+
+/* ===== FINAL PREMIUM HERO MENU POLISH V39 ===== */
+/* Fixes what was still weak: lighter menu, smaller hero title, stronger separation, better buttons. */
+
+/* Navbar: lighter, slimmer, more luxury */
+.va-navbar {
+  top: 30px !important;
+  width: min(620px, calc(100vw - 90px)) !important;
+  min-height: 58px !important;
+  padding: 0 28px !important;
+
+  border-radius: 22px !important;
+  background:
+    linear-gradient(180deg, rgba(12, 16, 22, 0.30), rgba(6, 10, 15, 0.16)) !important;
+
+  border: 1px solid rgba(215,165,77,0.14) !important;
+
+  backdrop-filter: blur(30px) saturate(1.28) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(1.28) !important;
+
+  box-shadow:
+    0 22px 70px rgba(0,0,0,0.34),
+    0 0 38px rgba(215,165,77,0.055),
+    inset 0 1px 0 rgba(255,255,255,0.055) !important;
+}
+
+.va-navbar::after {
+  left: 70px !important;
+  right: 70px !important;
+  background: linear-gradient(90deg, transparent, rgba(215,165,77,0.58), transparent) !important;
+}
+
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  padding: 21px 10px 19px !important;
+  font-size: 13.5px !important;
+  letter-spacing: 1.25px !important;
+}
+
+.va-navbar .va-nav-links a::before,
+.va-nav-links a::before {
+  top: 12px !important;
+  width: 4px !important;
+  height: 4px !important;
+}
+
+.va-navbar .va-nav-links a::after,
+.va-nav-links a::after {
+  bottom: 12px !important;
+}
+
+/* Hero block: more right, more elegant */
+header.va-hero .va-hero-copy {
+  right: clamp(95px, 9vw, 185px) !important;
+  width: min(680px, 41vw) !important;
+  top: 53% !important;
+}
+
+/* Eyebrow smaller and cleaner */
+header.va-hero .va-eyebrow {
+  font-size: clamp(11px, 0.82vw, 14px) !important;
+  letter-spacing: 5.5px !important;
+  margin-bottom: 20px !important;
+  color: #d7a54d !important;
+}
+
+/* Main title: slightly smaller and more premium */
+header.va-hero h1 {
+  font-size: clamp(50px, 4.55vw, 82px) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.5px !important;
+  text-shadow:
+    0 28px 88px rgba(0,0,0,0.86),
+    0 0 38px rgba(215,165,77,0.10) !important;
+}
+
+/* Description: tighter, cleaner */
+header.va-hero p {
+  font-size: clamp(15px, 1vw, 18px) !important;
+  line-height: 1.95 !important;
+  max-width: 650px !important;
+  color: rgba(246,239,229,0.88) !important;
+  text-shadow: 0 16px 44px rgba(0,0,0,0.78) !important;
+}
+
+/* Better layer separation behind text */
+header.va-hero .va-hero-copy::before {
+  inset: -48px -58px -52px -62px !important;
+  background:
+    radial-gradient(circle at 65% 50%, rgba(0,0,0,0.56), transparent 68%),
+    linear-gradient(270deg, rgba(0,0,0,0.50), rgba(0,0,0,0.16), transparent) !important;
+  filter: blur(14px) !important;
+  opacity: 0.96 !important;
+}
+
+/* Add slow cinematic video movement */
+header.va-hero > .va-hero-video {
+  transform: scale(1.035) !important;
+  animation: vaHeroDrift 22s ease-in-out infinite alternate !important;
+}
+
+@keyframes vaHeroDrift {
+  from {
+    transform: scale(1.035) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.065) translate3d(-14px, -6px, 0);
+  }
+}
+
+/* Buttons: premium polish */
+header.va-hero .va-buttons {
+  gap: 20px !important;
+  margin-top: 32px !important;
+}
+
+.va-button,
+.va-button-gold,
+.va-button-outline {
+  min-height: 54px !important;
+  padding: 0 30px !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.15px !important;
+}
+
+.va-button-gold {
+  background:
+    linear-gradient(135deg, #c69038, #efc96d, #c8943a) !important;
+  box-shadow:
+    0 20px 52px rgba(215,165,77,0.22),
+    0 0 28px rgba(215,165,77,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.32) !important;
+}
+
+.va-button-gold:hover {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    0 28px 68px rgba(215,165,77,0.30),
+    0 0 34px rgba(215,165,77,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.36) !important;
+}
+
+.va-button-outline {
+  background: rgba(255,255,255,0.035) !important;
+  border-color: rgba(255,255,255,0.20) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.va-button-outline:hover {
+  border-color: rgba(215,165,77,0.35) !important;
+  color: #f4d28a !important;
+}
+
+/* Slightly better dark overlay so text feels separate */
+header.va-hero::before {
+  background:
+    radial-gradient(circle at 64% 43%, rgba(215,165,77,0.10), transparent 29rem),
+    linear-gradient(90deg, rgba(5,9,13,0.76) 0%, rgba(5,9,13,0.52) 45%, rgba(5,9,13,0.30) 100%),
+    linear-gradient(180deg, rgba(5,9,13,0.08) 0%, rgba(5,9,13,0.20) 54%, rgba(5,9,13,0.80) 100%) !important;
+}
+
+@media (max-width: 900px) {
+  .va-navbar {
+    top: 12px !important;
+    width: calc(100vw - 28px) !important;
+    min-height: auto !important;
+    padding: 10px 14px !important;
+  }
+
+  .va-navbar .va-nav-links a,
+  .va-nav-links a {
+    font-size: 13px !important;
+    letter-spacing: .5px !important;
+    padding: 10px 0 !important;
+  }
+
+  header.va-hero .va-hero-copy {
+    right: auto !important;
+    width: 100% !important;
+  }
+
+  header.va-hero h1 {
+    font-size: clamp(40px, 11vw, 64px) !important;
+  }
+
+  header.va-hero > .va-hero-video {
+    animation: none !important;
+    transform: scale(1.04) !important;
+  }
+}
