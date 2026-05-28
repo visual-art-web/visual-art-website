@@ -4154,3 +4154,73 @@ header.va-hero::before {
     font-size: 13.5px !important;
   }
 }
+
+
+/* ===== FINAL NAVBAR DEPTH POLISH V43 ===== */
+/* Final cinematic balance: slightly lower + deeper center opacity */
+
+.va-navbar {
+  top: 54px !important;
+
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.34), transparent 72%),
+    linear-gradient(
+      180deg,
+      rgba(12,16,22,0.66),
+      rgba(6,10,15,0.42)
+    ) !important;
+
+  border: 1px solid rgba(215,165,77,0.20) !important;
+
+  backdrop-filter: blur(22px) saturate(1.18) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.18) !important;
+
+  box-shadow:
+    0 22px 62px rgba(0,0,0,0.48),
+    0 0 36px rgba(215,165,77,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 -1px 0 rgba(215,165,77,0.10) !important;
+}
+
+.va-navbar::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.055),
+      rgba(255,255,255,0.008) 45%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(215,165,77,0.055),
+      transparent 72%
+    ) !important;
+
+  opacity: 0.95 !important;
+}
+
+.va-navbar .va-nav-links a,
+.va-nav-links a {
+  color: rgba(255,248,236,0.92) !important;
+
+  text-shadow:
+    0 10px 24px rgba(0,0,0,0.64),
+    0 0 10px rgba(215,165,77,0.04) !important;
+}
+
+.va-navbar .va-nav-links a:hover,
+.va-nav-links a:hover,
+.va-navbar .va-nav-links a.active,
+.va-nav-links a.active {
+  color: #f4d28a !important;
+
+  text-shadow:
+    0 0 18px rgba(215,165,77,0.22),
+    0 14px 32px rgba(0,0,0,0.70) !important;
+}
+
+@media (max-width: 900px) {
+  .va-navbar {
+    top: 14px !important;
+  }
+}
