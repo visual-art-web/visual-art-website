@@ -1,13 +1,13 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "VISUAL ART | סטודיו צילום קולנועי",
-  description: "אתר פרימיום לצלמת — צילום חתונות, זוגיות, אופנה, תדמית, רילסים ורחפן.",
+  title: "VISUAL ART",
+  description: "Luxury cinematic photography studio",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="ltr">
       <body>{children}</body>
     </html>
   );
