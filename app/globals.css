@@ -3095,59 +3095,112 @@ header.va-hero {
 }
 
 
-/* ===== FINAL HERO RIGHT POSITION CLEAN ===== */
+/* ===== HERO FINAL RTL RIGHT BALANCE V36 ===== */
+/* Final hero layout: Hebrew text on the right, not cut, not too low, menu stays fixed. */
 
 header.va-hero {
   position: relative !important;
+  overflow: hidden !important;
+  padding-top: 0 !important;
 }
 
 header.va-hero .va-hero-inner {
   position: relative !important;
-  min-height: 100vh !important;
+  display: block !important;
+  min-height: clamp(690px, 92vh, 900px) !important;
+  padding: 0 !important;
 }
 
-/* ONLY ONE REAL HERO POSITION BLOCK */
+/* Real right-side RTL placement */
 header.va-hero .va-hero-copy {
   position: absolute !important;
+  z-index: 50 !important;
 
-  right: 8% !important;
+  right: clamp(80px, 8vw, 170px) !important;
   left: auto !important;
 
-  top: 56% !important;
+  top: 54% !important;
   transform: translateY(-50%) !important;
 
-  width: 42vw !important;
-  max-width: 760px !important;
-
-  text-align: right !important;
-  direction: rtl !important;
+  width: min(720px, 43vw) !important;
+  max-width: 720px !important;
 
   margin: 0 !important;
-  z-index: 50 !important;
+  padding: 0 !important;
+
+  direction: rtl !important;
+  text-align: right !important;
 }
 
-header.va-hero .va-eyebrow,
-header.va-hero h1,
+header.va-hero .va-eyebrow {
+  display: block !important;
+  direction: ltr !important;
+  text-align: right !important;
+  margin-bottom: 22px !important;
+}
+
+header.va-hero h1 {
+  text-align: right !important;
+  font-size: clamp(56px, 4.85vw, 90px) !important;
+  line-height: 1.04 !important;
+  max-width: 100% !important;
+}
+
 header.va-hero p {
   text-align: right !important;
+  max-width: 670px !important;
+  margin: 22px 0 0 auto !important;
 }
 
 header.va-hero .va-buttons {
+  display: flex !important;
   justify-content: flex-start !important;
   flex-direction: row-reverse !important;
+  gap: 18px !important;
+  margin-top: 34px !important;
 }
 
+/* keep readable shadow behind text, no visible box */
+header.va-hero .va-hero-copy::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -42px -52px -44px -52px !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(circle at 62% 50%, rgba(0,0,0,0.48), transparent 68%),
+    linear-gradient(270deg, rgba(0,0,0,0.44), rgba(0,0,0,0.14), transparent) !important;
+  filter: blur(10px) !important;
+  opacity: 0.92 !important;
+}
+
+/* Fixed centered menu, above everything */
+.va-navbar {
+  position: fixed !important;
+  top: 24px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  z-index: 999999 !important;
+}
+
+/* Mobile */
 @media (max-width: 900px) {
+  header.va-hero .va-hero-inner {
+    min-height: 82vh !important;
+  }
+
   header.va-hero .va-hero-copy {
     position: relative !important;
     right: auto !important;
+    left: auto !important;
     top: auto !important;
     transform: none !important;
 
     width: 100% !important;
     max-width: 100% !important;
 
-    padding: 120px 24px 70px !important;
+    padding: 125px 22px 74px !important;
     text-align: center !important;
   }
 
